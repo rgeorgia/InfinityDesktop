@@ -9,7 +9,7 @@ We are **not** experts, but we are willing to dig in, willing to learn and willi
 ### Second
 We are **not** NetBSD zealots. We are NetBSD **enthusiasts**. We won't bash Windows or scoff at any distro of Linux. We will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
 
-We will also not try to may os108 Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
+We will also not try to make os108 Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
 
 
 
