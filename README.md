@@ -17,7 +17,7 @@ We will also not try to make os108 Windows-like, Mac-like or Linux-like; it will
 The name may change in the future, but for now, here is the reason behind the name.
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
-----------------------------------------------------
+---
 Totally inspired by the good folks that brought you [GhostBSD](https://github.com/ghostbsd)! GhostBSD is built on [TrueOS](https://www.trueos.org/), which is another excellent project.
 
 We totally endorse their work and recommend you check them out. Some of us even support them financially. Yup we love GhostBSD!
