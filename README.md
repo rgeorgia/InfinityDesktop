@@ -1,4 +1,4 @@
-# os108
+# OS108
 An attempt to roll a NetBSD desktop.
 
 We have always been attracted to NetBSD for some unknown reason. We are not saying it's the best BSD distro, it just seems to have a magnetic pull on us. Consequently, we want to make a good desktop experience with a solid operating system under the hood.
@@ -13,8 +13,9 @@ We will also not try to make os108 Windows-like, Mac-like or Linux-like; it will
 
 
 
-## Why os108?
+## Why OS108?
 The name may change in the future, but for now, here is the reason behind the name.
+Name i came up with because of **1** and **0** being binary bits with which **8** bits makes up byte so hence came the name **OS108**
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
