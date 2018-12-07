@@ -1,4 +1,4 @@
-# OS108
+# Infinity Desktop
 An attempt to roll a NetBSD desktop.
 
 We have always been attracted to NetBSD for some unknown reason. We are not saying it's the best BSD distro, it just seems to have a magnetic pull on us. Consequently, we want to make a good desktop experience with a solid operating system under the hood.
