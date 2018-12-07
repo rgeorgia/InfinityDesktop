@@ -12,11 +12,6 @@ We are **not** NetBSD zealots. We are NetBSD **enthusiasts**. We won't bash Wind
 We will also not try to make os108 Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
 
 
-
-## Why OS108?
-The name may change in the future, but for now, here is the reason behind the name.
-Name i came up with because of **1** and **0** being binary bits with which **8** bits makes up byte so hence came the name **OS108**
-
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
 ---
