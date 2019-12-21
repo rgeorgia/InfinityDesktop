@@ -28,7 +28,7 @@ input_pass_x            130
 input_pass_y            151
 input_font              Sans:size=16:dpi=75
 # input_color           #448ed3
-input_color            #000000
+input_color            #ffffff
 
 username_msg            
 password_msg            
