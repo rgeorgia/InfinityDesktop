@@ -1,5 +1,4 @@
-# GhostBSD theme for SLIM
-
+# GhostBSD theme for SLIM adapted for Infinity
 # Messages (ie: shutdown)
 
 msg_color               #ffffff
@@ -10,7 +9,7 @@ msg_y                   30%
 # Session Name
 
 session_color               #ffffff
-session_font                Sans:size=16:bold:dpi=75
+session_font                Sans:size=18:bold:dpi=75
 session_x                   50%
 session_y                   90%
 
@@ -27,8 +26,9 @@ input_name_x            130
 input_name_y            97
 input_pass_x            130
 input_pass_y            151
-input_font              Sans:size=12:dpi=75
-input_color           #448ed3
+input_font              Sans:size=16:dpi=75
+# input_color           #448ed3
+input_color            #000000
 
 username_msg            
 password_msg            
