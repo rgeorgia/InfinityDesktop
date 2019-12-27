@@ -1,0 +1,300 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-accessories-menu" label="Accessories">
+  <item label="Calculator" icon="/usr/pkg/share/icons/gnome/48x48/apps/gnome-calculator.png">
+    <action name="Execute">
+      <command>gnome-calculator</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Ark File Archiver">
+    <action name="Execute">
+      <command>ark</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-editors-menu" label="Editors">
+  <item label="Leafpad"
+        icon="/usr/pkg/share/pixmaps/leafpad.png">
+    <action name="Execute">
+      <command>leafpad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Pluma"
+        icon="/usr/pkg/share/icons/gnome/48x48/apps/accessories-text-editor.png">
+    <action name="Execute">
+      <command>pluma</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Pycharm CE"
+        icon="/usr/pkg/share/pixmaps/pycharm48.png">
+    <action name="Execute">
+	    <command>/usr/pkg/pycharm-bin-2019.1.2/bin/pycharm.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Bluefish"
+        icon="/usr/pkg/share/pixmaps/bluefish.png">
+    <action name="Execute">
+      <command>bluefish</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-term-menu" label="Terminals">
+	<item label="xfce4-terminal" icon="/usr/pkg/share/icons/gnome/48x48/apps/xfce-terminal.png">
+    <action name="Execute">
+      <command>xfce4-terminal</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="sakura" icon="/usr/pkg/share/icons/gnome/48x48/apps/gnome-terminal.png">
+    <action name="Execute">
+      <command>sakura</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Xterm" icon="/usr/pkg/share/icons/gnome/48x48/apps/gnome-terminal.png">
+    <action name="Execute"><command>xterm -sb -rightbar -fs 15</command></action>
+  </item>
+</menu>
+
+<menu id="apps-net-menu" label="Internet">
+  <item label="Firefox"
+        icon="/usr/pkg/share/pixmaps/firefox.png">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="HexChat" 
+        icon="/usr/pkg/share/icons/gnome/48x48/status/network-transmit-receive.png">
+    <action name="Execute">
+      <command>hexchat</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Wireshark" icon="/usr/pkg/share/icons/hicolor/48x48/apps/wireshark.png">
+    <action name="Execute">
+      <command>wireshark</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Claws Mail" icon="/usr/pkg/share/icons/hicolor/48x48/apps/claws-mail.png">
+    <action name="Execute">
+      <command>claws-mail</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-office-menu" label="Office">
+	<item label="LibreOffice Base"
+		icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-base.png">
+    <action name="Execute">
+      <command>sbase</command>
+    </action>
+  </item>
+  <item label="LibreOffice Calc"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-calc.png">
+    <action name="Execute">
+      <command>scalc</command>
+    </action>
+  </item>
+  <item label="LibreOffice Draw"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-draw.png">
+    <action name="Execute">
+      <command>sdraw</command>
+    </action>
+  </item>
+  <item label="LibreOffice Impress"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-impress.png">
+    <action name="Execute">
+      <command>simpress</command>
+    </action>
+  </item>
+  <item label="LibreOffice Math"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-math.png">
+    <action name="Execute">
+      <command>ooffice -math</command>
+    </action>
+  </item>
+  <item label="LibreOffice Main"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-main.png">
+    <action name="Execute">
+      <command>soffice</command>
+    </action>
+  </item>
+  <item label="LibreOffice Writer"
+	  icon="/usr/pkg/usr/share/icons/hicolor/64x64/apps/libreoffice6.2-writer.png">
+    <action name="Execute">
+      <command>swriter</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-multimedia-menu" label="Multimedia">
+  <item label="Amarok">
+    <action name="Execute">
+      <command>amarok</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Rhythmbox">
+    <action name="Execute">
+      <command>rhythmbox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="MPlayer">
+    <action name="Execute">
+      <command>gmplayer</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>MPlayer</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Totem">
+    <action name="Execute">
+      <command>totem</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-fileman-menu" label="File Managers">
+  <item label="Thunar" icon="/usr/pkg/share/icons/gnome/48x48/apps/xfce-filemanager.png">
+    <action name="Execute">
+      <command>Thunar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="PCMan File Manager" icon="/usr/pkg/share/icons/gnome/48x48/apps/file-manager.png">
+    <action name="Execute">
+      <command>pcmanfm</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-graphics-menu" label="Graphics">
+  <item label="Dia Diagram Editor">
+    <action name="Execute">
+      <command>dia</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Inkscape"
+        icon="/usr/pkg/share/icons/gnome/48x48/mimetypes/x-office-drawing.png">
+    <action name="Execute">
+      <command>inkscape</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager" icon="/usr/pkg/share/pixmaps/obconf.png">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Tint2 Configuration" 
+        icon="/usr/pkg/share/icons/gnome/48x48/categories/xfce4-settings.png">
+    <action name="Execute">
+      <command>tint2conf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Xfce Settings" 
+        icon="/usr/pkg/share/icons/gnome/48x48/categories/xfce-system-settings.png">
+    <action name="Execute">
+      <command>xfce-setting-show</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Manage Cups Printers"
+        icon="/usr/pkg/share/icons/gnome/48x48/devices/xfce-printer.png">
+    <action name="Execute">
+      <command>xdg-open http://localhost:631/</command>
+      <startupnotify>
+        <enabled>no</enabled>
+        <icon>cups</icon>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-accessories-menu"/>
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-graphics-menu"/>
+  <menu id="apps-net-menu"/>
+  <menu id="apps-office-menu"/>
+  <menu id="apps-multimedia-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-fileman-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+  <separator />
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>

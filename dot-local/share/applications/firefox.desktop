@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Browser Web Browser
+GenericName=Web Browser
+Comment=Browse the web
+Exec=firefox %u
+Icon=/usr/pkg/share/pixmaps/firefox.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;
