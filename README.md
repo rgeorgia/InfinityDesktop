@@ -1,4 +1,4 @@
-![infinity login](https://github.com/rgeorgia/InfinityDesktop/blob/master/infinity-slim-theme/infinity-default/panel.png)
+<img align="right" width="100" height="100" src="https://github.com/rgeorgia/InfinityDesktop/blob/master/infinity-slim-theme/infinity-default/panel.png">
 
 # Infinity Desktop
 An attempt to roll a NetBSD desktop.
