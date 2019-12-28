@@ -3,15 +3,15 @@
 # Infinity Desktop
 An attempt to roll a NetBSD desktop.
 
-We have always been attracted to NetBSD for some unknown reason. We are not saying it's the best BSD distro, it just seems to have a magnetic pull on us. Consequently, we want to make a good desktop experience with a solid operating system under the hood.
+I have always been attracted to NetBSD for some unknown reason. I an not saying it's the best BSD distro, it just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
 
 ### First
-We are **not** experts, but we are willing to dig in, willing to learn and willing to listen to sound advice. We do not feel that everything needs to be "invented by us." We are more than willing to _rip-off_ good ideas.
+I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be "invented here." I am more than willing to _rip-off_ good ideas.
 
 ### Second
-We are **not** NetBSD zealots. We are NetBSD **enthusiasts**. We will not bash Windows or scoff at any distro of Linux. We will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
+I am **not** a NetBSD zealot. I am a NetBSD **enthusiast**. I will not bash Windows or scoff at any distro of Linux. I will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
 
-We will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
+I will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
