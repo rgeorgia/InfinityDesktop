@@ -1,3 +1,5 @@
+[infinity-loop](https://user-images.githubusercontent.com/3987817/71548198-d97ec680-2978-11ea-9fb5-476e81d98b8f.png)
+
 # Infinity Desktop
 An attempt to roll a NetBSD desktop.
 
