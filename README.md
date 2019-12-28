@@ -9,10 +9,9 @@ We have always been attracted to NetBSD for some unknown reason. We are not sayi
 We are **not** experts, but we are willing to dig in, willing to learn and willing to listen to sound advice. We do not feel that everything needs to be "invented by us." We are more than willing to _rip-off_ good ideas.
 
 ### Second
-We are **not** NetBSD zealots. We are NetBSD **enthusiasts**. We won't bash Windows or scoff at any distro of Linux. We will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
+We are **not** NetBSD zealots. We are NetBSD **enthusiasts**. We will not bash Windows or scoff at any distro of Linux. We will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
 
-We will also not try to make os108 Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
-
+We will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
