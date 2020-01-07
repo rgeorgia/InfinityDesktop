@@ -1,5 +1,8 @@
 sudo-1.8.28         Allow others to run commands as root
 tmux-2.9anb1        BSD-licensed terminal multiplexer (GNU Screen alternative)
+libxml2-2.9.9       XML parser library from the GNOME project
+libxslt-1.1.33nb1   XSLT parser library from the GNOME project
+osabi-NetBSD-9.99.33 Operating System version dummy-package
 dbus-1.12.16        Message bus system
 fam-2.7.0nb9        File Alteration Monitor
 hal-0.5.14nb22      FreeDesktop hardware abstraction layer
@@ -35,12 +38,23 @@ libreoffice6-bin-6.2.7 Integrated office productivity suite (binary pkg)
 claws-mail-3.17.1nb9 X based e-mail and netnews client
 firefox-69.0.1      Web browser with support for extensions (version 69)
 bluefish-2.2.10nb3  GTK HTML editor for the experienced web designer
-wireshark-3.0.4nb1  Network protocol analyzer
+wget-1.20.3nb3      Retrieve files from the 'net via HTTP and FTP
+libsmi-0.5.0        Library to access SMI MIB information
 adwaita-icon-theme-3.30.1 Standard GNOME icons
 xfce4-icon-theme-4.4.3nb30 Xfce icon themes
 sakura-3.7.0        Sakura is a terminal emulator based on GTK and VTE that supports tab
 gnome-icon-theme-3.12.0nb4 Theme consisting of a set of icons for GNOME
 gnome-icon-theme-extras-2.30.1nb2 Extra icons for the GNOME icon sets
+py37-cairo-1.18.1   Python bindings for cairo
 pycharm-bin-2019.1.2 JetBrain\'s python IDE
 pluma-1.22.1nb2     Small and lightweight UTF-8 text editor for MATE
 mate-icon-theme-1.22.1nb2 Collection of icons used as the basis for MATE themes
+gnome-calculator-3.24.0nb18 Desktop calculator for GNOME
+obmenu-1.0          Openbox menu editor
+go-hugo-0.55.6nb4   A Fast & Modern Static Website Engine
+createbuildlink-3.17 Shell script to help creating buildlink3.mk files
+gnome-doc-utils-0.20.10nb3 Documentation utilities for the GNOME project
+snort-2.9.9.0nb2    The Open Source Network Intrusion Detection System
+zenity-2.32.1nb27   Display GNOME dialogs from the command line
+ncftp3-3.2.6nb2     FTP replacement with advanced user interface
+pkg_chk-2.0.11      Check installed package versions against pkgsrc
