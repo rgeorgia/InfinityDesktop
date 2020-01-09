@@ -36,7 +36,7 @@
 
 ## INSTALLS
 
-- install tint2			[IP]
+- install tint2			[]
 - install slim			[]
 - install slim-themes		[]
 - install tint2			[]
@@ -53,10 +53,10 @@
 - install hexchat		[] (/usr/pkgsrc/chat/hexchat)
 - install avahi			[] (/usr/pkgsrc/net/avahi)
 - install postgresql		[] (/usr/pkgsrc/databases/postgresql12-server)
-- install libreoffice		[] (/usr/pkgsrc/misc/libreoffice6-bin)pkg
+- install libreoffice		[] (/usr/pkgsrc/misc/libreoffice6-bin)
 - install PyCharm		[] (/usr/pkgsrc/devel/pycharm-bin)
 - install leafpad		[]
 - install go			[]
-- install thunderbird	[]
+- install claws-mail		[]
 
 
