@@ -24,8 +24,6 @@ xfce4-terminal-0.8.8nb1 Xfce terminal emulator
 py37-libxml2-2.9.9  Python wrapper for libxml2
 xfce4-session-4.14.0 Xfce session manager
 leafpad-0.8.18.1nb1 Simple and light text editor using GTK+
-py27-libxslt-1.1.33nb1 -safe to try
-  // to clean 
 lxsession-0.5.3nb3  Session manager for LXDE
 lastpass-cli-1.3.1nb5 Command line interface to LastPass.com
 go-1.12.12          Meta package providing the current release of the Go language
