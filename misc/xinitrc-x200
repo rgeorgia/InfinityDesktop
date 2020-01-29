@@ -1,0 +1,2 @@
+#/usr/pkg/bin/openbox-session
+exec ck-launch-session dbus-launch --exit-with-session mate-session
