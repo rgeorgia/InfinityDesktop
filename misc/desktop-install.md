@@ -1,4 +1,6 @@
-## NSTS
+# Install
+
+## pkgin install checklist
 
 - install tint2		[]
 - install slim		[] (/usr/pkgsrc/x11/slim)
@@ -7,10 +9,6 @@
 - install vim		[] (/usr/pkgsrc/editors/vim)
 - install xfce4-terminal[] (/usr/pkgsrc/x11/xfce4-terminal)
 - install zsh		[]
-- install lxterminal	[]
-- install lxapperance	[]
-- install lxsession	[]
-- install xfce4-session	[]
 - install bash		[] (/usr/pkgsr/shells/bash)
 - install nmap		[] (/usr/pkgsrc/net/nmap)
 - install pcmanfm	[] (/usr/pkgsrc/sysutils/pcmanfm)
@@ -30,14 +28,11 @@
 - install john		[] (/usr/pkgsrc/security/john)
 - install hugo		[] (/usr/pkgsrc/www/hugo)
 - install mutt		[] ()
+- install bluefish	[] (/usr/pkgsrc/www/bluefish)
+- install firefox	[] (/usr/pkgsrc/www/firefox)
+- install wireshark	[] (/usr/pkgsrc/net/wireshark)
+- install thunderbird	[] (/usr/pkgsrc/mail/thunderbird)
 
 ## Maybe
 
-? install mongodb	[] (/usr/pkgsrc/databases/mongodb)
-? install thunderbird	[] (/usr/pkgsrc/mail/thunderbird)
-
-## ED
-
-- install bluefish	[] (/usr/pkgsrc/www/bluefish)
-- install firefox69	[] (/usr/pkgsrc/www/firefox)
-- install wireshark	[] (/usr/pkgsrc/net/wireshark)
+- install mongodb	[] (/usr/pkgsrc/databases/mongodb)

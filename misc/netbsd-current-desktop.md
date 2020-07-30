@@ -1,6 +1,9 @@
+# Install
+
 ## NOTES 
 
-- mk.conf => ACCEPTABLE_LICENSES+= vim-license esdl-license server-side-public-license
+- mk.conf 
+  - ACCEPTABLE_LICENSES+= vim-license esdl-license server-side-public-license
 - updated wpa_supplicant.conf and rc.conf for wireless
 
 
@@ -9,7 +12,7 @@
 - Tune login.conf
 - Checkout nomadBSD for openbox and tint2 configuration ideas
 
-# NetBSD Current (9.99.23) Desktop
+# NetBSD Current Desktop
 
 - downloaded netbsd current from cdn site
 - installed into VirtualBox
