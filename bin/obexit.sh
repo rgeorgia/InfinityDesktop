@@ -5,6 +5,6 @@ if [ -z $1 ]; then
 fi
 if [ $1 = reboot ];then
    zenity --question --ok-label "Reboot" --text "Reboot $HOST?" && sudo /sbin/reboot
-   elif [ $1 = halt ];then
+elif [ $1 = poweroff ];then
       zenity --question --ok-label "Shudown" --text "Shutdown $HOST?" && sudo /sbin/poweroff
 fi
