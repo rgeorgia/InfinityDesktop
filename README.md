@@ -13,6 +13,9 @@ I am **not** a NetBSD zealot. I am a NetBSD **enthusiast**. I will not bash Wind
 
 I will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be NetBSD-like. Honestly, this may not be for everyone.
 
+### Desktop
+I am focusing on Openbox with tint2. It is lightweight and very flexible. Plus, I really don't understand a lot about how to configure Mate correctly. 
+
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
 ---
