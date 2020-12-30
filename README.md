@@ -7,7 +7,7 @@ I have always been attracted to  both NetBSD  and DragonflyBSD. I am not saying 
 Actually this, like many other projects, is a scratch for my particular itch.
 
 ### First
-I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be "invented here." I am more than willing to _rip-off_ good ideas.
+I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be invented here. I am more than willing to rip-off good ideas.
 
 ### Second
 I am **not** a NetBSD or DragonflyBSD zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about smartd or anyother technology I am completely ignorant about. 
@@ -19,6 +19,9 @@ I will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; 
 I am focusing on [FVWM](https://www.fvwm.org/). The final result should be a lightweight and very flexible desktop environment. 
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
+
+https://github.com/rgeorgia/InfinityDesktop/blob/master/screenshots/dfly_fvwm.png
+![dfly_desktop](https://github.com/rgeorgia/InfinityDesktop/blob/master/screenshots/dfly_fvwm.png?raw=true)
 
 ---
 
