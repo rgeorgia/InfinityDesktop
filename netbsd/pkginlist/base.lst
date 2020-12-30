@@ -7,7 +7,6 @@ openbox
 obconf
 bash
 feh
-xfce4
 lxappearance
 zsh
 slim
@@ -22,6 +21,7 @@ lastpass-cli
 go
 skippy
 postgresql12-server
+mongodb
 base64
 hexchat
 avahi
@@ -33,7 +33,6 @@ pluma
 gnome-calculator
 go-hugo
 createbuildlink
-gnome-doc-utils
 snort
 zenity
 ncftp3
