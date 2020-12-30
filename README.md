@@ -1,6 +1,6 @@
 
 # Infinity Desktop
-An attempt to roll a BSD desktop, specifically NetBSD and DragonflyBSD.
+An attempt to roll a BSD desktop, specifically [NetBSD](http://netbsd.org/) and [DragonflyBSD](https://www.dragonflybsd.org/).
 
 I have always been attracted to  both NetBSD  and DragonflyBSD. I am not saying that they the best BSD distros, they just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
 
