@@ -20,7 +20,6 @@ I am focusing on [FVWM](https://www.fvwm.org/). The final result should be a lig
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
-https://github.com/rgeorgia/InfinityDesktop/blob/master/screenshots/dfly_fvwm.png
 ![dfly_desktop](https://github.com/rgeorgia/InfinityDesktop/blob/master/screenshots/dfly_fvwm.png?raw=true)
 
 ---
