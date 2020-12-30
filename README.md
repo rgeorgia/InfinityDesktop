@@ -1,4 +1,3 @@
-<img align="right" width="200" height="200" src="https://github.com/rgeorgia/InfinityDesktop/blob/master/infinity-slim-theme/infinity-default/panel.png">
 
 # Infinity Desktop
 An attempt to roll a NetBSD desktop.
