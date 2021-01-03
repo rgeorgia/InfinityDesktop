@@ -86,7 +86,8 @@ AddToFunc MoveToCurrent
 # and is used with the help menu.
 DestroyFunc ViewManPage
 AddToFunc   ViewManPage
-+ I Exec exec $[infostore.xterm] -g 80x40 -n "Manual Page - $0" -T "Manual Page - $0" -e man "$0"
++ I Exec exec $[infostore.xterm] -g 80x40 -n \
+    "Manual Page - $0" -T "Manual Page - $0" -e man "$0"
 
 # Function: SetBG $0
 #
@@ -96,9 +97,19 @@ AddToFunc   ViewManPage
 # like display, feh, etc.
 DestroyFunc SetBG
 AddToFunc   SetBG
-+ I Test (f $[FVWM_USERDIR]/images/background/$0) Exec exec feh --bg-scale $[FVWM_USERDIR]/images/background/$0
++ I Test (f $[FVWM_USERDIR]/images/background/$0) \
+    Exec exec feh --bg-scale $[FVWM_USERDIR]/images/background/$0
 + I TestRc (Match) Exec exec ln -fs images/background/$0 $[FVWM_USERDIR]/.BGdefault
 + I TestRc (Match) Break
+
+# Fuction: CreateMenu
+#
+# CreateMenu is used to scan xdg .destop files using menu-maker.py
+# to create a dynmic menu
+DestroyFunc CreateMenu
+AddToFunc CreateMenu
++ I PipeRead '$[FVW_USERDIR]/scripts/menu-maker.py; echo Nop'
+
 
 # Function: IconManClick
 #
@@ -153,8 +164,8 @@ AddToFunc   ChangeDesk
 #
 DesktopName 0 Main
 DesktopName 1 Dev
-DesktopName 2 Email
-DesktopName 3 Desk3
+DesktopName 2 Graphics
+DesktopName 3 Music
 DesktopSize 2x2
 
 # EdgeScroll will move the view port between the Pages when the mouse
@@ -171,7 +182,7 @@ Style * EdgeMoveDelay 350, EdgeMoveResistance 350
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
 # be covered when maximizing or placing windows.
-EwmhBaseStruts 0 120 0 0
+EwmhBaseStruts 120 0 0 0
 
 # This sets the ClickTime and MoveThreshold used to determine
 # Double Clicks, Hold and Move for the mouse.
@@ -190,7 +201,7 @@ Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
 
 # Sets all windows to OpaqueMove (vs a wired frame) and  windows will
 # snap to each other and the edge of the screen.
-OpaqueMoveSize unlimited
+# OpaqueMoveSize unlimited
 Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
 
 # Transient Windows (such as open file windows)
@@ -215,7 +226,6 @@ Style * !Icon
 # Window Specific Styles
 Style LeftPanel !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
 Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
-# Style Quit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style Quit !Title, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -256,8 +266,6 @@ Colorset 6 fg white, bg #eda870, hi, sh, Plain, NoShape
 Colorset 7 fg white, bg #686f82, hi, sh, Plain, NoShape
 Colorset 8 fg white, bg #b24d7a, hi, sh, Plain, NoShape
 Colorset 9 fg black, bg #999999, hi, sh, Plain, NoShape
-# Colorset 10 fg #white, bg #8998aa, hi #aaaaaa, sh #999999, Plain, NoShape
-# Colorset 11 fg #white, bg #686f82, hi #ffffff, sh #ffffff, Plain, NoShape
 Colorset 10 fg #white, bg #5d6069, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #white, bg #fff7e9, hi #ffffff, sh #ffffff, Plain, NoShape
 Colorset 12 fg #black, bg #ffffff, hi, sh, Plain, NoShape
@@ -288,15 +296,15 @@ AddToMenu   MenuFvwmRoot $[USER] Title
 + "&Applications%icons/apps.png%" Popup MenuApplications
 + "" Nop
 + "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
++ "" Nop
 # TODO: Add for Martel help later
 + "M&an Pages%icons/help.png%" Popup MenuFvwmManPages
 + "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -bg black -fg white -fa 'Monospace' -fs 11
-#+ "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -terminal $[infostore.xterm]
 + "Copy Config%icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
 + "" Nop
 + "Re&fresh%icons/refresh.png%" Refresh
 + "&Restart%icons/restart.png%" Restart
-+ "&Logout%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "&Logout%icons/logout.png%" Module FvwmScript FvwmScript-ConfirmQuit
 + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-Quit
 
 # Programs Menu
@@ -317,28 +325,90 @@ Test (x pycharm-pro) + "PyCharm Pro" Exec exec pycharm-pro
 Test (x rox) + "Rox Filer" Exec exec rox 
 Test (x pcmanfm) + "pcmanfm" Exec exec pcmanfm
 
+# ====== Dynamic Menu Section ======
+
+DestroyMenu NetworkMenu
+AddToMenu NetworkMenu "Network" Title
++ "Thunderbird" Exec exec thunderbird %u
++ "Chromium" Exec exec chrome %U
++ "FileZilla" Exec exec filezilla
++ "Telegram Desktop" Exec exec telegram-desktop -- %u
++ "Web Browser" Exec exec exo-open --launch WebBrowser %u
++ "Mail Reader" Exec exec exo-open --launch MailReader %u
+
+DestroyMenu SystemMenu
+AddToMenu SystemMenu "Systerm" Title
++ "Preferred Applications" Exec exec exo-preferred-applications
++ "XScreenSaver Stop" Exec exec /usr/local/bin/xscreensaver-command -exit
++ "XScreenSaver Blank" Exec exec /usr/local/bin/xscreensaver-command -activate
++ "XScreenSaver Start" Exec exec /usr/local/bin/xscreensaver
++ "XScreenSaver Lock" Exec exec /usr/local/bin/xscreensaver-command -lock
+
+DestroyMenu GraphicsMenu
+AddToMenu GraphicsMenu "Graphics" Title
++ "Lumina Screenshot" Exec exec lumina-screenshot -new-instance
++ "Blender" Exec exec blender 
++ "Inkscape" Exec exec inkscape
++ "Ristretto" Exec exec ristretto
++ "Feh" Exec exec feh --start-at %u
++ "GIMP" Exec exec gimp-2.10
+
+DestroyMenu TextEditorMenu
+AddToMenu TextEditorMenu "Text Editors" Title
++ Vim Exec exec uxterm vim %F
++ Neovim Exec exec uxterm nvim %F
++ "Mousepad" Exec exec mousepad %F
++ "GVim" Exec exec gvim -f %F
++ "Leafpad" Exec exec leafpad %f
+
+DestroyMenu FileManagerMenu
+AddToMenu FileManagerMenu "File Managers" Title
++ "pcmanfm" Exec exec pcmanfm %U
++ "rox" Exec exec rox
+
+DestroyMenu UtilityMenu
+AddToMenu UtilityMenu "Utilites" Title
++ "xfburn" Exec exec xfburn -i %f
++ "Terminal Emulator" Exec exec exo-open --launch TerminalEmulator
++ "Character Map" Exec exec gucharmap
++ "Shortcut Editor" Exec exec lxshortcut -i %f
++ "File Manager" Exec exec exo-open --launch FileManager %u
+
+DestroyMenu DevelopmentMenu
+AddToMenu DevelopmentMenu "Development" Title
++ "GoLand" Exec exec /usr/local/share/goland/bin/goland.sh
++ "Icon Browser" Exec exec gtk3-icon-browser
++ "Widget Factory" Exec exec gtk3-widget-factory
++ "PyCharm Pro" Exec exec /usr/local/share/pycharm-pro/bin/pycharm.sh
++ "bluefish" Exec exec bluefish %F
+
+DestroyMenu SettingsMenu
+AddToMenu SettingsMenu "Settings" Title
++ "Preferred Applications" Exec exec exo-preferred-applications
++ "XScreenSaver Stop" Exec exec /usr/local/bin/xscreensaver-command -exit
++ "XScreenSaver Blank" Exec exec /usr/local/bin/xscreensaver-command -activate
++ "XScreenSaver Start" Exec exec /usr/local/bin/xscreensaver
++ "XScreenSaver Lock" Exec exec /usr/local/bin/xscreensaver-command -lock
+
+DestroyMenu MiscMenu
+AddToMenu MiscMenu "Misc" Title
++ "BibleTime" Exec exec bibletime
+
 # Application Menu
 DestroyMenu MenuApplications
-AddToMenu MenuApplications "Applications" Title
-+ "Chromium" Exec exec chrome 
-+ "FileZilla" Exec exec filezilla 
-+ "Firefox" Exec exec firefox 
-+ "Telegram" Exec exec telegram-desktop -- 
+AddToMenu MenuApplications "Applications"  Title
++ "Network" Popup NetworkMenu
++ "Development" Popup DevelopmentMenu
++ "Text Editors" Popup TextEditorMenu
++ "File Managers" Popup FileManagerMenu
++ "Graphics" Popup GraphicsMenu
++ "Misc" Popup MiscMenu
++ "Utilities" Popup UtilityMenu
++ "System" Popup SystemMenu
++ "Settings" Popup SettingsMenu
 + "" Nop
-+ "File Manager PCManFM" Exec exec pcmanfm 
-+ "Inkscape" Exec exec inkscape 
-+ "Gimp" Exec exec gimp 
-+ "" Nop
-+ "PyCharm Pro" Exec exec /usr/local/share/pycharm-pro/bin/pycharm.sh 
-+ "GoLand" Exec exec /usr/local/share/goland/bin/goland.sh 
-+ "GVim" Exec exec gvim -f 
-+ "Leafpad" Exec exec leafpad 
-+ "Mousepad" Exec exec mousepad 
-+ "Bluefish Editor" Exec exec bluefish 
-+ "" Nop
-+ "Sakura" Exec exec sakura 
-+ "XTerm" Exec exec xterm 
-+ "Character Map" Exec exec gucharmap 
+
+# ====== END CUSTOM MENU ======
 
 # Background Menu
 #
@@ -559,7 +629,7 @@ ButtonStyle 6 - MwmDecorMin
 # FvwmIdent is a module that can be used to get the various info about
 # a window. One use is getting the class/resource/name of a window.
 DestroyModuleConfig FvwmIdent:*
-*FvwmIdent: Colorset 10
+*FvwmIdent: Colorset 14
 *FvwmIdent: Font "xft:Sans:size=12:antialias=True"
 
 # FvwmBanner
@@ -619,21 +689,30 @@ PipeRead 'echo "*LeftPanel: (120x$(($[vp.height]-205)), Top, Swallow FvwmIconMan
 
 # FvwmButtons - QuickLaunch
 #
+# This module creates a quicklaunch 'taskbar'
+Style "QuickLaunch" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
+   CirculateSkip, StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
+
 DestroyModuleConfig QuickLaunch:*
-#*QuickLaunch: Colorset 10
 *QuickLaunch: Geometry -0-0
-*QuickLaunch: Fore black
-*QuickLaunch: Back SlateGrey
-*QuickLaunch: Frame 1
-*QuickLaunch: Font "xft:Mono:Regular:size=8:antialias=True"
-*QuickLaunch: Rows 1
+# *QuickLaunch: Fore black
+# *QuickLaunch: Back SlateGrey
+*QuickLaunch: Rows 20
 *QuickLaunch: Columns 2
-*QuickLaunch: "Chrome Browser"	Exec exec chrome
-*QuickLaunch: Firefox	Exec exec firefox
-*QuickLaunch: "PyCharm Pro"	Exec exec pycharm-pro
-*QuickLaunch: "Xfce4 Terminal"	Exec exec xfce4-terminal 
-*QuickLaunch: Restart	fvwm.xpm	Restart
-#*QuickLaunch: (Swallow XClock 'Exec xclock -digital -update 1 -fg white -bg SteelBlue3 &')
+*QuickLaunch: Colorset 9
+*QuickLaunch: Frame 1
+*QuickLaunch: Font "Shadow=1:xft:Mono:Regular:pixelsize=10:minspace=True:antialias=True"
+*QuickLaunch: (2x1, Frame 0, Icon "$[FVWM_USERDIR]/images/icons/32x32/rocket.png")
+Test (x chrome) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/chrome.png", \
+     Action(Mouse 1) Exec exec chrome)
+Test (x firefox) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/firefox.png", \
+     Action(Mouse 1) Exec exec firefox)
+Test (x pycharm-pro) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/pycharm.png", \
+     Action(Mouse 1) Exec exec pycharm-pro)
+Test (x xfce4-terminal) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/terminal.png", \
+      Action(Mouse 1) Exec exec xfce4-terminal)
+*QuickLaunch: (2x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/restart.png", \
+      Action(Mouse 1) Restart)
 
 # FvwmPager
 #
