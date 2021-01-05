@@ -62,8 +62,6 @@ AddToFunc   StartFunction
 + I Module FvwmButtons LeftPanel
 + I Module FvwmButtons QuickLaunch
 + I Module FvwmEvent EventNewDesk
-# + I AddToMenu MenuFvwmRoot "XDG Menu" Popup XDGMenu
-# + I PipeRead 'fvwm-menu-desktop'
 
 
 # Mouse Bindings Functions
@@ -227,8 +225,10 @@ Style * BorderColorset 3, HilightBorderColorset 4
 Style * !Icon
 
 # Window Specific Styles
-Style LeftPanel !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
-Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style LeftPanel   !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
+Style QuickLaunch !Title, !Borders, !Handles, Sticky, WindowListSkip, CirculateSkip, \
+                  StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
+Style ConfirmQuit !Title, PositionPlacement Top, WindowListSkip, Layer 6
 Style Quit !Title, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
@@ -697,27 +697,20 @@ DestroyModuleConfig LeftPanel:*
 *LeftPanel: (5x80, Frame 0)
 *LeftPanel: (120x5, Frame 0)
 PipeRead 'echo "*LeftPanel: (120x$(($[vp.height]-205)), Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
-# This draws a line above and below the clock
 *LeftPanel: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 0)
-#This is the very bottom of the panel.
 *LeftPanel: (120x5, Frame 0)
 
 # FvwmButtons - QuickLaunch
 #
 # This module creates a quicklaunch 'taskbar'
-Style "QuickLaunch" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
-   CirculateSkip, StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
 
 DestroyModuleConfig QuickLaunch:*
 *QuickLaunch: Geometry -0-0
-# *QuickLaunch: Fore black
-# *QuickLaunch: Back SlateGrey
-*QuickLaunch: Rows 1
-*QuickLaunch: Columns 2
-*QuickLaunch: Colorset 9
-*QuickLaunch: Frame 1
+*QuickLaunch: Rows 1 
+#*QuickLaunch: Columns 2
+*QuickLaunch: Colorset 10
+*QuickLaunch: Frame 0
 *QuickLaunch: Font "Shadow=1:xft:Mono:Regular:pixelsize=10:minspace=True:antialias=True"
-*QuickLaunch: (2x1, Frame 0, Icon "$[FVWM_USERDIR]/images/icons/32x32/rocket.png")
 Test (x chrome) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/chrome.png", \
      Action(Mouse 1) Exec exec chrome)
 Test (x firefox) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/firefox.png", \
@@ -726,8 +719,6 @@ Test (x pycharm-pro) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/i
      Action(Mouse 1) Exec exec pycharm-pro)
 Test (x xfce4-terminal) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/terminal.png", \
       Action(Mouse 1) Exec exec xfce4-terminal)
-*QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/restart.png", \
-      Action(Mouse 1) Restart)
 
 # FvwmPager
 #
