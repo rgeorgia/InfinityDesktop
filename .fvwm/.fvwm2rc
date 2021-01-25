@@ -203,7 +203,8 @@ Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
 # Sets all windows to OpaqueMove (vs a wired frame) and  windows will
 # snap to each other and the edge of the screen.
 # OpaqueMoveSize unlimited
-Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+# Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+Style * SnapAttraction 15 SameType ScreenAll, SnapGrid
 
 # Transient Windows (such as open file windows)
 Style * DecorateTransient, StackTransientParent
@@ -227,7 +228,7 @@ Style * !Icon
 # Window Specific Styles
 Style LeftPanel   !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
 Style QuickLaunch !Title, !Borders, !Handles, Sticky, WindowListSkip, CirculateSkip, \
-                  StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
+StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
 Style ConfirmQuit !Title, PositionPlacement Top, WindowListSkip, Layer 6
 Style Quit !Title, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
@@ -298,8 +299,8 @@ AddToMenu   MenuFvwmRoot $[USER] Title
 + "&Xclock Analog" Exec exec xclock -update 1 
 + "&Applications%icons/apps.png%" Popup MenuApplications
 + "" Nop
-+ "XDG Menu" Popup XDGMenu
-+ "" Nop
+# + "XDG Menu" Popup XDGMenu
+# + "" Nop
 + "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
 + "" Nop
 # TODO: Add for Martel help later
@@ -399,11 +400,11 @@ DestroyMenu MiscMenu
 AddToMenu MiscMenu "Misc" Title
 + "BibleTime" Exec exec bibletime
 
-DestroyMenu XDGMenu
-AddToMenu XDGMenu "Desktop Apps" Title
-# PipeRead 'fvwm-menu-desktop'
-+ DynamicPopUpAction PipeRead 'fvwm-menu-desktop --dynamic --include-items config'
-+ DynamicPopDownAction DestroyMenu recreate XDGMenu
+# DestroyMenu XDGMenu
+# AddToMenu XDGMenu "Desktop Apps" Title
+##  PipeRead 'fvwm-menu-desktop'
+# + DynamicPopUpAction PipeRead 'fvwm-menu-desktop --dynamic --include-items config'
+# + DynamicPopDownAction DestroyMenu recreate XDGMenu
 
 DestroyMenu MyMenu
 AddToMenu MyMenu "MyMenu" Title
@@ -707,9 +708,9 @@ PipeRead 'echo "*LeftPanel: (120x$(($[vp.height]-205)), Top, Swallow FvwmIconMan
 DestroyModuleConfig QuickLaunch:*
 *QuickLaunch: Geometry -0-0
 *QuickLaunch: Rows 1 
-#*QuickLaunch: Columns 2
-*QuickLaunch: Colorset 10
-*QuickLaunch: Frame 0
+*QuickLaunch: Columns 2
+*QuickLaunch: Colorset 9
+*QuickLaunch: Frame 1
 *QuickLaunch: Font "Shadow=1:xft:Mono:Regular:pixelsize=10:minspace=True:antialias=True"
 Test (x chrome) *QuickLaunch: (1x1, Frame 1, Icon "$[FVWM_USERDIR]/images/icons/32x32/chrome.png", \
      Action(Mouse 1) Exec exec chrome)
