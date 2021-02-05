@@ -310,7 +310,7 @@ AddToMenu   MenuFvwmRoot $[USER] Title
 + "" Nop
 + "Re&fresh%icons/refresh.png%" Refresh
 + "&Restart%icons/restart.png%" Restart
-+ "&Logout%icons/logout.png%" Module FvwmScript FvwmScript-ConfirmQuit
++ "&Logout%$[FVWM_USERDIR]/images/icons/logout.png%" Module FvwmScript FvwmScript-ConfirmQuit
 + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-Quit
 
 # Programs Menu
