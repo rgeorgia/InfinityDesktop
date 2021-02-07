@@ -59,8 +59,6 @@ AddToFunc   StartFunction
 + I Module FvwmAnimate
 + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) Exec exec feh --bg-scale $[FVWM_USERDIR]/.BGdefault
 + I Test (Init) Module FvwmBanner
-# + I Module FvwmButtons LeftPanel
-# + I Module FvwmButtons QuickLaunch
 + I Module FvwmEvent EventNewDesk
 + I Module FvwmButtons FvwmTaskBar
 
@@ -196,7 +194,7 @@ MoveThreshold 3
 Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
-DefaultFont "xft:Sans:Bold:size=8:antialias=True"
+DefaultFont "xft:Mono:Regular:size=8:antialias=True"
 
 # Window Placement
 Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
@@ -205,7 +203,7 @@ Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
 # snap to each other and the edge of the screen.
 # OpaqueMoveSize unlimited
 # Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
-Style * SnapAttraction 15 SameType ScreenAll, SnapGrid
+Style * SnapAttraction 10 SameType ScreenAll, SnapGrid
 
 # Transient Windows (such as open file windows)
 Style * DecorateTransient, StackTransientParent
@@ -229,8 +227,6 @@ Style * BorderColorset 3, HilightBorderColorset 4
 Style * !Icon
 
 # Window Specific Styles
-Style LeftPanel   !Title, !Borders, !Handles, Sticky, WindowListSkip, NeverFocus
-Style QuickLaunch !Title, !Borders, !Handles, Sticky, WindowListSkip, CirculateSkip, \
 StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
 Style ConfirmQuit !Title, PositionPlacement Top, WindowListSkip, Layer 6
 Style Quit !Title, WindowListSkip, Layer 6
@@ -242,8 +238,6 @@ EwmhBaseStruts 0 0 0 42
 
 # Run FvwmTaskBar
 Module FvwmIconMan FvwmTaskBar
-# Set the time to the current time
-# PipeRead 'echo "SendToModule FvwmButtons ChangeButton TaskTime Title \"`date +%R`\""'
 
 #######
 # 3: Colorsets
@@ -445,6 +439,7 @@ AddToMenu   BGMenu "Wallpapers" Title
 + "dragonfly xray"  SetBG dragonflies-xray-wallpaper.jpg
 + "dfly painting"   SetBG dragonflies-wallpaper.jpg
 + "Think"           SetBG simple-think.jpg
++ "Rust Logo"       SetBG rust-logo.jpg
 + "Lightbulbs"      SetBG simple-lightbulbs.jpg
 + "Think Different" SetBG simple-thinkdifferent.jpg
 + "Desert 5 (Big Sur) " SetBG The-Desert-5-dragged.jpg
@@ -656,7 +651,7 @@ ButtonStyle 6 - MwmDecorMin
 # a window. One use is getting the class/resource/name of a window.
 DestroyModuleConfig FvwmIdent:*
 *FvwmIdent: Colorset 14
-*FvwmIdent: Font "xft:Sans:size=12:antialias=True"
+*FvwmIdent: Font "xft:Mono:size=10:antialias=True"
 
 # FvwmBanner
 #
@@ -678,9 +673,8 @@ DestroyModuleConfig FvwmBanner:*
 #     quitting fvwm.
 DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 1
-
-
-*LeftPanel: (120x45, Icon "$[FVWM_USERDIR]/images/dfly_powered3.png", Frame 0)
+*FvwmScript: Font "xft:Mono:Regular:pixelsize=9:minspace=True:antialias=True"
+#*LeftPanel: (120x45, Icon "$[FVWM_USERDIR]/images/dfly_powered3.png", Frame 0)
 
 Colorset 15 fg white, bg #213c83, hi #aaaaaa, sh gray60, Plain, NoShape
 Colorset 16 fg white, bg #8998aa, hi #aaaaaa, sh #999999, Plain, NoShape
@@ -689,15 +683,12 @@ DestroyModuleConfig FvwmTaskBar:*
 *FvwmTaskBar: Geometry 1920x40+0-0
 *FvwmTaskBar: Colorset 15
 *FvwmTaskBar: Frame 0
-*FvwmTaskBar: Font "Shadow=1:xft:Mono:Regular:pixelsize=10:minspace=True:antialias=True"
+*FvwmTaskBar: Font "Shadow=0:xft:Mono:Regular:pixelsize=10:minspace=True:antialias=True"
 *FvwmTaskBar: Rows 1
 *FvwmTaskBar: Columns 1920
 # Menu Button
-*FvwmTaskBar: (55x1, Title "Fvwm", ActiveColorset 6, Action(Mouse 1) \
-    Menu MenuFvwmRoot Root 0 o100-24p, Frame 0)
+*FvwmTaskBar: (55x1, Title "Dfly", ActiveColorset 6, Action(Mouse 1) Menu MenuFvwmRoot Root 0 o100-24p, Frame 0)
 # Quick Launch Buttons
-Test (x chrome) *FvwmTaskBar: (45x1, Frame 0, Icon "$[FVWM_USERDIR]/images/icons/32x32/chrome.png", \
-     Action(Mouse 1) Exec exec chrome)
 Test (x firefox) *FvwmTaskBar: (45x1, Frame 0, Icon "$[FVWM_USERDIR]/images/icons/32x32/firefox.png", \
      Action(Mouse 1) Exec exec firefox)
 Test (x pycharm-pro) *FvwmTaskBar: (45x1, Frame 0, Icon "$[FVWM_USERDIR]/images/icons/32x32/pycharm.png", \
@@ -707,8 +698,10 @@ Test (x xfce4-terminal) *FvwmTaskBar: (45x1, Frame 0, Icon "$[FVWM_USERDIR]/imag
 *FvwmTaskBar: (1x1, Frame 1)
 *FvwmTaskBar: (3x1, Frame 0)
 # Swallow FvwmIconMan TaskBarIcons
-*FvwmTaskBar: (1900x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan TaskBarIcons')
-*FvwmTaskBar: (80x1, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime ', Frame 0)
+*FvwmTaskBar: (1590x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan TaskBarIcons', Frame 0)
+*FvwmTaskBar: (100x1, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
+*FvwmTaskBar: (3x1, Frame 2)
+*FvwmTaskBar: (60x1, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime ', Frame 0)
 
 DestroyModuleConfig TaskBarIcons: *
 *TaskBarIcons: IconName TaskBarIcons
@@ -722,7 +715,8 @@ DestroyModuleConfig TaskBarIcons: *
 *TaskBarIcons: ManagerGeometry 1x1
 # Button Styles
 *TaskBarIcons: DrawIcons always
-*TaskBarIcons: ReliefThickness 1
+*TaskBarIcons: ReliefThickness 0
+*TaskBarIcons: ShowOnlyIcons
 *TaskBarIcons: Format "%t"
 *TaskBarIcons: IconButton down
 *TaskBarIcons: IconAndSelectButton down
@@ -743,14 +737,18 @@ DestroyModuleConfig TaskBarIcons: *
 #
 # This module displays the location of the windows on the various Pages
 # and Desks. This is setup to show only the Pages on the current Desk.
+Style FvwmPager Sticky, !StaysOnTop
 DestroyModuleConfig FvwmPager:*
+*FvwmPager: Rows    1
+*FvwmPager: Columms 1
+*FvwmPager: LablesBelow
 *FvwmPager: Colorset * 10
 *FvwmPager: HilightColorset * 13
-*FvwmPager: BalloonColorset * 9
+*FvwmPager: BalloonColorset * 8
 *FvwmPager: WindowColorsets 10 11
 *FvwmPager: Font None
 *FvwmPager: Balloons All
-*FvwmPager: BalloonFont "xft:Sans:Regular:size=9:antialias=True"
+*FvwmPager: BalloonFont "xft:Mono:Regular:size=9:antialias=True"
 *FvwmPager: BallonYOffset +8
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
@@ -771,9 +769,9 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: SelectColorset 12
 *FvwmIconMan: IconAndSelectColorset 12
 *FvwmIconMan: DrawIcons always
-*FvwmIconMan: ReliefThickness 0
+*FvwmIconMan: ReliefThickness 1
 *FvwmIconMan: Format "%t"
-*FvwmIconMan: Font "xft:Sans:Regular:size=8:antialias=True"
+*FvwmIconMan: Font "xft:Mono:Regular:size=8:antialias=True"
 *FvwmIconMan: Action Mouse 0 A ret
 *FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
 *FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
