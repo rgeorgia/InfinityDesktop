@@ -1,0 +1,3 @@
+xrdb -merge /home/rgeorgia/.Xresources
+
+/usr/pkg/bin/fvwm3
