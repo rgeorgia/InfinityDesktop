@@ -1,9 +1,0 @@
-#!/bin/sh
-xsetroot -solid black
-# xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail
-
-#--- log messages in background
-root-tail -f -geometry 500x150-10+10 -fn fixed /var/log/messages
-
-#--- add the clock. need to set the position somehow
-xclock -geometry 620x75+0-0  -digital -bg black -fg white -strftime "%A %b %d %Y  [ %H:%M:%S ] (%Z)" -update 1 -face 'georgia:size=22' &
