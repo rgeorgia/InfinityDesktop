@@ -322,7 +322,7 @@ AddToMenu   MenuFvwmRoot $[USER] Title
 # lines as this is only to help make this menu portable.
 DestroyMenu MenuPrograms
 AddToMenu   MenuPrograms "Programs" Title
-Test (x sakura) + "Sakura" Exec exec sakura
+Test (x sakura) + "Xfce4-terminal" Exec exec xfce4-terminal
 Test (x xterm) + "Xterm" Exec exec xterm -fa 'Monospace' -fs 11 -bg black -fg white
 Test (x uxterm) + "UXterm" Exec exec uxterm -fa 'Monospace' -fs 11 -bg white -fg black
 + "" Nop
@@ -432,8 +432,8 @@ AddToMenu   BGMenu "Wallpapers" Title
 + "Rust Logo"       SetBG rust-logo.jpg
 + "Lightbulbs"      SetBG simple-lightbulbs.jpg
 + "Think Different" SetBG simple-thinkdifferent.jpg
-+ "Desert 5 (Big Sur) " SetBG The-Desert-5-dragged.jpg
-+ "Ripple Reflection" SetBG ripple_reflections.jpg
++ "Dragonflies"     SetBG dragonflies-wallpaper.jpg
++ "Grundge Planet"  SetBG grundge_planets.png
 
 # Window Operations Menus
 DestroyMenu MenuWindowOps
@@ -651,7 +651,6 @@ DestroyModuleConfig FvwmIdent:*
 DestroyModuleConfig FvwmBanner:*
 *FvwmBanner: NoDecor
 *FvwmBanner: Timeout 4
-#*FvwmBanner: Pixmap $[FVWM_USERDIR]/images/dfly_greeting.xpm
 *FvwmBanner: Pixmap $[FVWM_USERDIR]/images/netbsd2.png
 
 # FvwmScript
