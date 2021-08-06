@@ -10,7 +10,7 @@ Actually this, like many other projects, is a scratch for my particular itch.
 I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be invented here. I am more than willing to rip-off good ideas.
 
 ### Second
-I am **not** a NetBSD or DragonflyBSD zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about smartd or anyother technology I am completely ignorant about. 
+I am **not** a NetBSD or DragonflyBSD zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about systemd or anyother technology I am completely ignorant about. 
 I will, however, try to learn from them, borrowing the good ideas and avoiding painful ones.
 
 I will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be Ron-like. Honestly, this may not be for everyone.
