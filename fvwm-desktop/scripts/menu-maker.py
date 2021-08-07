@@ -53,9 +53,7 @@ def get_desktop_apps() -> list:
     application_path = f"/usr/{local_path}/share/applications/"
     desktop_ext = "desktop"
     p = Path(application_path)
-    desktop_apps = list(p.glob(f"*.{desktop_ext}"))
-
-    return desktop_apps
+    return list(p.glob(f"*.{desktop_ext}"))
 
 
 def build_menu_items(lines) -> dict:
@@ -76,7 +74,8 @@ def build_menu_items(lines) -> dict:
 
 
 def menu_no_categories(menu_list: list):
-    pass
+    for item in menu_list:
+        print(item)
 
 
 def menu_by_category(menu_list: list):
@@ -91,9 +90,9 @@ def menu_by_category(menu_list: list):
 
         cat_dict[category].append(item)
 
-   # print("DestroyMenu MyMenu")
-   # print('AddToMenu MyMenu "My Applications" Title')
-   # print('+ "" Nop')
+    # print("DestroyMenu MyMenu")
+    # print('AddToMenu MyMenu "My Applications" Title')
+    # print('+ "" Nop')
 
     for key_category, value in cat_dict.items():
         print(f'+ "[{key_category}]" nop')
@@ -101,6 +100,10 @@ def menu_by_category(menu_list: list):
         for item in value:
             if item.get('Exec') in menu_item_skip_list:
                 continue
+
+            if item.get('Exec') is not None and "%" in item.get('Exec'):
+                item['Exec'] = item.get('Exec')[:-3]
+
             if item.get('Terminal') == 'true':
                 print(f"+ {item.get('Name')} Exec exec uxterm {item.get('Exec')}")
             else:
@@ -111,8 +114,9 @@ def menu_by_category(menu_list: list):
                 print(f"+ \"{name}\" Exec exec {item.get('Exec')}")
         print(f'+ "" nop')
 
-def print_menu(menu):
-    pass
+
+# def print_menu(menu):
+#     pass
 
 
 def main():
