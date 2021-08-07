@@ -335,73 +335,6 @@ Test (x pcmanfm) + "pcmanfm" Exec exec pcmanfm
 
 # ====== Dynamic Menu Section ======
 
-DestroyMenu NetworkMenu
-AddToMenu NetworkMenu "Network" Title
-+ "Thunderbird" Exec exec thunderbird %u
-+ "Chromium" Exec exec chrome %U
-+ "FileZilla" Exec exec filezilla
-+ "Telegram Desktop" Exec exec telegram-desktop -- %u
-+ "Web Browser" Exec exec exo-open --launch WebBrowser %u
-+ "Mail Reader" Exec exec exo-open --launch MailReader %u
-
-DestroyMenu SystemMenu
-AddToMenu SystemMenu "Systerm" Title
-+ "Preferred Applications" Exec exec exo-preferred-applications
-+ "XScreenSaver Stop" Exec exec /usr/local/bin/xscreensaver-command -exit
-+ "XScreenSaver Blank" Exec exec /usr/local/bin/xscreensaver-command -activate
-+ "XScreenSaver Start" Exec exec /usr/local/bin/xscreensaver
-+ "XScreenSaver Lock" Exec exec /usr/local/bin/xscreensaver-command -lock
-
-DestroyMenu GraphicsMenu
-AddToMenu GraphicsMenu "Graphics" Title
-+ "Lumina Screenshot" Exec exec lumina-screenshot -new-instance
-+ "Blender" Exec exec blender 
-+ "Inkscape" Exec exec inkscape
-+ "Ristretto" Exec exec ristretto
-+ "Feh" Exec exec feh --start-at %u
-+ "GIMP" Exec exec gimp-2.10
-
-DestroyMenu TextEditorMenu
-AddToMenu TextEditorMenu "Text Editors" Title
-+ Vim Exec exec uxterm vim %F
-+ Neovim Exec exec uxterm nvim %F
-+ "Mousepad" Exec exec mousepad %F
-+ "GVim" Exec exec gvim -f %F
-+ "Leafpad" Exec exec leafpad %f
-
-DestroyMenu FileManagerMenu
-AddToMenu FileManagerMenu "File Managers" Title
-+ "pcmanfm" Exec exec pcmanfm %U
-+ "rox" Exec exec rox
-
-DestroyMenu UtilityMenu
-AddToMenu UtilityMenu "Utilites" Title
-+ "xfburn" Exec exec xfburn -i %f
-+ "Terminal Emulator" Exec exec exo-open --launch TerminalEmulator
-+ "Character Map" Exec exec gucharmap
-+ "Shortcut Editor" Exec exec lxshortcut -i %f
-+ "File Manager" Exec exec exo-open --launch FileManager %u
-
-DestroyMenu DevelopmentMenu
-AddToMenu DevelopmentMenu "Development" Title
-+ "GoLand" Exec exec /usr/local/share/goland/bin/goland.sh
-+ "Icon Browser" Exec exec gtk3-icon-browser
-+ "Widget Factory" Exec exec gtk3-widget-factory
-+ "PyCharm Pro" Exec exec /usr/local/share/pycharm-pro/bin/pycharm.sh
-+ "bluefish" Exec exec bluefish %F
-
-DestroyMenu SettingsMenu
-AddToMenu SettingsMenu "Settings" Title
-+ "Preferred Applications" Exec exec exo-preferred-applications
-+ "XScreenSaver Stop" Exec exec /usr/local/bin/xscreensaver-command -exit
-+ "XScreenSaver Blank" Exec exec /usr/local/bin/xscreensaver-command -activate
-+ "XScreenSaver Start" Exec exec /usr/local/bin/xscreensaver
-+ "XScreenSaver Lock" Exec exec /usr/local/bin/xscreensaver-command -lock
-
-DestroyMenu MiscMenu
-AddToMenu MiscMenu "Misc" Title
-+ "BibleTime" Exec exec bibletime
-
 DestroyMenu MyMenu
 AddToMenu MyMenu "Local Apps" Title
 PipeRead '$[FVWM_USERDIR]/scripts/menu-maker.py'
@@ -409,15 +342,6 @@ PipeRead '$[FVWM_USERDIR]/scripts/menu-maker.py'
 # Application Menu
 DestroyMenu MenuApplications
 AddToMenu MenuApplications "Applications"  Title
-+ "Network" Popup NetworkMenu
-+ "Development" Popup DevelopmentMenu
-+ "Text Editors" Popup TextEditorMenu
-+ "File Managers" Popup FileManagerMenu
-+ "Graphics" Popup GraphicsMenu
-+ "Misc" Popup MiscMenu
-+ "Utilities" Popup UtilityMenu
-+ "System" Popup SystemMenu
-+ "Settings" Popup SettingsMenu
 + "Local Apps" Popup MyMenu
 
 # ====== END CUSTOM MENU ======
