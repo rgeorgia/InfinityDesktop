@@ -101,6 +101,9 @@ def menu_by_category(menu_list: list):
             if item.get('Exec') in menu_item_skip_list:
                 continue
 
+            if key_category == "Settings" and "xfce4" in item.get('Exec'):
+                continue
+
             if item.get('Exec') is not None and "%" in item.get('Exec'):
                 item['Exec'] = item.get('Exec')[:-3]
 
