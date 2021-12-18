@@ -15,7 +15,7 @@ go-hugo
 hal
 hexchat
 lastpass-cli
-libreoffice6-bin
+libreoffice
 lxappearance
 mongodb
 ncftp3
@@ -26,8 +26,9 @@ pcmanfm
 pkg_chk
 pkg_comp
 pluma
-postgresql12-server
+postgresql13
 pycharm-bin
+qterminal
 sakura
 skippy
 slim
@@ -38,6 +39,6 @@ tint2
 tmux
 vim
 wget
-xfce4-terminal
+windowmaker-desktop
 zenity
 zsh
