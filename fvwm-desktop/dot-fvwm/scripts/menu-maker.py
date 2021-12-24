@@ -53,9 +53,7 @@ def get_desktop_apps() -> list:
     application_path = f"/usr/{local_path}/share/applications/"
     desktop_ext = "desktop"
     p = Path(application_path)
-    desktop_apps = list(p.glob(f"*.{desktop_ext}"))
-
-    return desktop_apps
+    return list(p.glob(f"*.{desktop_ext}"))
 
 
 def build_menu_items(lines) -> dict:
@@ -90,7 +88,6 @@ def menu_by_category(menu_list: list):
             category = item.get('Categories')[0]
 
         cat_dict[category].append(item)
-
    # print("DestroyMenu MyMenu")
    # print('AddToMenu MyMenu "My Applications" Title')
    # print('+ "" Nop')
@@ -104,12 +101,9 @@ def menu_by_category(menu_list: list):
             if item.get('Terminal') == 'true':
                 print(f"+ {item.get('Name')} Exec exec uxterm {item.get('Exec')}")
             else:
-                if short_names.get(item.get('Name')):
-                    name = short_names.get(item.get('Name'))
-                else:
-                    name = item.get('Name')
+                name = short_names.get(item.get('Name')) or item.get('Name')
                 print(f"+ \"{name}\" Exec exec {item.get('Exec')}")
-        print(f'+ "" nop')
+        print('+ "" nop')
 
 def print_menu(menu):
     pass

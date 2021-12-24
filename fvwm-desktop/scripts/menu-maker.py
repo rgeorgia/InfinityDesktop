@@ -110,12 +110,9 @@ def menu_by_category(menu_list: list):
             if item.get('Terminal') == 'true':
                 print(f"+ {item.get('Name')} Exec exec uxterm {item.get('Exec')}")
             else:
-                if short_names.get(item.get('Name')):
-                    name = short_names.get(item.get('Name'))
-                else:
-                    name = item.get('Name')
+                name = short_names.get(item.get('Name')) or item.get('Name')
                 print(f"+ \"{name}\" Exec exec {item.get('Exec')}")
-        print(f'+ "" nop')
+        print('+ "" nop')
 
 
 # def print_menu(menu):
