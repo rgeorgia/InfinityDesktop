@@ -21,6 +21,8 @@ leafpad
 libreoffice
 ncftp3
 nmap
+nodejs
+npm
 pcmanfm
 pkg_chk
 pkg_comp
@@ -31,7 +33,9 @@ slim
 slim-themes
 snort
 sudo
+suse
 tmux
 vim
 wget
+xfce4-terminal
 zenity
