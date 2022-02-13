@@ -6,7 +6,6 @@
       [exec]   (Run) {fbrun}
 [submenu] (Terminals)
       [exec]   (xterm) {xterm}
-      [exec]   (xfce4-terminal) {xfce4-terminal}
       [exec]   (qterminal) {qterminal}
       [exec]   (rxvt) {rxvt}
       [exec]   (mrxvt) {mrxvt}
