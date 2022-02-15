@@ -1,29 +1,28 @@
-[begin] (Fluxbox-1.3.7)
+[begin] (Infinity+) 
 [encoding] {UTF-8}
-      [exec] (xterm) {xterm}
-      [exec] (Sakura) {sakura}
-      [exec] (firefox) {firefox}
+      [exec] (xterm) {xterm} <~/.fluxbox/icons/xterm.xpm>
+      [exec] (Sakura) {sakura} <~/.fluxbox/icons/gnome-terminal.xpm>
+      [exec] (firefox) {firefox} <~/.fluxbox/icons/browser.xpm>
       [exec]   (Run) {fbrun}
 [submenu] (Terminals)
-      [exec]   (xterm) {xterm}
-      [exec]   (xfce4-terminal) {xfce4-terminal}
-      [exec]   (qterminal) {qterminal}
-      [exec]   (rxvt) {rxvt}
-      [exec]   (mrxvt) {mrxvt}
+      [exec]   (eterm) {Eterm} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
+      [exec]   (qterminal) {qterminal} </usr/pkg/include/X11/pixmaps/xterm-linux.xpm>
+      [exec]   (rxvt) {rxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
+      [exec]   (mrxvt) {mrxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
 [end]
 [submenu] (Net)
     [submenu] (Browsers)
-      [exec]   (firefox) {firefox}
+      [exec]   (firefox) {firefox} <~/.fluxbox/icons/browser.xpm>
     [end]
     [submenu] (IM)
-      [exec]   (pidgin) {pidgin}
-      [exec]   (hexchat) {hexchat}
+      [exec]   (pidgin) {pidgin} </usr/pkg/include/X11/pixmaps/chat.xpm>
+      [exec]   (hexchat) {hexchat} </usr/pkg/include/X11/pixmaps/chat.xpm>
     [end]
     [submenu] (Mail)
       [exec]   (thunderbird) {thunderbird}
     [end]
     [submenu] (FTP)
-      [exec]   (filezilla) {filezilla}
+      [exec]   (filezilla) {filezilla} </usr/pkg/include/X11/pixmaps/ftp.xpm>
     [end]
     [submenu] (SMB)
       [exec]   (LinNeighborhood) {LinNeighborhood}
@@ -36,9 +35,10 @@
     [end]
 [end]
 [submenu] (Editors)
-      [exec]   (bluefish) {bluefish}
+      [exec]   (PyCharm CE 2021.3.2) {~/pycharm-community-2021.3.2/bin/pycharm.sh}
       [exec]   (leafpad) {leafpad}
       [exec]   (scite) {scite}
+      [exec]   (bluefish) {bluefish}
 [end]
 [submenu] (File utils)
       [exec]   (pcmanfm) {pcmanfm}
