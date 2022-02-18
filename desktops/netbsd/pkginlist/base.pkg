@@ -2,6 +2,7 @@ avahi
 base64
 bash
 bluefish
+ca-certificates
 createbuildlink
 dbus
 fam
@@ -11,6 +12,10 @@ fluxter
 ftmenu
 firefox
 fish
+fuse
+fuse-exfat
+fuse-ntfs-3g
+fuse-unionfs
 git
 go
 go-hugo
