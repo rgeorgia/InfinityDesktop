@@ -1,0 +1,31 @@
+[core]
+        editor = vi
+[user]
+        name = Ron Georgia
+        email = rong1611@gmail.com
+[alias]
+        st = status
+        co = checkout
+        ci = commit
+        b = branch -v -a
+        ru = remote update
+        ss = status -s
+        l = log --graph --decorate --pretty=oneline --abbrev-commit
+        la = log --pretty=format:'* %C(yellow)%h %C(cyan)%an %C(reset)%s'
+[color]
+        branch = true
+        diff = true
+        status = true
+[push]
+        default = current
+[pager]
+        branch = false
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[credential "https://github.com"]
+        helper = 
+        helper = !/usr/bin/gh auth git-credential
+
