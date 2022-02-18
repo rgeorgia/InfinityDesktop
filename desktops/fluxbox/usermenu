@@ -1,28 +1,27 @@
-[begin] (Fluxbox-1.3.7)
+[begin] (Infinity) 
 [encoding] {UTF-8}
-      [exec] (xterm) {xterm}
-      [exec] (Sakura) {sakura}
-      [exec] (firefox) {firefox}
+      [exec] (xterm) {xterm} <~/.fluxbox/icons/xterm.xpm>
+      [exec] (Sakura) {sakura} <~/.fluxbox/icons/gnome-terminal.xpm>
+      [exec] (firefox) {firefox} <~/.fluxbox/icons/firefox.xpm>
       [exec]   (Run) {fbrun}
 [submenu] (Terminals)
-      [exec]   (xterm) {xterm}
-      [exec]   (qterminal) {qterminal}
-      [exec]   (rxvt) {rxvt}
-      [exec]   (mrxvt) {mrxvt}
+      [exec]   (eterm) {Eterm} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
+      [exec]   (qterminal) {qterminal} </usr/pkg/include/X11/pixmaps/xterm-linux.xpm>
+      [exec]   (rxvt) {rxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
+      [exec]   (mrxvt) {mrxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
 [end]
 [submenu] (Net)
     [submenu] (Browsers)
-      [exec]   (firefox) {firefox}
+      [exec]   (firefox) {firefox} <~/.fluxbox/icons/firefox.xpm>
     [end]
     [submenu] (IM)
-      [exec]   (pidgin) {pidgin}
-      [exec]   (hexchat) {hexchat}
+      [exec]   (hexchat) {hexchat} <~/.fluxbox/icons/xchat.xpm>
     [end]
     [submenu] (Mail)
-      [exec]   (thunderbird) {thunderbird}
+      [exec]   (thunderbird) {thunderbird} <~/.fluxbox/icons/thunderbird.xpm>
     [end]
     [submenu] (FTP)
-      [exec]   (filezilla) {filezilla}
+      [exec]   (filezilla) {filezilla} </usr/pkg/include/X11/pixmaps/ftp.xpm>
     [end]
     [submenu] (SMB)
       [exec]   (LinNeighborhood) {LinNeighborhood}
@@ -35,19 +34,20 @@
     [end]
 [end]
 [submenu] (Editors)
-      [exec]   (bluefish) {bluefish}
-      [exec]   (leafpad) {leafpad}
-      [exec]   (scite) {scite}
+      [exec]   (PyCharm CE 2021.3.2) {~/pycharm-community-2021.3.2/bin/pycharm.sh} <~/.fluxbox/icons/pycharm.xpm>
+      [exec]   (leafpad) {leafpad} <~/.fluxbox/icons/leafpad.xpm>
+      [exec]   (bluefish) {bluefish} <~/.fluxbox/icons/bluefish.xpm>
 [end]
 [submenu] (File utils)
-      [exec]   (pcmanfm) {pcmanfm}
-      [exec]   (rox) {rox}
-      [exec]   (mc) {Eterm -e mc}
+      [exec]   (pcmanfm) {pcmanfm} <~/.fluxbox/icons/fm.xpm>
+      [exec]   (rox) {rox} <~/.fluxbox/icons/fm.xpm>
+      [exec]   (thunar) {thunar} <~/.fluxbox/icons/thunar.xpm>
+      [exec]   (mc) {xterm -e mc}
 [end]
 [submenu] (Multimedia)
     [submenu] (Graphics)
-      [exec]   (gimp) {gimp}
-      [exec]   (inkscape) {inkscape}
+      [exec]   (gimp) {gimp} <~/.fluxbox/icons/gimp.xpm>
+      [exec]   (inkscape) {inkscape} <~/.fluxbox/icons/inkscape.xpm>
       [exec] (blender) {blender -w}
     [end]
     [submenu] (Audio)
@@ -68,18 +68,17 @@
     [end]
 [end]
 [submenu] (Office)
-      [exec] (Open Office)      {soffice}
-      [exec] (OO Base)          {sobase}
-      [exec] (OO Calc)          {socalc}
-      [exec] (OO Writer)        {sowriter}
-      [exec] (OO Web)           {soweb}
-      [exec] (OO Impress)       {soimpress}
-      [exec] (OO Draw)          {sodraw}
-      [exec] (OO Math)          {somath}
-      [exec] (OO Templates)     {sofromtemplate}
-      [exec] (OO Printer Admin) {sopadmin}
-      [exec]   (acroread) {acroread}
-      [exec]   (xpdf) {xpdf}
+      [exec] (Libre Office)      {loffice}
+      [exec] (Base)          {lobase}
+      [exec] (Calc)          {localc}
+      [exec] (Writer)        {lowriter}
+      [exec] (Web)           {loweb}
+      [exec] (Impress)       {loimpress}
+      [exec] (Draw)          {lodraw}
+      [exec] (Math)          {lomath}
+      [exec] (Templates)     {lofromtemplate}
+      [exec] (Printer Admin) {lopadmin}
+      [exec] (xpdf) {xpdf}
 [end]
 [submenu] (Games)
       [exec]   (mahjongg) {mahjongg}
