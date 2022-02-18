@@ -10,6 +10,7 @@ feh
 fluxbox
 fluxter
 ftmenu
+filezilla
 firefox
 fish
 fuse
@@ -24,6 +25,7 @@ hexchat
 lastpass-cli
 leafpad
 libreoffice
+mc
 ncftp3
 nmap
 nodejs
@@ -33,12 +35,14 @@ pkg_chk
 pkg_comp
 pycharm-bin
 qterminal
+rhythmbox
 sakura
 slim
 slim-themes
 snort
 sudo
 suse
+tcsh
 tmux
 vim
 wget
