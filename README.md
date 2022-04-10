@@ -1,7 +1,7 @@
 # Infinity Desktop
-An attempt to roll a BSD desktop, specifically [NetBSD](http://netbsd.org/).
+An attempt to roll a BSD desktop, specifically for [NetBSD](http://netbsd.org/).
 
-I have always been attracted to  both NetBSD. I am not saying that it is the best BSD distros, NetBSD just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
+I have always been attracted to **NetBSD**. I am not saying that it is the best BSD distros, **NetBSD** just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
 
 Actually this, like many other projects, is a scratch for my particular itch.
 
@@ -9,9 +9,9 @@ Actually this, like many other projects, is a scratch for my particular itch.
 I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be invented here. I am more than willing to rip-off good ideas.
 
 ### Second
-I am **not** a NetBSD zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about systemd or anyother technology I am completely ignorant of. 
+I am __not__ a **NetBSD** zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about systemd or any other technology that I know nothing about.
 
-I will also not try to make Infinity DE a Windows-like, Mac-like or Linux-like; it will be Ron-like. Honestly, this may not be for everyone.
+I will also not try to make Infinity DE a _Windows-like_, _Mac-like_ or _Linux-like_; it will be _Ron-like_. Honestly, this may not be for everyone.
 
 ### Desktop
 I am focusing more on [fluxbox](http://fluxbox.org/) for now. I did some work with [FVWM](https://www.fvwm.org/). Either way, the final result should be a lightweight and very flexible desktop environment. 
