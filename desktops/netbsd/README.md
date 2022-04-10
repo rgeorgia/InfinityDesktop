@@ -9,7 +9,7 @@
 ## System Updates
 
 - list /etc/rc.d to file rc.d-original.txt
-  - maybe in $HOME/.config/ifinity/init
+  - maybe in $HOME/.config/infinity/init
 
 - copy files in /usr/pkg/share/examples/rc.d to /etc/rc.d
 - update /etc/rc.conf with
