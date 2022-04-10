@@ -20,8 +20,6 @@ For a "heavier" desktop I may also look at [xfce4](https://www.xfce.org/) and [e
 
 Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
-![dfly_desktop](https://github.com/rgeorgia/InfinityDesktop/blob/master/screenshots/dfly_fvwm.png?raw=true)
-
 ---
 
 Totally inspired by the good folks that brought you [GhostBSD](https://github.com/ghostbsd)! GhostBSD is built on [TrueOS](https://www.trueos.org/), which is another excellent project. I totally recommend you check them out. Some of us even support them financially. Yup I **love** GhostBSD!
