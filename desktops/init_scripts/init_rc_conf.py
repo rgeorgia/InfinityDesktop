@@ -36,7 +36,13 @@ def copy_example_rcd(rc_files_to_move: list):
 
 
 def update_rc_config(rc_files_to_move, host_name):
-    files_to_activate = ['dbus', 'hal', 'rpcbind', 'famd', 'avahidaemon', 'slim']
+    service_to_activate = ["dbus", "hal", "rpcbind", "famd", "avahidaemon", "slim"]
+    services = [item.name for item in rc_files_to_move]
+    for item in service_to_activate:
+        if item in services:
+            print(f"{item}=YES")
+
+
 
 def prompt_for_hostname() -> str:
     hostname = platform.uname().node
@@ -64,7 +70,7 @@ def main():
     host_name = prompt_for_hostname()
 
     rc_files_to_move = list_example_rcd()
-    copy_example_rcd(rc_files_to_move)
+    # copy_example_rcd(rc_files_to_move)
 
     update_rc_config(rc_files_to_move, host_name)
 
