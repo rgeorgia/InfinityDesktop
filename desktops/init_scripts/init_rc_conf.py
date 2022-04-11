@@ -23,9 +23,10 @@ def list_example_rcd() -> list:
 
 
 def copy_example_rcd(rc_files_to_move: list):
+    # TODO: this does not retain file permission
     try:
         for item in rc_files_to_move:
-            shutil.copyfile(f"{item}", f"{ETC_RCD}/{item.name}")
+            shutil.copy2(f"{item}", f"{ETC_RCD}/{item.name}", follow_symlinks=False)
     except shutil.SameFileError:
         pass
     except PermissionError:
@@ -42,7 +43,6 @@ def update_rc_config(rc_files_to_move, host_name):
     for item in service_to_activate:
         if item in services:
             print(f"{item}=YES")
-
 
 
 def prompt_for_hostname() -> str:
@@ -71,7 +71,7 @@ def main():
     host_name = prompt_for_hostname()
 
     rc_files_to_move = list_example_rcd()
-    # copy_example_rcd(rc_files_to_move)
+    copy_example_rcd(rc_files_to_move)
 
     update_rc_config(rc_files_to_move, host_name)
 
