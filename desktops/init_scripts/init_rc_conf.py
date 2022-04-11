@@ -38,6 +38,7 @@ def copy_example_rcd(rc_files_to_move: list):
 def update_rc_config(rc_files_to_move, host_name):
     service_to_activate = ["dbus", "hal", "rpcbind", "famd", "avahidaemon", "slim"]
     services = [item.name for item in rc_files_to_move]
+    services.append("rpcbind")
     for item in service_to_activate:
         if item in services:
             print(f"{item}=YES")
