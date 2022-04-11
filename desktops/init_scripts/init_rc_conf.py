@@ -1,27 +1,65 @@
+#!/usr/pkg/bin/python3.10
+"""
+init_rc_conf.py updates the /etc/rc.conf file. Need root permission
+"""
+import platform
+from pathlib import Path
+import os
+import sys
+import shutil
+
+CONFIG_PATH = f"{Path.home()}/.config/infinity"
+EXAMPLE_RCD = "/usr/pkg/share/examples/rc.d/"
+ETC_RCD = "/etc/rc.d"
+RC_CONF = "/etc/rc.conf"
+
+
 def has_rcd_file() -> bool:
-    pass
+    return Path(f"{CONFIG_PATH}/rcd.txt").exists()
 
 
 def list_example_rcd() -> list:
-    pass
+    return [item for item in Path(EXAMPLE_RCD).iterdir()]
 
 
-def copy_example_rcd(rc_files_to_move):
-    pass
+def copy_example_rcd(rc_files_to_move: list):
+    try:
+        for item in rc_files_to_move:
+            shutil.copyfile(f"{item}", f"{ETC_RCD}/{item.name}")
+    except shutil.SameFileError:
+        pass
+    except PermissionError:
+        print("You need root privs to copy files")
+        sys.exit(1)
+    except FileNotFoundError as fne:
+        print(f"{fne}")
 
 
 def update_rc_config(rc_files_to_move, host_name):
-    pass
-
+    files_to_activate = ['dbus', 'hal', 'rpcbind', 'famd', 'avahidaemon', 'slim']
 
 def prompt_for_hostname() -> str:
-    pass
+    hostname = platform.uname().node
+    return hostname
+
+
+def create_config_infinity():
+    try:
+        os.makedirs(CONFIG_PATH)
+    except PermissionError as e:
+        print(f"Could not create {CONFIG_PATH}: {e}")
+        sys.exit(1)
 
 
 def main():
+    if not Path(CONFIG_PATH).exists():
+        create_config_infinity()
+
     if not has_rcd_file():
-        # get list from /etc/rc.d and write contents to ~/.config/infinity/rcd.txt
-        pass
+        # creating a list of what's in /etc/rc.d just in case we need to roll back
+        with open(f"{CONFIG_PATH}/rcd.txt", "w") as rcd_file:
+            for item in [item.name for item in Path("/etc/rc.d").iterdir()]:
+                rcd_file.write(f"{item}\n")
 
     host_name = prompt_for_hostname()
 
@@ -31,5 +69,5 @@ def main():
     update_rc_config(rc_files_to_move, host_name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
