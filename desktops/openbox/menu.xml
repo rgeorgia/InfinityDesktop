@@ -41,7 +41,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="qterminal" icon="/usr/pkg/share/icons/Paper/32x32/apps/xterm-color.png">
+  <item label="qterminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/qterminal.png">
     <action name="Execute">
       <command>qterminal</command>
       <startupnotify>
@@ -49,7 +49,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Xterm">
+  <item label="Xterm" icon="/usr/pkg/share/icons/Paper/32x32/apps/xterm.png">
       <action name="Execute">
           <command>xterm</command>
       </action>
@@ -131,42 +131,9 @@
 </menu>
 
 <menu id="apps-multimedia-menu" label="Multimedia">
-  <item label="Amarok">
-    <action name="Execute">
-      <command>amarok</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Rhythmbox">
+    <item label="Rhythmbox" icon="/usr/pkg/share/icons/Moka/32x32/apps/rhythmbox.png">
     <action name="Execute">
       <command>rhythmbox</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="K3b">
-    <action name="Execute">
-      <command>k3b</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="MPlayer">
-    <action name="Execute">
-      <command>gmplayer</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>MPlayer</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Totem">
-    <action name="Execute">
-      <command>totem</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -175,7 +142,7 @@
 </menu>
 
 <menu id="apps-fileman-menu" label="File Managers">
-  <item label="Rox">
+    <item label="Rox" icon="/usr/pkg/share/icons/Moka/32x32/apps/file-roller.png">
     <action name="Execute">
       <command>rox</command>
       <startupnotify>
@@ -184,7 +151,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="PCMan File Manager">
+  <item label="PCMan File Manager" icon="/usr/pkg/share/icons/Moka/32x32/apps/file-manager.png">
     <action name="Execute">
       <command>pcmanfm</command>
       <startupnotify>
@@ -195,7 +162,7 @@
 </menu>
 
 <menu id="apps-graphics-menu" label="Graphics">
-  <item label="Gimp">
+    <item label="Gimp" icon="/usr/pkg/share/icons/Moka/32x32/apps/gimp.png">
     <action name="Execute">
       <command>gimp</command>
       <startupnotify>
@@ -203,15 +170,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Gwenview">
-    <action name="Execute">
-      <command>gwenview</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Dia Diagram Editor">
+  <item label="Dia Diagram Editor" icon="/usr/pkg/share/icons/Moka/32x32/apps/dia.png">
     <action name="Execute">
       <command>dia</command>
       <startupnotify>
@@ -219,7 +178,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Inkscape">
+  <item label="Inkscape" icon="/usr/pkg/share/icons/Moka/32x32/apps/inkscape.png">
     <action name="Execute">
       <command>inkscape</command>
       <startupnotify>
