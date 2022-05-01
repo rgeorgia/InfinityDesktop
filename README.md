@@ -14,7 +14,7 @@ I am __not__ a **NetBSD** zealot. I am an **enthusiast**. I will not bash Window
 I will also not try to make Infinity DE a _Windows-like_, _Mac-like_ or _Linux-like_; it will be _Ron-like_. Honestly, this may not be for everyone.
 
 ### Desktop
-I am focusing more on [fluxbox](http://fluxbox.org/) for now. I did some work with [FVWM](https://www.fvwm.org/). Either way, the final result should be a lightweight and very flexible desktop environment. 
+I am focusing more on [openbox](http://openbox.org/wiki/Main_Page). I did some work with [fluxbox](http://fluxbox.org/) and [FVWM](https://www.fvwm.org/). Either way, the final result should be a lightweight and very flexible desktop environment. 
 
 For a "heavier" desktop I may also look at [xfce4](https://www.xfce.org/) and [enlightenment](https://www.enlightenment.org/). 
 
