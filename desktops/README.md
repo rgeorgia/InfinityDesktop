@@ -4,12 +4,12 @@
 2. Install service packages. i.e. dbus, hal, famd, avahidaemon
 3. Start services
 4. Install default packages. 
-  - openbox, obconf, file manager, slim or xdm, feh, etc
-  - office, thunderbird
+  1. openbox, obconf, file manager, slim or xdm, feh, etc
+  1. office, thunderbird
 5. Install extra packages based on category
-  - Developer: go, python, rustup, node, pycharm
-  - Home: multimedia stuff, audio
+  1. Developer: go, python, rustup, node, pycharm
+  1. Home: multimedia stuff, audio
 6. Auto config
-  - Update /etc/rc.conf
-  - Update /etc/login.conf
+  1. Update /etc/rc.conf
+  1. Update /etc/login.conf
 7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME
