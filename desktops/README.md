@@ -4,7 +4,7 @@
 2. Install service packages. i.e. dbus, hal, famd, avahidaemon
 3. Start services
 4. Install default packages. 
-  - openbox, obconf, file manager, slim or xdm, feh, etc
+    - openbox, obconf, file manager, slim or xdm, feh, etc
   - office, thunderbird
 5. Install extra packages based on category
   - Developer: go, python, rustup, node, pycharm
