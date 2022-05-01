@@ -5,11 +5,11 @@
 3. Start services
 4. Install default packages. 
     - openbox, obconf, file manager, slim or xdm, feh, etc
-  - office, thunderbird
+    - office, thunderbird
 5. Install extra packages based on category
-  - Developer: go, python, rustup, node, pycharm
-  - Home: multimedia stuff, audio
+    - Developer: go, python, rustup, node, pycharm
+    - Home: multimedia stuff, audio
 6. Auto config
-  - Update /etc/rc.conf
-  - Update /etc/login.conf
+    - Update /etc/rc.conf
+    - Update /etc/login.conf
 7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME
