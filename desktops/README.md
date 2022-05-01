@@ -12,4 +12,5 @@
 6. Auto config
     - Update /etc/rc.conf
     - Update /etc/login.conf
-7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME7. Create $HOME
+7. Create $HOME
+8. Setup ENV
