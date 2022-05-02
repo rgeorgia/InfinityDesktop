@@ -1,17 +1,24 @@
 # Infinity Desktop
 An attempt to roll a BSD desktop, specifically for [NetBSD](http://netbsd.org/).
 
+## Summary
+Create an package that installs and builds a usable desktop.
+
+```bash
+$ pkgin in infinity-desktop
+```
+
+## Background
+
 I have always been attracted to **NetBSD**. I am not saying that it is the best BSD distros, **NetBSD** just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
 
 Actually this, like many other projects, is a scratch for my particular itch.
 
-### First
+### Disclaimer
 I am **not** an expert, but I am willing to dig in, willing to learn and willing to listen to sound advice. I do not feel that everything needs to be invented here. I am more than willing to rip-off good ideas.
 
-### Second
 I am __not__ a **NetBSD** zealot. I am an **enthusiast**. I will not bash Windows or scoff at any distro of Linux. You will not find any snarky comments about systemd or any other technology that I know nothing about.
 
-I will also not try to make Infinity DE a _Windows-like_, _Mac-like_ or _Linux-like_; it will be _Ron-like_. Honestly, this may not be for everyone.
 
 ### Desktop
 I am focusing more on [openbox](http://openbox.org/wiki/Main_Page). I did some work with [fluxbox](http://fluxbox.org/) and [FVWM](https://www.fvwm.org/). Either way, the final result should be a lightweight and very flexible desktop environment. 
