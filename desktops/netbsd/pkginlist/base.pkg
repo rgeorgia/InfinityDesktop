@@ -45,6 +45,6 @@ sudo
 suse
 tcsh
 tmux
-vim
+neovim
 wget
 zenity
