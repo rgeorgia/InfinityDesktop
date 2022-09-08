@@ -1,8 +1,8 @@
 base64
 bash
-bluefish
 ca-certificates
 createbuildlink
+elixir
 firefox
 fish
 git
@@ -18,11 +18,11 @@ nodejs
 npm
 pcmanfm
 python310
+py310-ipython
+py310-sqlite3
 pycharm-bin
-qterminal
 sakura
-snort
 sqlitebrowser
-tcsh
 tmux
 neovim
+zig
