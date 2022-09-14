@@ -2,7 +2,8 @@ xrdb -merge /home/rgeorgia/.Xresources
 xset s off
 xset -dpms
 
+fvwm3
 # exec startfluxbox
 # exec startxfce4
-/usr/X11R7/bin/ctwm
+# /usr/X11R7/bin/ctwm
 exit $?
