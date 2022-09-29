@@ -26,3 +26,5 @@ sqlitebrowser
 tcsh
 tmux
 neovim
+intellij-ce-bin 
+openjdk11
