@@ -15,8 +15,7 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-/usr/pkg/bin/feh --no-fehbg --bg-scale '/home/rgeorgia/.fluxbox/backgrounds/infinity-wallpaper-4.jpg'
-/usr/pkg/bin/qterminal &
-/usr/pkg/bin/tint2 &
-/usr/pkg/bin/todo &
-# /usr/pkg/bin/idesk &
+/usr/local/bin/feh --no-fehbg --bg-scale '/home/rgeorgia/.fluxbox/backgrounds/infinity-wallpaper-4.jpg'
+/usr/local/bin/xfce4-terminal &
+/usr/local/bin/tint2 &
+/usr/local/bin/todo &
