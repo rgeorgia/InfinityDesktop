@@ -19,7 +19,7 @@ slim
 slim-themes
 suse
 sysupgrade
-neovim
 thunderbird
+vim-gtk3
 wget
 zenity
