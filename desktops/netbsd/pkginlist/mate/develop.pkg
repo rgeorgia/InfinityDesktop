@@ -25,7 +25,6 @@ py310-ipython
 py310-pip
 py310-sqlite3
 pycharm-bin
-sakura
 sqlitebrowser
 tmux
 vim-gtk3
