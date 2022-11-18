@@ -2,7 +2,7 @@
 # MAKE SURE YOU HAVE THE -a FLAG OTHERWISE YOU'LL OVERWRITE THE rc.conf FILE
 # Make a copy for "just in case"
 cp /etc/rc.conf /tmp/rc.conf.bk
-for x in dbus avahidaemon famd hal
+for x in dbus avahidaemon rpcbind famd hal
 do
 	grep $x /etc/rc.conf
 	if [ $? -eq 1 ]
