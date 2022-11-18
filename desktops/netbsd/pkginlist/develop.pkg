@@ -17,6 +17,7 @@ netbeans-ide
 nmap
 nodejs
 npm
+openjdk11
 py39-pip
 py39-sqlite3
 python310
