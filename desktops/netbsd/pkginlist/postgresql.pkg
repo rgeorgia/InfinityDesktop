@@ -1,0 +1,7 @@
+postgresql14
+postgresql14-server
+postgresql14-client
+postgresql14-contrib
+postgresql14-docs
+postgresql14-plpython
+postgresql14-postgis

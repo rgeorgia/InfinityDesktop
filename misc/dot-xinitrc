@@ -2,11 +2,8 @@ xrdb -merge /home/rgeorgia/.Xresources
 xset s off
 xset -dpms
 
-# start idesk (we need the sleep because fluxbox will overpaint the
-# idesk with the rootCommand
-# (sleep 2; idesk &) &
-
-exec startfluxbox
+fvwm3
+# exec startfluxbox
 # exec startxfce4
 # /usr/X11R7/bin/ctwm
 exit $?

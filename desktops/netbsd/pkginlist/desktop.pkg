@@ -13,14 +13,13 @@ libreoffice
 mc
 mozilla-rootcerts-openssl
 pcmanfm
-qterminal
 rhythmbox
 sakura
 slim
 slim-themes
 suse
 sysupgrade
-tcsh
-neovim
+thunderbird
+vim-gtk3
 wget
 zenity

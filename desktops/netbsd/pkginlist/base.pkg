@@ -1,6 +1,6 @@
 sudo
 git
-neovim
+vim-gtk3
 dialog
 fish
 bash

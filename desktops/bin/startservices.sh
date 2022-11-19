@@ -1,8 +1,8 @@
-# Added services to rc.conf then start them. 
+# Added services to rc.conf then start them.
 # MAKE SURE YOU HAVE THE -a FLAG OTHERWISE YOU'LL OVERWRITE THE rc.conf FILE
 # Make a copy for "just in case"
 cp /etc/rc.conf /tmp/rc.conf.bk
-for x in dbus rpcbind avahidaemon famd hal
+for x in dbus avahidaemon rpcbind famd hal
 do
 	grep $x /etc/rc.conf
 	if [ $? -eq 1 ]
