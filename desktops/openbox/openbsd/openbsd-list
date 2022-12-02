@@ -12,6 +12,7 @@ firefox--
 fish--
 gimp--%stable
 git--
+gnome-colors-icon-theme--
 gnupg--
 go--
 hexchat--
@@ -21,6 +22,7 @@ inkscape--
 iridium--
 lastpass-cli--
 leafpad--
+moka-icon-theme--
 mousepad--
 mozilla-dicts-ca--
 mpv--
@@ -31,6 +33,7 @@ node--
 obconf--
 obmenu--
 openbox--
+paper-icon-theme--
 pcmanfm--
 picom--
 pycharm--
@@ -38,6 +41,7 @@ python--%3.10
 qterminal--
 quirks--
 rhythmbox--
+rox-filer--
 rust--
 rust-clippy--
 rust-gdb--
@@ -47,7 +51,9 @@ spleen--
 thunderbird--
 tint2--
 unzip--
+vim--gtk3-perl-python3-ruby
 w3m--image
 weechat--
+xfce4-icon-theme--
 xfce4-terminal--
 yarn--
