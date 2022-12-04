@@ -5,6 +5,7 @@
 
 # To set your language for displaying messages and time/date formats, use the following:
 LANG=en_US.UTF8
+# XDG_CONFIG_DIRS=/usr/pkg/etc/xdg
 XDG_CONFIG_DIRS=/etc/xdg
 
 # To set your keyboard layout, you need to modify your X config:

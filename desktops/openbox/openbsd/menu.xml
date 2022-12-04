@@ -22,9 +22,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="PycharmCE 2021.3" icon="/usr/local/pycharm/bin/pycharm.png">
+  <item label="PycharmCE 2022.1" icon="/usr/local/pycharm/bin/pycharm.png">
     <action name="Execute">
-        <command>/usr/local/pycharm/bin/pycharm.sh</command>
+        <command>/usr/local/bin/pycharm</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
