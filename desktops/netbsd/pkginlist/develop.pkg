@@ -18,6 +18,7 @@ nmap
 nodejs
 npm
 openjdk11
+openjdk17
 py39-pip
 py39-sqlite3
 python310
@@ -26,8 +27,8 @@ py310-pip
 py310-sqlite3
 pycharm-bin
 sqlitebrowser
+tcsh
 tmux
 vim-gtk3
 intellij-ce-bin 
-openjdk11
 zig
