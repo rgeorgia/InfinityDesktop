@@ -6,7 +6,7 @@
       [exec]   (Run) {fbrun}
 [submenu] (Terminals)
       [exec]   (eterm) {Eterm} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
-      [exec]   (qterminal) {qterminal} </usr/pkg/include/X11/pixmaps/xterm-linux.xpm>
+      [exec]   (xfce4-terminal) {xfce4-terminal} </usr/pkg/include/X11/pixmaps/xterm-linux.xpm>
       [exec]   (rxvt) {rxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
       [exec]   (mrxvt) {mrxvt} </usr/pkg/include/X11/pixmaps/xterm2.xpm>
 [end]
@@ -34,7 +34,8 @@
     [end]
 [end]
 [submenu] (Editors)
-      [exec]   (PyCharm CE 2021.3.2) {~/pycharm-community-2021.3.2/bin/pycharm.sh} <~/.fluxbox/icons/pycharm.xpm>
+      [exec]   (PyCharm CE 2021.3.3) {~/pycharm-community-2021.3.3/bin/pycharm.sh} <~/.fluxbox/icons/pycharm.xpm>
+      [exec]   (PyCharm Pro 2021.3.3) {~/pycharm-2021.3.3/bin/pycharm.sh} <~/.fluxbox/icons/pycharm.xpm>
       [exec]   (leafpad) {leafpad} <~/.fluxbox/icons/leafpad.xpm>
       [exec]   (bluefish) {bluefish} <~/.fluxbox/icons/bluefish.xpm>
 [end]
