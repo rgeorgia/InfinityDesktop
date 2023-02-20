@@ -1,7 +1,7 @@
-postgresql14
-postgresql14-server
-postgresql14-client
-postgresql14-contrib
-postgresql14-docs
-postgresql14-plpython
-postgresql14-postgis
+postgresql15
+postgresql15-server
+postgresql15-client
+postgresql15-contrib
+postgresql15-docs
+postgresql15-plpython
+postgresql15-postgis
