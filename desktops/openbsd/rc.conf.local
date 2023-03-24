@@ -1,0 +1,4 @@
+multicast=YES
+apmd_flags=-A
+pkg_scripts=messagebus avahi_daemon
+xenodm_flags=
