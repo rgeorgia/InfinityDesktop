@@ -22,9 +22,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="PycharmCE 2021.3" icon="/home/rgeorgia/pycharm-community-2021.3.3/bin/pycharm.png">
+  <item label="Pycharm 2021.3" icon="/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.png">
     <action name="Execute">
-        <command>/home/rgeorgia/pycharm-community-2021.3.3/bin/pycharm.sh</command>
+        <command>/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.sh</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -41,9 +41,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="qterminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/qterminal.png">
+  <item label="xfce4-terminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/xfce4-terminal.png">
     <action name="Execute">
-      <command>qterminal</command>
+      <command>xfce4-terminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
