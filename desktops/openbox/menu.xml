@@ -5,6 +5,24 @@
 <menu id="apps-accessories-menu" label="Accessories">
 </menu>
 
+<menu id="apps-development-menu" label="Development">
+  <item label="Pycharm Pro 2021.3" icon="/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.png">
+    <action name="Execute">
+        <command>/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="IDEA 2021.3" icon="/usr/pkg/intellij-ce-bin-2021.3.2/bin/idea.png">
+    <action name="Execute">
+        <command>/usr/pkg/intellij-ce-bin-2021.3.2/bin/idea.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
 <menu id="apps-editors-menu" label="Editors">
     <item label="Leafpad" icon="/usr/pkg/share/icons/Moka/32x32/apps/leafpad.png">
     <action name="Execute">
@@ -22,14 +40,6 @@
       </startupnotify>
     </action>
   </item>
-  <item label="PycharmCE 2021.3" icon="/home/rgeorgia/pycharm-community-2021.3.3/bin/pycharm.png">
-    <action name="Execute">
-        <command>/home/rgeorgia/pycharm-community-2021.3.3/bin/pycharm.sh</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
 </menu>
 
 <menu id="apps-term-menu" label="Terminals">
@@ -41,9 +51,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="qterminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/qterminal.png">
+  <item label="xfce4-terminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/terminal.png">
     <action name="Execute">
-      <command>qterminal</command>
+      <command>xfce4-terminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -233,6 +243,7 @@
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
   <menu id="apps-accessories-menu"/>
+  <menu id="apps-development-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
