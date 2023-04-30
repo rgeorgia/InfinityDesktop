@@ -13,8 +13,7 @@ Use these links to get yourself up and running:
 3. git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
 3. curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-4. git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
-5. pkgin in gh
-6. git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+5. git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+6. pkgin in gh
 7. Launch vim and run `:PluginInstall`
   1. or To install from command line: `vim +PluginInstall +qall`
