@@ -21,6 +21,7 @@ hugo--extended
 inconsolata-font--
 inkscape--
 iridium--
+intellij--
 lastpass-cli--
 leafpad--
 moka-icon-theme--
@@ -41,6 +42,7 @@ pycharm--
 python--%3.11
 qterminal--
 quirks--
+rakudo--
 rhythmbox--
 rox-filer--
 rust--
@@ -49,6 +51,7 @@ rust-gdb--
 rust-rustfmt--
 sakura--
 spleen--
+spyder--
 thunderbird--
 tint2--
 unzip--
