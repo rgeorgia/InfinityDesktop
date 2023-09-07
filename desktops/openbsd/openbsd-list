@@ -10,6 +10,7 @@ ffmpeg--
 filezilla--
 firefox--
 fish--
+geany--
 gimp--%stable
 git--
 gnome-colors-icon-theme--
@@ -37,7 +38,7 @@ paper-icon-theme--
 pcmanfm--
 picom--
 pycharm--
-python--%3.10
+python--%3.11
 qterminal--
 quirks--
 rhythmbox--
