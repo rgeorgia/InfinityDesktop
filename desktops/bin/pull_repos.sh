@@ -21,4 +21,3 @@ git clone $URL/nscat.git $HOME/workspace/go_projects/nscat
 git clone $URL/iss_location.git $HOME/workspace/$RUST/iss_location
 git clone $URL/team-51-loki-6051ea9d.git $HOME/workspace/team-51-loki-6051ea9d
 git clone $URL/ASD-200-CMP.git $HOME/workspace/ASD-200-CMP.git
-
