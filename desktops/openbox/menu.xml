@@ -40,6 +40,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Pycharm 2021.3" icon="/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.png">
+    <action name="Execute">
+        <command>/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
 </menu>
 
 <menu id="apps-term-menu" label="Terminals">
@@ -51,7 +59,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="xfce4-terminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/terminal.png">
+  <item label="xfce4-terminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/xfce4-terminal.png">
     <action name="Execute">
       <command>xfce4-terminal</command>
       <startupnotify>
