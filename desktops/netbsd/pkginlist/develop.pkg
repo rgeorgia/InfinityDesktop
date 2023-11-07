@@ -5,6 +5,7 @@ createbuildlink
 elixir
 firefox
 fish
+geany
 git
 go
 go-hugo
@@ -26,7 +27,6 @@ py311-pip
 py311-sqlite3
 py39-pip
 py39-sqlite3
-pycharm-bin
 python310
 python311
 sqlitebrowser
