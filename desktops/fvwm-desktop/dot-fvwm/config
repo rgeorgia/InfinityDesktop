@@ -48,8 +48,8 @@ SetEnv pictures_home $[HOME]/Pictures
 SetEnv fvwm_home $[HOME]/.fvwm
 SetEnv fvwm_images $[fvwm_home]/images
 SetEnv fvwm_themes $[fvwm_home]/themes
-#SetEnv fvwm_cache $[HOME]/.fvwm/cache/
-#SetEnv fvwm_scripts $[HOME]/.fvwm/scripts
+SetEnv fvwm_cache $[HOME]/.fvwm/cache/
+SetEnv fvwm_scripts $[HOME]/.fvwm/scripts
 
 #Images folder
 SetEnv fvwm_backgrounds $[fvwm_images]/backgrounds
@@ -104,29 +104,18 @@ ImagePath $[fvwm_icons]:$[fvwm_launchers]:$[fvwm_backgrounds]:+
 DestroyFunc StartFunction
 AddToFunc   StartFunction
 + I Module FvwmPager 0 2
-# + I Module FvwmButtons Launchers
++ I Module FvwmButtons Launchers
 
 Exec exec pkill volumeicon
-# Exec exec pkill variety
-# Exec exec ~/.config/polybar/launch.sh &
-# Exec exec feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/infinity-wallpaper-4.jpg &
-# Exec exec sxhkd -c ~/.config/fvwm3/sxhkd/sxhkdrc &
-# Exec exec dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 Exec exec conky -c $HOME/.config/fvwm3/system-overview &
-# Exec exec nm-applet &
-# Exec exec pamac-tray &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
-# Exec exec blueberry-tray &
 Exec exec picom --config $HOME/.config/fvwm3/picom.conf &
-#Exec exec picom
-Exec exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-Exec exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
-#Exec exec tint2 &
-# Exec exec volumeicon &
+Exec exec picom
+Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+Exec exec /usr/pkg/lib/xfce4/notifyd/xfce4-notifyd &
 # Exec exec xdgmenumaker -f fvwm > ~/.config/fvwm3/xdgmenu
-# Exec exec sleep 2 & variety &
 
 # Mouse Bindings Functions
 DestroyFunc RaiseMoveX
@@ -386,7 +375,6 @@ AddToMenu   MenuPrograms "" Title
 + "Pager" Module FvwmPager 0 3
 + "Thunar" Exec exec thunar
 + "Terminal" Exec exec xfce4-terminal
-+ "Sublime" Exec exec subl
 + "Logout" Exec exec archlinux-logout
 
 # Background Menu
@@ -862,25 +850,24 @@ DestroyModuleConfig FvwmPager: *
 ##################################################################
 
 
-Style "Launchers" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
+# Style "Launchers" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
   CirculateSkip, StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
 
-DestroyModuleConfig Launchers: *
-*Launchers: Geometry 540x60+320-0
-*Launchers: Colorset 3
-*Launchers: Rows 1
-*Launchers: Columns 38
-*Launchers: Frame 0
-*Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=14:minspace=True:antialias=True"
-*Launchers: (2x1, Frame 0, Title(Center) "")
-*Launchers: (5x1, Frame 0, Icon terminal.svg, 		Action(Mouse 1) Exec exec $[fvwm_terminal])
-*Launchers: (5x1, Frame 0, Icon thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
-*Launchers: (5x1, Frame 0, Icon firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
+# DestroyModuleConfig Launchers: *
+# *Launchers: Geometry 540x60+800-0
+# *Launchers: Colorset 5
+# *Launchers: Rows 1
+# *Launchers: Columns 38
+# *Launchers: Frame 0
+# *Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=14:minspace=True:antialias=True"
+# *Launchers: (2x1, Frame 1, Title(Center) "")
+# *Launchers: (5x1, Frame 0, Icon ./launchers/terminal.svg, 		Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
+# *Launchers: (5x1, Frame 0, Icon ./launchers/thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
+# *Launchers: (5x1, Frame 0, Icon ./launchers/firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
 #*Launchers: (5x1, Frame 0, Icon meld.svg,			Action(Mouse 1) Exec exec $[fvwm_compare])
-*Launchers: (5x1, Frame 0, Icon sublime-text.svg,	Action(Mouse 1) Exec exec $[fvwm_editor])
-*Launchers: (5x1, Frame 0, Icon gimp.svg,			Action(Mouse 1) Exec exec gimp)
+# *Launchers: (5x1, Frame 0, Icon gimp.svg,			Action(Mouse 1) Exec exec gimp)
 #*Launchers: (5x1, Frame 0, Icon inkscape.svg,		Action(Mouse 1) Exec exec inkscape)
-*Launchers: (5x1, Frame 0, Icon discord.svg,		Action(Mouse 1) Exec exec discord)
-*Launchers: (5x1, Frame 0, Icon telegram.svg,		Action(Mouse 1) Exec exec telegram-desktop)
-*Launchers: (5x1, Frame 0, Icon shutdown.svg,		Action(Mouse 1) Exec exec archlinux-logout)
+# *Launchers: (5x1, Frame 0, Icon discord.svg,		Action(Mouse 1) Exec exec discord)
+# *Launchers: (5x1, Frame 0, Icon telegram.svg,		Action(Mouse 1) Exec exec telegram-desktop)
+# *Launchers: (5x1, Frame 0, Icon shutdown.svg,		Action(Mouse 1) Exec exec archlinux-logout)
 *Launchers: (1x1, Frame 0) noreWorkingArea, NeverFocus, WindowListSkip )
