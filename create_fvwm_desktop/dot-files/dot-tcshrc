@@ -1,0 +1,41 @@
+alias ll 'ls-F -al'
+alias lss 'ls-F -l'
+
+setenv	EDITOR	vi
+
+# Set the search path for programs.
+set path = (~/bin /bin /sbin /usr/{bin,sbin,X11R7/bin,pkg/{,s}bin,games} \
+	    /usr/local/{,s}bin)
+
+# Colors!
+set     red="%{\033[1;31m%}"
+set   green="%{\033[1;32m%}"
+set  yellow="%{\033[1;33m%}"
+set    blue="%{\033[1;34m%}"
+set magenta="%{\033[1;35m%}"
+set    cyan="%{\033[1;36m%}"
+set   white="%{\033[1;37m%}"
+set     end="%{\033[0m%}"
+# END Colors
+
+# set prompt with current git branch if available
+alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)"'
+
+alias precmd __git_current_branch
+
+if ($?prompt) then
+	# Filename completion.
+	set filec
+
+	# Size of the history buffer.
+	set history = 1000
+
+	# Set the location of your incoming email for mail notification.
+	set mail = (/var/mail/$USER)
+
+	# Set the prompt to include the hostname.
+	set mch = `hostname -s`
+    # set prompt = "${mch:q}:  "
+	set prompt = "${green}%n ${white}%~ ${green}%%${end} "
+endif
+
