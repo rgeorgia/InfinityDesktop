@@ -8,7 +8,7 @@ sudo pkgin -y im ${INSTALL_FILE}
 # copy service files to /etc/rc.d
 EXAMPLE_RCD=/usr/pkg/share/examples/rc.d
 ETC_RCD=/etc/rc.d
-for x in dbus hal avahidaemon famd 
+for x in dbus hal avahidaemon famd
 do
 	sudo cp $EXAMPLE_RCD/$x $ETC_RCD/$x
 done
@@ -17,7 +17,7 @@ done
 # MAKE SURE YOU HAVE THE -a FLAG OTHERWISE YOU'LL OVERWRITE THE rc.conf FILE
 # Make a copy for "just in case"
 cp /etc/rc.conf /tmp/rc.conf.bk
-for x in dbus avahidaemon rpcbind famd hal xdm
+for x in dbus avahidaemon rpcbind famd hal
 do
 	grep $x /etc/rc.conf
 	if [ $? -eq 1 ]
@@ -30,7 +30,9 @@ do
 	fi
 done
 
-# Makes home 
+echo "xdm=YES" | tee -a /etc/rc.conf
+
+# Makes home
 # copy dot files
 cp dot-files/dot-Xresources $HOME/.Xresources
 cp dot-files/dot-gitconfig $HOME/.gitconfig
