@@ -45,9 +45,9 @@ InfoStoreAdd runcmd "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf 
 # ==================================================
 
 SetEnv pictures_home $[HOME]/Pictures
-SetEnv fvwm_home $[HOME]/.fvwm
-SetEnv fvwm_images $[fvwm_home]/images
-SetEnv fvwm_themes $[fvwm_home]/themes
+SetEnv fvwm_userdir $[HOME]/.fvwm
+SetEnv fvwm_images $[FVWM_USERDIR]/images
+SetEnv fvwm_themes $[FVWM_USERDIR]/themes
 SetEnv fvwm_cache $[HOME]/.fvwm/cache/
 SetEnv fvwm_scripts $[HOME]/.fvwm/scripts
 
@@ -106,7 +106,7 @@ AddToFunc   StartFunction
 + I Module FvwmPager 0 2
 + I Module FvwmButtons Launchers
 
-Exec exec pkill volumeicon
+# Exec exec pkill volumeicon
 Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/infinity-wallpaper-4.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/system-overview &
 Exec exec xfce4-power-manager &
@@ -724,9 +724,6 @@ DestroyModuleConfig EventNewDesk:*
 *EventNewDesk: new_desk ChangeDesk
 
 
-
-
-
 # == Keyboard bindings
 
 # Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing
@@ -850,23 +847,23 @@ DestroyModuleConfig FvwmPager: *
 ##################################################################
 
 
-# Style "Launchers" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
+Style "Launchers" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
   CirculateSkip, StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
 
-# DestroyModuleConfig Launchers: *
-# *Launchers: Geometry 540x60+800-0
-# *Launchers: Colorset 5
-# *Launchers: Rows 1
-# *Launchers: Columns 38
-# *Launchers: Frame 0
-# *Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=14:minspace=True:antialias=True"
-# *Launchers: (2x1, Frame 1, Title(Center) "")
-# *Launchers: (5x1, Frame 0, Icon ./launchers/terminal.svg, 		Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
-# *Launchers: (5x1, Frame 0, Icon ./launchers/thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
-# *Launchers: (5x1, Frame 0, Icon ./launchers/firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
-#*Launchers: (5x1, Frame 0, Icon meld.svg,			Action(Mouse 1) Exec exec $[fvwm_compare])
+DestroyModuleConfig Launchers: *
+*Launchers: Geometry 540x60+800-0
+*Launchers: Colorset 5
+*Launchers: Rows 1
+*Launchers: Columns 38
+*Launchers: Frame 0
+*Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=14:minspace=True:antialias=True"
+*Launchers: (2x1, Frame 1, Title(Center) "")
+*Launchers: (5x1, Frame 0, Icon ./launchers/terminal.svg, 		Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
+*Launchers: (5x1, Frame 0, Icon ./launchers/thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
+*Launchers: (5x1, Frame 0, Icon ./launchers/firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
+# *Launchers: (5x1, Frame 0, Icon meld.svg,			Action(Mouse 1) Exec exec $[fvwm_compare])
 # *Launchers: (5x1, Frame 0, Icon gimp.svg,			Action(Mouse 1) Exec exec gimp)
-#*Launchers: (5x1, Frame 0, Icon inkscape.svg,		Action(Mouse 1) Exec exec inkscape)
+# *Launchers: (5x1, Frame 0, Icon inkscape.svg,		Action(Mouse 1) Exec exec inkscape)
 # *Launchers: (5x1, Frame 0, Icon discord.svg,		Action(Mouse 1) Exec exec discord)
 # *Launchers: (5x1, Frame 0, Icon telegram.svg,		Action(Mouse 1) Exec exec telegram-desktop)
 # *Launchers: (5x1, Frame 0, Icon shutdown.svg,		Action(Mouse 1) Exec exec archlinux-logout)
