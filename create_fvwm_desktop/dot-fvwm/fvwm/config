@@ -107,7 +107,7 @@ AddToFunc   StartFunction
 + I Module FvwmButtons Launchers
 
 # Exec exec pkill volumeicon
-Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/infinity-wallpaper-4.jpg &
+Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/simple-lightbulbs.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/system-overview &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
@@ -861,10 +861,6 @@ DestroyModuleConfig Launchers: *
 *Launchers: (5x1, Frame 0, Icon ./launchers/terminal.svg, 		Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
 *Launchers: (5x1, Frame 0, Icon ./launchers/thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
 *Launchers: (5x1, Frame 0, Icon ./launchers/firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
-# *Launchers: (5x1, Frame 0, Icon meld.svg,			Action(Mouse 1) Exec exec $[fvwm_compare])
-# *Launchers: (5x1, Frame 0, Icon gimp.svg,			Action(Mouse 1) Exec exec gimp)
-# *Launchers: (5x1, Frame 0, Icon inkscape.svg,		Action(Mouse 1) Exec exec inkscape)
-# *Launchers: (5x1, Frame 0, Icon discord.svg,		Action(Mouse 1) Exec exec discord)
-# *Launchers: (5x1, Frame 0, Icon telegram.svg,		Action(Mouse 1) Exec exec telegram-desktop)
-# *Launchers: (5x1, Frame 0, Icon shutdown.svg,		Action(Mouse 1) Exec exec archlinux-logout)
+*Launchers: (5x1, Frame 0, Icon ./launchers/gimp.svg,			Action(Mouse 1) Exec exec gimp)
+*Launchers: (5x1, Frame 0, Icon ./launchers/telegram.svg,		Action(Mouse 1) Exec exec thunderbird)
 *Launchers: (1x1, Frame 0) noreWorkingArea, NeverFocus, WindowListSkip )
