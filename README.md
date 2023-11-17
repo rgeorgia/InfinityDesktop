@@ -21,11 +21,8 @@ I am __not__ a **NetBSD** zealot. I am an **enthusiast**. I will not bash Window
 
 
 ### Desktop
-I am focusing more on [openbox](http://openbox.org/wiki/Main_Page). I did some work with [fluxbox](http://fluxbox.org/) and [FVWM](https://www.fvwm.org/). Either way, the final result should be a lightweight and very flexible desktop environment. 
+I am focusing more on [FVWM](https://www.fvwm.org/). I am actually pulling a lot of configuration information from [ArcoLinux](https://arcolinux.com/)
 
-For a "heavier" desktop I may also look at [xfce4](https://www.xfce.org/) and [enlightenment](https://www.enlightenment.org/). 
-
-Roadmap and other misc things are on our [wiki](https://github.com/rgeorgia/OS108/wiki)
 
 ---
 
