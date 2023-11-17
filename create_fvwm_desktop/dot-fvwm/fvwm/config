@@ -107,7 +107,7 @@ AddToFunc   StartFunction
 + I Module FvwmButtons Launchers
 
 # Exec exec pkill volumeicon
-Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/simple-lightbulbs.jpg &
+Exec exec feh --bg-fill $[fvwm_backgrounds]/simple-lightbulbs.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/system-overview &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
