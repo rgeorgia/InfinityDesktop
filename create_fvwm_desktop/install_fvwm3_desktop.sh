@@ -1,5 +1,4 @@
 echo "Make sure you have sudo permissions."
-read "Continue or ^c to quit"
 
 # Install and start services
 INSTALL_FILE=services.pkg
@@ -59,9 +58,8 @@ chsh -s /usr/pkg/bin/fish
 mkdir -p $HOME/.fvwm
 cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 
-# Pull repos
-./pull_repos.sh
-
 # Install packages
 echo "Installing package"
 sudo pkgin -y im fvwm3.pkg
+
+sudo cp ./xdm/Xresources /etc/X11/xdm/.

@@ -1,0 +1,81 @@
+! $NetBSD: Xresources.in,v 1.8 2022/05/24 14:53:15 nia Exp $
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting: Welcome to CLIENTHOST
+xlogin*namePrompt: \040\040\040\040\040\040\040Login:
+xlogin*fail: Login incorrect or forbidden by policy
+xlogin*Login.echoPasswd: true
+
+#if WIDTH > 800
+xlogin*greetFont:	-*-spleen-*-*-*-*-32-*-*-*-*-*-*-*
+xlogin*font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*promptFont:	-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*failFont:	-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*greetFace:	Sans-24:hintstyle=hintslight
+xlogin*face:		Sans-14:hintstyle=hintslight
+xlogin*promptFace:	Sans-14:bold:hintstyle=hintslight
+xlogin*failFace:	Sans-14:bold:hintstyle=hintslight
+#else
+xlogin*greetFont:	-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*promptFont:	-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*failFont:	-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+xlogin*greetFace:	Sans-18:hintstyle=hintslight
+xlogin*face:		Sans-12:hintstyle=hintslight
+xlogin*promptFace:	Sans-12:bold:hintstyle=hintslight
+xlogin*failFace:	Sans-14:bold:hintstyle=hintslight
+#endif
+
+xlogin*borderWidth: 2
+xlogin*frameWidth: 2
+xlogin*innerFramesWidth: 1
+xlogin*sepWidth: 0
+
+#ifdef COLOR
+xlogin*logoFileName: /usr/X11R7/include/X11/pixmaps/NetBSD.xpm
+xlogin*shdColor: steelblue
+xlogin*hiColor: steelblue
+xlogin*background: white
+xlogin*inpColor: lavender
+xlogin*greetColor: black
+xlogin*failColor: darkred
+#else
+xlogin*logoFileName: /usr/X11R7/include/X11/pixmaps/NetBSD-bw.xpm
+xlogin*shdColor: black
+xlogin*hiColor: black
+xlogin*background: white
+xlogin*inpColor: white
+xlogin*greetColor: black
+xlogin*failColor: black
+#endif
+
+*Foreground: black
+*Background: white
+
+xlogin*useShape: true
+xlogin*logoPadding: 12
+
+XConsole.text.geometry:	480x130
+XConsole.verbose:	true
+XConsole*iconic:	true
+XConsole*font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+
+Chooser*geometry:		700x500+300+200
+Chooser*allowShellResize:	false
+Chooser*viewport.forceBars:	true
+Chooser*label.font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+Chooser*label.label:		XDMCP Host Menu from CLIENTHOST
+Chooser*list.font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
+Chooser*Command.font:		-*-spleen-*-*-*-*-16-*-*-*-*-*-*-*
