@@ -45,7 +45,6 @@ npm
 openjdk11
 openjdk17
 oxygen-fonts
-picom
 py310-ipython
 py310-pip
 py310-sqlite3

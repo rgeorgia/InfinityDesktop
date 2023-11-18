@@ -113,8 +113,6 @@ Exec exec feh --bg-fill $[fvwm_backgrounds]/water_color_tan.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/system-overview &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
-Exec exec picom --config $HOME/.config/fvwm3/picom.conf &
-Exec exec picom
 Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 Exec exec /usr/pkg/lib/xfce4/notifyd/xfce4-notifyd &
 # Exec exec xdgmenumaker -f fvwm > ~/.config/fvwm3/xdgmenu
@@ -372,8 +370,8 @@ read xdgmenu
 # lines as this is only to help make this menu portable.
 DestroyMenu MenuPrograms
 AddToMenu   MenuPrograms "" Title
-+ "Wallpapers%images/icons/wallpaper.png%" Popup BGMenu
-+ "Man Pages" Popup MenuFvwmManPages
+# + "Wallpapers%images/icons/wallpaper.png%" Popup BGMenu
+# + "Man Pages" Popup MenuFvwmManPages
 + "Pager" Module FvwmPager 0 3
 + "Thunar" Exec exec thunar
 + "Terminal" Exec exec xfce4-terminal
