@@ -34,8 +34,7 @@ draw_borders no
 draw_graph_borders yes
 draw_outline no
 draw_shades no
-use_xft yes
-xftfont DejaVu Sans Mono:size=12
+extra_newline no
 gap_x 5
 gap_y 60
 minimum_size 5 5
@@ -43,33 +42,35 @@ net_avg_samples 2
 no_buffers yes
 out_to_console no
 out_to_stderr no
-extra_newline no
 own_window yes
 own_window_class Conky
 own_window_type desktop
+show_graph_range no
+show_graph_scale no
 stippled_borders 0
 update_interval 1.0
 uppercase no
 use_spacer none
-show_graph_scale no
-show_graph_range no
+use_xft yes
+xftfont DejaVu Sans Mono:size=10
 
 TEXT
-$nodename_short - $sysname 
-$kernel on $machine 
-$hr
+$nodename_short
+${color orange}$sysname $kernel on $machine 
+${color orange}$hr
 ${color grey}Uptime:$color $uptime
 ${color grey}Frequency (in GHz):$color $freq_g
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}RAM Usage:
+$color $mem/$memmax - $memperc% ${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
 ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-$hr
-${color grey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color orange}$hr
+${color grey}File systems:${fs_type}
+$color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 ${color grey}Networking:
 Up:$color ${upspeed wm0} ${color grey} - Down:$color ${downspeed wm0}
-$hr
+${color orange}$hr
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
