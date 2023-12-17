@@ -108,12 +108,11 @@ AddToFunc   StartFunction
 
 # Exec exec pkill volumeicon
 # Exec exec feh --bg-fill $[fvwm_backgrounds]/simple-lightbulbs.jpg &
-Exec exec feh --bg-fill $[fvwm_backgrounds]/bg6.jpg &
-Exec exec conky -c $HOME/.config/fvwm3/system-overview &
+# Exec exec feh --bg-fill $[fvwm_backgrounds]/bg6.jpg &
+Exec exec feh --bg-fill $[fvwm_backgrounds]/water_color_tan.jpg &
+Exec exec conky -b -c $HOME/.config/fvwm3/system-overview &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
-Exec exec picom --config $HOME/.config/fvwm3/picom.conf &
-Exec exec picom
 Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 Exec exec /usr/pkg/lib/xfce4/notifyd/xfce4-notifyd &
 # Exec exec xdgmenumaker -f fvwm > ~/.config/fvwm3/xdgmenu
@@ -217,7 +216,7 @@ AddToFunc   ChangeDesk
 DesktopName 0 Main
 DesktopName 1 Code
 DesktopName 2 Play
-DesktopSize 3x3
+DesktopSize 2x2
 
 # EdgeScroll will move the view port between the Pages when the mouse
 # moves to the edge of the screen. This set the amount of distance to
@@ -382,14 +381,14 @@ AddToMenu   MenuPrograms "" Title
 #
 # Backgrounds are located in ~/.fvwm/images/background/
 # Menu icons are located in ~/.fvwm/images/bgicons/
-# DestroyMenu BGMenu
-# AddToMenu   BGMenu "" Title
-# + "Floral%bgicons/bg1.png%" SetBG bg1.png
-# + "Circles%bgicons/bg2.png%" SetBG bg2.png
-# + "Space%bgicons/bg3.png%" SetBG bg3.png
-# + "Mountain%bgicons/bg3.png%" SetBG bg4.jpg
-# + "Zoom%bgicons/bg4.png%" SetBG bg5.jpg
-# + "Stripes%bgicons/bg5.png%" SetBG bg6.jpg
+DestroyMenu BGMenu
+AddToMenu   BGMenu "" Title
++ "Floral%bgicons/bg1.png%" SetBG bg1.png
++ "Circles%bgicons/bg2.png%" SetBG bg2.png
++ "Space%bgicons/bg3.png%" SetBG bg3.png
++ "Mountain%bgicons/bg4.png%" SetBG bg4.jpg
++ "Zoom%bgicons/bg5.png%" SetBG bg5.jpg
++ "Stripes%bgicons/bg6.png%" SetBG bg6.jpg
 
 # Window Operations Menus
 DestroyMenu MenuWindowOps
@@ -472,29 +471,29 @@ AddToMenu   MenuSendToPage
 
 
 # Fvwm Man Pages (Help) Menu
-# DestroyMenu MenuFvwmManPages
-# AddToMenu   MenuFvwmManPages "Help" Title
-# + "fvwm"                ViewManPage fvwm
-# + "FvwmAnimate"         ViewManPage FvwmAnimate
-# + "FvwmAuto"            ViewManPage FvwmAuto
-# + "FvwmBacker"          ViewManPage FvwmBacker
-# + "FvwmButtons"         ViewManPage FvwmButtons
-# + "FvwmCommand"         ViewManPage FvwmCommand
-# + "FvwmConsole"         ViewManPage FvwmConsole
-# + "FvwmEvent"           ViewManPage FvwmEvent
-# + "FvwmIconMan"         ViewManPage FvwmIconMan
-# + "FvwmIdent"           ViewManPage FvwmIdent
-# + "FvwmPager"           ViewManPage FvwmPager
-# + "FvwmPerl"            ViewManPage FvwmPerl
-# + "FvwmProxy"           ViewManPage FvwmProxy
-# + "FvwmRearrange"       ViewManPage FvwmRearrange
-# + "FvwmScript"          ViewManPage FvwmScript
-# + "" Nop
-# + "fvwm-root"	        ViewManPage fvwm-root
-# + "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
-# + "fvwm-menu-directory" ViewManPage fvwm-menu-directory
-# + "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
-# + "fvwm-config"         ViewManPage fvwm-config
+DestroyMenu MenuFvwmManPages
+AddToMenu   MenuFvwmManPages "Help" Title
++ "fvwm"                ViewManPage fvwm
++ "FvwmAnimate"         ViewManPage FvwmAnimate
++ "FvwmAuto"            ViewManPage FvwmAuto
++ "FvwmBacker"          ViewManPage FvwmBacker
++ "FvwmButtons"         ViewManPage FvwmButtons
++ "FvwmCommand"         ViewManPage FvwmCommand
++ "FvwmConsole"         ViewManPage FvwmConsole
++ "FvwmEvent"           ViewManPage FvwmEvent
++ "FvwmIconMan"         ViewManPage FvwmIconMan
++ "FvwmIdent"           ViewManPage FvwmIdent
++ "FvwmPager"           ViewManPage FvwmPager
++ "FvwmPerl"            ViewManPage FvwmPerl
++ "FvwmProxy"           ViewManPage FvwmProxy
++ "FvwmRearrange"       ViewManPage FvwmRearrange
++ "FvwmScript"          ViewManPage FvwmScript
++ "" Nop
++ "fvwm-root"	        ViewManPage fvwm-root
++ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
++ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
++ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
++ "fvwm-config"         ViewManPage fvwm-config
 
 ##################################################################
 # 5: Mouse and Key bindings
@@ -855,13 +854,13 @@ DestroyModuleConfig Launchers: *
 *Launchers: Geometry 540x60+800-0
 *Launchers: Colorset 5
 *Launchers: Rows 1
-*Launchers: Columns 38
+*Launchers: Columns 40
 *Launchers: Frame 0
-*Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=14:minspace=True:antialias=True"
-*Launchers: (2x1, Frame 1, Title(Center) "")
-*Launchers: (5x1, Frame 0, Icon ./launchers/terminal.svg, 		Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
-*Launchers: (5x1, Frame 0, Icon ./launchers/thunar.svg, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
-*Launchers: (5x1, Frame 0, Icon ./launchers/firefox.svg, 		Action(Mouse 1) Exec exec $[fvwm_browser])
-*Launchers: (5x1, Frame 0, Icon ./launchers/gimp.svg,			Action(Mouse 1) Exec exec gimp)
-*Launchers: (5x1, Frame 0, Icon ./launchers/telegram.svg,		Action(Mouse 1) Exec exec thunderbird)
-*Launchers: (1x1, Frame 0) noreWorkingArea, NeverFocus, WindowListSkip )
+*Launchers: Font "Shadow=3:xft:NotoSans:Bold:pixelsize=10:minspace=True:antialias=True"
+*Launchers: (5x1, Frame 0, Icon ./icons/netbsd.png)
+*Launchers: (5x1, Frame 0, Icon ./icons/48x48/terminal.png,   	Action(Mouse 1) Exec exec /usr/pkg/bin/xfce4-terminal)
+*Launchers: (5x1, Frame 0, Icon ./icons/48x48/thunar.png, 		Action(Mouse 1) Exec exec $[fvwm_filemanager])
+*Launchers: (5x1, Frame 0, Icon ./icons/48x48/firefox.png, 		Action(Mouse 1) Exec exec $[fvwm_browser])
+*Launchers: (5x1, Frame 0, Icon ./icons/48x48/leafpad.png, 		Action(Mouse 1) Exec exec /usr/pkg/bin/SciTE )
+*Launchers: (5x1, Frame 1, Icon ./icons/48x48/geany.png,		Action(Mounse1) Exec exec /usr/pkg/bin/geany)
+*Launchers: (1x1, Frame 1) noreWorkingArea, NeverFocus, WindowListSkip )

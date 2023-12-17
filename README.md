@@ -8,6 +8,8 @@ Create an package that installs and builds a usable desktop.
 $ pkgin in infinity-desktop
 ```
 
+![Desktop](screenshots/screen.png)
+
 ## Background
 
 I have always been attracted to **NetBSD**. I am not saying that it is the best BSD distros, **NetBSD** just seems to have a magnetic pull on me. Consequently, I want to make a good desktop experience with a solid operating system under the hood.
