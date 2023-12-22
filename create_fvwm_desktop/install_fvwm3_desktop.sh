@@ -29,7 +29,7 @@ do
 	fi
 done
 
-echo "xdm=YES" | tee -a /etc/rc.conf
+echo "xdm=YES" | sudo tee -a /etc/rc.conf
 
 # Makes home
 # copy dot files
