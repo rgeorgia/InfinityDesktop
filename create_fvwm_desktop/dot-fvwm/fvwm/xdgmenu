@@ -23,6 +23,9 @@ AddToMenu "Development"
 + "Meld" Exec meld 
 + "Leafpad" Exec leafpad 
 + "Geany" Exec geany 
++ "" nop
++ "Pycharm Pro" Exec /home/rgeorgia/pycharm-2023.2.4/bin/pycharm.sh
++ "GoLand" Exec /home/rgeorgia/GoLand-2023.2.4/bin/goland.sh
 
 DestroyMenu "Graphics"
 AddToMenu "Graphics"
