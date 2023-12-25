@@ -91,6 +91,6 @@ sudo pkgin -y im misc.pkg
 echo "Installing Fonts"
 sudo pkgin -y im fonts.pkg
 echo "Installing Development packages"
-suod pkgin -y im devlop.pkg
+sudo pkgin -y im devlop.pkg
 
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
