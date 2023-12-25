@@ -1,21 +1,42 @@
-echo "Make sure you have sudo permissions."
+#!/bin/sh
+#
 
-# Install and start services
-INSTALL_FILE=services.pkg
-sudo pkgin -y im ${INSTALL_FILE}
+id | egrep "wheel|root" > /dev/null 2>&1
+if [ $? = 0 ]
+then
+    echo "You have permission"
+else
+    echo "You do not have root level permission"
+    exit 1
+fi
 
-# copy service files to /etc/rc.d
+### Install services and update rc.conf
+
 EXAMPLE_RCD=/usr/pkg/share/examples/rc.d
 ETC_RCD=/etc/rc.d
-for x in dbus hal avahidaemon famd
-do
-	sudo cp $EXAMPLE_RCD/$x $ETC_RCD/$x
-done
+
+install_services()
+    for x in dbus hal avahi fam
+    do
+        sudo pkgin -y in ${x}
+    done
+
+
+# copy service files to /etc/rc.d
+copy_to_rcd()
+    for x in dbus hal avahidaemon famd
+    do
+        sudo cp $EXAMPLE_RCD/$x $ETC_RCD/$x
+    done
+
+install_services
+copy_to_rcd
 
 # Added services to rc.conf then start them.
 # MAKE SURE YOU HAVE THE -a FLAG OTHERWISE YOU'LL OVERWRITE THE rc.conf FILE
 # Make a copy for "just in case"
 cp /etc/rc.conf /tmp/rc.conf.bk
+
 for x in dbus avahidaemon rpcbind famd hal
 do
 	grep $x /etc/rc.conf
@@ -30,6 +51,8 @@ do
 done
 
 echo "xdm=YES" | sudo tee -a /etc/rc.conf
+
+### End services and update rc.conf
 
 # Makes home
 # copy dot files
@@ -59,7 +82,15 @@ mkdir -p $HOME/.fvwm
 cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 
 # Install packages
-echo "Installing package"
+echo "Installing fvwm3 packages"
 sudo pkgin -y im fvwm3.pkg
+echo "Installing Fonts"
+sudo pkgin -y im fonts.pkg
+echo "Installing Misc pagkages"
+sudo pkgin -y im misc.pkg
+echo "Installing Fonts"
+sudo pkgin -y im fonts.pkg
+echo "Installing Development packages"
+suod pkgin -y im devlop.pkg
 
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
