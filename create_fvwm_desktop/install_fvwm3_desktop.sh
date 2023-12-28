@@ -10,8 +10,10 @@ else
     exit 1
 fi
 
+sudo pkgin in python311
+
 # Update /etc/rc.conf file
-./services.py
+sudo ./services.py
 
 ### End services and update rc.conf
 

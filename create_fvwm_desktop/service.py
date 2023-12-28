@@ -30,11 +30,11 @@ class Services:
 
     def start_services(self):
         for item in self.services_to_copy_or_start:
-            subprocess.run(f"sudo service {item} start", shell=True)
+            subprocess.run(f"service {item} start", shell=True)
 
     def install_services(self):
         for item in self.services_to_install:
-            subprocess.run(f"sudo pkgin -y in {item}", shell=True)
+            subprocess.run(f"pkgin -y in {item}", shell=True)
 
 
 class RcFile:
@@ -52,8 +52,9 @@ class RcFile:
             try:
                 shutil.copy(source, target)
 
-            except PermissionError:
-                subprocess.run(f"sudo cp {source} {target}", shell=True)
+            except PermissionError as perr:
+                raise perr
+                # subprocess.run(f"sudo cp {source} {target}", shell=True)
 
             except Exception as err:
                 raise err
