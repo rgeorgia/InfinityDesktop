@@ -10,32 +10,6 @@ else
     exit 1
 fi
 
-### Install services and update rc.conf
-
-EXAMPLE_RCD=/usr/pkg/share/examples/rc.d
-ETC_RCD=/etc/rc.d
-
-install_services()
-    for x in dbus hal avahi fam
-    do
-        sudo pkgin -y in ${x}
-    done
-
-
-# copy service files to /etc/rc.d
-copy_to_rcd()
-    for x in dbus hal avahidaemon famd
-    do
-        sudo cp $EXAMPLE_RCD/$x $ETC_RCD/$x
-    done
-
-install_services
-copy_to_rcd
-
-# Added services to rc.conf then start them.
-# Make a copy for "just in case"
-cp /etc/rc.conf /tmp/rc.conf.bk
-
 # Update /etc/rc.conf file
 ./services.py
 
