@@ -54,7 +54,6 @@ class RcFile:
 
             except PermissionError as perr:
                 raise perr
-                # subprocess.run(f"sudo cp {source} {target}", shell=True)
 
             except Exception as err:
                 raise err
