@@ -1,5 +1,6 @@
 #!/usr/pkg/bin/python3.11
 
+import subprocess
 from pathlib import Path
 
 
@@ -20,6 +21,10 @@ class Services:
     @property
     def services_to_copy_or_start(self) -> list:
         return self._services_to_copy_or_start
+
+    def start_services(self):
+        for item in self.services_to_copy_or_start:
+            subprocess.run(f"sudo service {item} start", shell=True)
 
 
 # RC_FILE_LOCATION=Path("/etc/rc.conf")
@@ -54,8 +59,13 @@ def append_to_file(file_path: Path, line: str):
         file.write(f"{line}\n")
 
 
-def update_rc_file(file: Path, content: dict):
-    service = Services()
+def update_rc_file(file: Path, content: dict, service: Services):
+    """
+
+    :param content:
+    :param file:
+    :type service: Services
+    """
     for key, value in content.items():
         s = value.split("=")[0]
         if s in service.rc_services:
@@ -70,6 +80,8 @@ def update_rc_file(file: Path, content: dict):
 
 
 if __name__ == "__main__":
+    services = Services()
     rc_file = RC_FILE_LOCATION
     lines = get_rc_content(rc_file)
-    update_rc_file(rc_file, lines)
+    update_rc_file(file=rc_file, content=lines, service=services)
+    services.start_services()
