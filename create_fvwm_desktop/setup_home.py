@@ -35,24 +35,46 @@ chsh -s /usr/pkg/bin/fish
 mkdir -p $HOME/.fvwm
 cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 """
+import shutil
+from pathlib import Path
 
 
-def copy_dot_files():
-    pass
+class SetupHome:
+    def __init__(self):
+        self.dot_file_location = Path(".").joinpath("dot-files")
+        self.dot_fvwm_location = Path(".").joinpath("dot-fvwm")
+
+    def copy_dot_files(self):
+        for item in self.dot_file_location.iterdir():
+            target_file_name = str(item).split("/")[1].replace("dot-", ".")
+            source_file_name = str(item)
+            print(f"Copyting {source_file_name} to {Path.home().joinpath(target_file_name)}")
+            # shutil.copy2(source_file_name, target_file_name)
+
+    def make_home(self):
+        pass
+
+    def setup_dot_config(self):
+        pass
+
+    def make_dot_fvwm(self):
+        pass
+
+    def symlink_initrc(self):
+        pass
 
 
-def make_home():
-    pass
+class UserConfig:
+    def __init__(self):
+        self.dot_config_location = Path(".").joinpath("dot-config")
+
+    def change_to_fish(self):
+        pass
+
+    def setup_dot_config(self):
+        pass
 
 
-def setup_dot_config():
-    pass
-
-
-def chsh_fish():
-    # maybe make this interactive?
-    pass
-
-
-def make_dot_fvwm():
-    pass
+if __name__ == "__main__":
+    set_up_home = SetupHome()
+    set_up_home.copy_dot_files()
