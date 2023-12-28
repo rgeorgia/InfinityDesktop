@@ -10,12 +10,11 @@ else
     exit 1
 fi
 
+# Make sure python3.11 is installed
 sudo pkgin in python311
 
 # Update /etc/rc.conf file
 sudo ./services.py
-
-### End services and update rc.conf
 
 ./setup_home.py
 

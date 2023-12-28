@@ -35,3 +35,24 @@ chsh -s /usr/pkg/bin/fish
 mkdir -p $HOME/.fvwm
 cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 """
+
+
+def copy_dot_files():
+    pass
+
+
+def make_home():
+    pass
+
+
+def setup_dot_config():
+    pass
+
+
+def chsh_fish():
+    # maybe make this interactive?
+    pass
+
+
+def make_dot_fvwm():
+    pass
