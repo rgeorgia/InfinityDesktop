@@ -61,7 +61,11 @@ class UserConfig:
         src.symlink_to(str(target))
 
 
-if __name__ == "__main__":
+def main():
     set_up_home = SetupHome()
     set_up_home.copy_dot_files()
     set_up_home.make_home()
+
+
+if __name__ == "__main__":
+    main()
