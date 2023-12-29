@@ -33,14 +33,14 @@ class SetupHome:
             target_file_name = str(item).split("/")[1].replace("dot-", ".")
             source_file_name = str(item)
             print(f"Copying {source_file_name} to {Path.home().joinpath(target_file_name)}")
-            # shutil.copy2(source_file_name, target_file_name)
+            shutil.copy2(source_file_name, target_file_name)
 
     def make_home(self):
         for item in self.dirs_to_create:
             new_dir = Path.home().joinpath(item)
             new_dir.mkdir(parents=True, exist_ok=True)
 
-    def setup_dot_config(self):
+    def make_dot_config(self):
         pass
 
     def make_dot_fvwm(self):
