@@ -47,30 +47,17 @@ class UserConfig:
 
     def setup_dot_config(self):
         """
-        cp -r dot-config/fish/* $HOME/.config/fish/.
-        cp -r dot-config/sakura/* $HOME/.config/sakura/.
-        cp -r dot-config/fvwm3/* $HOME/.config/fvwm3/.
+
         :return:
         """
         for item in self.dot_config_dirs:
             new_dir = Path.home().joinpath(".config").joinpath(item)
             new_dir.mkdir(parents=True, exist_ok=True)
-            """
-             shutil.copytree(src, dst, 
-             symlinks=False, 
-             ignore=None, 
-             copy_function=copy2, 
-             ignore_dangling_symlinks=False, dirs_exist_ok=False)¶
-            """
+
+        for _dir in self.dot_config_dirs:
+            new_dir = Path.home().joinpath(".config")
             shutil.copytree(self.dot_config_location, new_dir, symlinks=False, ignore=None, copy_function=shutil.copy2,
                             ignore_dangling_symlinks=False, dirs_exist_ok=True)
-
-    # @staticmethod
-    # def symlink_initrc():
-    #     # create symlink from .xinitrc to .xsession
-    #     src = Path.home().joinpath(".xinitrc")
-    #     target = Path.home().joinpath(".xsession")
-    #     src.symlink_to(str(target))
 
 
 def main():
