@@ -13,8 +13,8 @@ fi
 # Make sure python3.11 is installed
 sudo pkgin -y in python311
 sudo touch /etc/modules.conf
-sudo echo "nvmm" | tee -a /etc/modules.conf
-sudo echo "compat_linux" | tee -a /etc/modules.conf
+echo "nvmm" | sudo tee -a /etc/modules.conf
+echo "compat_linux" | sudo tee -a /etc/modules.conf
 
 sudo ./services.py
 ./setup_home.py

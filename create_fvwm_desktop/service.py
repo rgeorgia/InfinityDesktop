@@ -107,13 +107,12 @@ if __name__ == "__main__":
     services = Services()
     rc_files = RcFile()
     rc_files.backup_rc_conf()
+    services.install_services()
     try:
         rc_files.copy_to_etc_rcd(files=services.services_to_copy_or_start)
     except Exception as e:
         print(e)
         sys.exit(1)
-
-    services.install_services()
     lines = rc_files.get_content()
     rc_files.update_rc_file(content=lines, service=services)
-    # services.start_services()
+    services.start_services()
