@@ -32,11 +32,10 @@ class SetupHome:
             new_dir.mkdir(parents=True, exist_ok=True)
 
     def make_dot_fvwm(self):
-        for _dir in self.dot_fvwm_location.iterdir():
-            new_dir = Path.home().joinpath(".fvwm")
-            print(f"Copying {_dir} to {new_dir}")
-            shutil.copytree(self.dot_fvwm_location, new_dir, symlinks=False, ignore=None,
-                            copy_function=shutil.copy2, ignore_dangling_symlinks=False, dirs_exist_ok=True)
+
+        print(f"Copying {self.dot_fvwm_location} to {Path.home().joinpath('.fvwm')}")
+        shutil.copytree(self.dot_fvwm_location, Path.home().joinpath(".fvwm"), symlinks=False, ignore=None,
+                        copy_function=shutil.copy2, ignore_dangling_symlinks=False, dirs_exist_ok=True)
 
 
 class UserConfig:
