@@ -42,6 +42,7 @@ class UserConfig:
 
     @staticmethod
     def change_to_fish():
+        print("Changing shell to fish")
         subprocess.run("chsh -s /usr/pkg/bin/fish", shell=True)
 
     def setup_dot_config(self):
@@ -61,7 +62,8 @@ class UserConfig:
              copy_function=copy2, 
              ignore_dangling_symlinks=False, dirs_exist_ok=False)¶
             """
-            shutil.copytree(self.dot_config_location, new_dir)
+            shutil.copytree(self.dot_config_location, new_dir, symlinks=False, ignore=None, copy_function=shutil.copy2,
+                            ignore_dangling_symlinks=False, dirs_exist_ok=False)
 
     # @staticmethod
     # def symlink_initrc():
