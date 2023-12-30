@@ -63,7 +63,7 @@ class UserConfig:
              ignore_dangling_symlinks=False, dirs_exist_ok=False)¶
             """
             shutil.copytree(self.dot_config_location, new_dir, symlinks=False, ignore=None, copy_function=shutil.copy2,
-                            ignore_dangling_symlinks=False, dirs_exist_ok=False)
+                            ignore_dangling_symlinks=False, dirs_exist_ok=True)
 
     # @staticmethod
     # def symlink_initrc():
