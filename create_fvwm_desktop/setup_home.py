@@ -24,7 +24,7 @@ class SetupHome:
             target_file_name = str(item).split("/")[1].replace("dot-", ".")
             source_file_name = str(item)
             print(f"Copying {source_file_name} to {Path.home().joinpath(target_file_name)}")
-            shutil.copy2(source_file_name, target_file_name)
+            shutil.copy(source_file_name, target_file_name)
 
     def make_home(self):
         for item in self.dirs_to_create:
@@ -66,7 +66,6 @@ def main():
     set_up_home = SetupHome()
     user_config = UserConfig()
     set_up_home.copy_dot_files()
-    # user_config.symlink_initrc()
     set_up_home.make_home()
     user_config.setup_dot_config()
     set_up_home.make_dot_fvwm()
