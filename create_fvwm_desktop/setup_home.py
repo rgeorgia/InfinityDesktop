@@ -11,6 +11,7 @@ cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 import shutil
 import subprocess
 from pathlib import Path
+from typing import Self
 
 
 class SetupHome:
@@ -62,15 +63,16 @@ class UserConfig:
                             ignore_dangling_symlinks=False, dirs_exist_ok=True)
 
 
-def main():
-    set_up_home = SetupHome()
-    user_config = UserConfig()
-    set_up_home.copy_dot_files()
-    set_up_home.make_home()
-    user_config.setup_dot_config()
-    set_up_home.make_dot_fvwm()
-    user_config.change_to_fish()
+class SetupUserHome:
+    def __init__(self):
+        self.setup_home = SetupHome()
+        self.user_config = UserConfig()
 
+    def run(self) -> Self:
+        self.setup_home.copy_dot_files()
+        self.setup_home.make_home()
+        self.user_config.setup_dot_config()
+        self.setup_home.make_dot_fvwm()
+        self.user_config.change_to_fish()
+        return self
 
-if __name__ == "__main__":
-    main()

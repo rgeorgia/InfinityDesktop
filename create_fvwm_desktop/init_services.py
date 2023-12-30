@@ -3,9 +3,10 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from typing import Self
 
 
-class Services:
+class InstallServices:
     """Class of services needed"""
 
     def __init__(self):
@@ -35,11 +36,15 @@ class Services:
 
     def start_services(self):
         for item in self.services_to_start:
-            subprocess.run(f"service {item} start", shell=True)
+            subprocess.run(f"sudo service {item} start", shell=True)
 
     def install_services(self):
         for item in self.services_to_install:
-            subprocess.run(f"pkgin -y in {item}", shell=True)
+            subprocess.run(f"sudo pkgin -y in {item}", shell=True)
+
+class StartServices:
+    def __init__(self):
+        pass
 
 
 class RcFile:
@@ -114,8 +119,19 @@ class RcFile:
             self.append_to_file(f"{line}=YES")
 
 
+class InitServices:
+    def __init__(self):
+        self.install_services = InstallServices()
+        self.start_services = StartServices()
+        self.rc_file = RcFile()
+
+    def run(self) -> Self:
+
+        return self
+
+
 if __name__ == "__main__":
-    services = Services()
+    services = InitServices()
     rc_files = RcFile()
     rc_files.backup_rc_conf()
     services.install_services()
