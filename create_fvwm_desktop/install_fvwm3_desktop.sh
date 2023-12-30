@@ -23,11 +23,11 @@ echo "Installing fvwm3 packages"
 sudo pkgin -y im fvwm3.pkg
 echo "Installing Fonts"
 sudo pkgin -y im fonts.pkg
-echo "Installing Misc pagkages"
-sudo pkgin -y im misc.pkg
-echo "Installing Fonts"
-sudo pkgin -y im fonts.pkg
-echo "Installing Development packages"
-sudo pkgin -y im devlop.pkg
+#echo "Installing Misc pagkages"
+#sudo pkgin -y im misc.pkg
+#echo "Installing Fonts"
+#sudo pkgin -y im fonts.pkg
+#echo "Installing Development packages"
+#sudo pkgin -y im devlop.pkg
 
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
