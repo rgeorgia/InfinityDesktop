@@ -3,6 +3,7 @@ ca-certificates
 conky
 dialog
 feh
+fish
 fvwm3
 git
 mozilla-rootcerts
@@ -10,3 +11,10 @@ mozilla-rootcerts-openssl
 vim-gtk3
 xfce4-terminal
 xfce4-thunar
+oxygen-fonts
+sourcecodepro-fonts
+nerd-fonts-CodeNewRoman
+nerd-fonts-JetBrainsMono
+sudo
+sysupgrade
+tcsh
