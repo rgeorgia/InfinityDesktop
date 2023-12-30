@@ -63,19 +63,19 @@ class UserConfig:
             """
             shutil.copytree(self.dot_config_location, new_dir)
 
-    @staticmethod
-    def symlink_initrc():
-        # create symlink from .xinitrc to .xsession
-        src = Path.home().joinpath(".xinitrc")
-        target = Path.home().joinpath(".xsession")
-        src.symlink_to(str(target))
+    # @staticmethod
+    # def symlink_initrc():
+    #     # create symlink from .xinitrc to .xsession
+    #     src = Path.home().joinpath(".xinitrc")
+    #     target = Path.home().joinpath(".xsession")
+    #     src.symlink_to(str(target))
 
 
 def main():
     set_up_home = SetupHome()
     user_config = UserConfig()
     set_up_home.copy_dot_files()
-    user_config.symlink_initrc()
+    # user_config.symlink_initrc()
     set_up_home.make_home()
     set_up_home.make_dot_fvwm()
     user_config.setup_dot_config()
