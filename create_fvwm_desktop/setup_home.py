@@ -9,6 +9,7 @@ mkdir -p $HOME/.fvwm
 cp -r dot-fvwm/fvwm/* $HOME/.fvwm
 """
 import shutil
+import subprocess
 from pathlib import Path
 
 
@@ -39,8 +40,9 @@ class UserConfig:
         self.dot_config_location = Path(".").joinpath("dot-config")
         self.dot_config_dirs = ['fish', 'sakura', 'fvwm3']
 
-    def change_to_fish(self):
-        pass
+    @staticmethod
+    def change_to_fish():
+        subprocess.run("chsh -s /usr/pkg/bin/fish", shell=True)
 
     def setup_dot_config(self):
         """
@@ -52,6 +54,14 @@ class UserConfig:
         for item in self.dot_config_dirs:
             new_dir = Path.home().joinpath(".config").joinpath(item)
             new_dir.mkdir(parents=True, exist_ok=True)
+            """
+             shutil.copytree(src, dst, 
+             symlinks=False, 
+             ignore=None, 
+             copy_function=copy2, 
+             ignore_dangling_symlinks=False, dirs_exist_ok=False)¶
+            """
+            shutil.copytree(self.dot_config_location, new_dir)
 
     @staticmethod
     def symlink_initrc():
@@ -63,8 +73,14 @@ class UserConfig:
 
 def main():
     set_up_home = SetupHome()
+    user_config = UserConfig()
     set_up_home.copy_dot_files()
+    user_config.symlink_initrc()
     set_up_home.make_home()
+    set_up_home.make_dot_fvwm()
+    user_config.setup_dot_config()
+    set_up_home.make_dot_fvwm()
+    user_config.change_to_fish()
 
 
 if __name__ == "__main__":
