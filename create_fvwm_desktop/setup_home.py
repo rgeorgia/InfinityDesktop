@@ -16,7 +16,7 @@ from pathlib import Path
 class SetupHome:
     def __init__(self):
         self.dot_file_location = Path(".").joinpath("dot-files")
-        self.dot_fvwm_location = Path(".").joinpath("dot-fvwm")
+        self.dot_fvwm_location = Path(".").joinpath("dot-fvwm").joinpath("fvwm")
         self.dirs_to_create = ['Documents', 'Downloads', 'Templates', 'Videos', 'Pictures/backgrounds', 'Nowhere', ]
 
     def copy_dot_files(self):
@@ -32,7 +32,6 @@ class SetupHome:
             new_dir.mkdir(parents=True, exist_ok=True)
 
     def make_dot_fvwm(self):
-
         print(f"Copying {self.dot_fvwm_location} to {Path.home().joinpath('.fvwm')}")
         shutil.copytree(self.dot_fvwm_location, Path.home().joinpath(".fvwm"), symlinks=False, ignore=None,
                         copy_function=shutil.copy2, ignore_dangling_symlinks=False, dirs_exist_ok=True)
