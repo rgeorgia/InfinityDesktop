@@ -25,3 +25,5 @@ sudo pkgin -y im fvwm3.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
+cd $HOME
+ln -s .xinitrc .xsession
