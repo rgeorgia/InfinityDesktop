@@ -10,7 +10,7 @@ class Services:
 
     def __init__(self):
         self._rc_services: list = ["dbus", "avahidaemon", "rpcbind", "famd", "hal", "xdm"]
-        self._services_to_copy_or_start: list = ["dbus", "avahidaemon", "famd", "hal",]
+        self._services_to_copy_or_start: list = ["dbus", "avahidaemon", "fam", "hal",]
         self._services_to_install: list = ["dbus", "hal", "avahi", "fam"]
 
     @property

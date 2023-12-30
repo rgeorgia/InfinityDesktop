@@ -12,6 +12,7 @@ fi
 
 # Make sure python3.11 is installed
 sudo pkgin -y in python311
+sudo touch /etc/modules.conf
 sudo echo "nvmm" | tee -a /etc/modules.conf
 sudo echo "compat_linux" | tee -a /etc/modules.conf
 
@@ -21,13 +22,6 @@ sudo ./services.py
 # Install packages
 echo "Installing fvwm3 packages"
 sudo pkgin -y im fvwm3.pkg
-echo "Installing Fonts"
-sudo pkgin -y im fonts.pkg
-#echo "Installing Misc pagkages"
-#sudo pkgin -y im misc.pkg
-#echo "Installing Fonts"
-#sudo pkgin -y im fonts.pkg
-#echo "Installing Development packages"
-#sudo pkgin -y im devlop.pkg
 
+echo "Updating Xresources in /etc/X11/xdm"
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
