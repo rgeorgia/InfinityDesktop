@@ -33,7 +33,9 @@ class SetupHome:
 
     def make_dot_fvwm(self):
         for _dir in self.dot_fvwm_location.iterdir():
-            shutil.copytree(self.dot_fvwm_location, Path.home(), symlinks=False, ignore=None,
+            new_dir = Path.home().joinpath(".fvwm")
+            print(f"Copying {_dir} to {new_dir}")
+            shutil.copytree(self.dot_fvwm_location, new_dir, symlinks=False, ignore=None,
                             copy_function=shutil.copy2, ignore_dangling_symlinks=False, dirs_exist_ok=True)
 
 
