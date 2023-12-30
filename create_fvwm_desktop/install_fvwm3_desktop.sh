@@ -11,7 +11,7 @@ else
 fi
 
 # Make sure python3.11 is installed
-sudo pkgin in python311
+sudo pkgin -y in python311
 
 # Update /etc/rc.conf file
 sudo ./services.py
