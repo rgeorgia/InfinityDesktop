@@ -45,7 +45,7 @@ class Services:
 class RcFile:
     def __init__(self):
         self.rc_file_name = "rc.conf"
-        self.rc_file_location = Path(".").joinpath(self.rc_file_name)
+        self.rc_file_location = Path("/etc").joinpath(self.rc_file_name)
         self.example_rcd = Path("/usr/pkg/share/examples/rc.d")
         self.etc_rcd = Path("/etc/rc.d")
         self.tmp_backup = Path("/tmp").joinpath(f"{self.rc_file_name}.bk")
