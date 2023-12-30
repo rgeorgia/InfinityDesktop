@@ -10,7 +10,8 @@ class Services:
 
     def __init__(self):
         self._rc_services: list = ["dbus", "avahidaemon", "rpcbind", "famd", "hal", "xdm"]
-        self._services_to_copy_or_start: list = ["dbus", "avahidaemon", "fam", "hal",]
+        self._services_to_copy: list = ["dbus", "avahidaemon", "famd", "hal",]
+        self._services_to_start: list = ["dbus", "avahidaemon", "fam", "hal",]
         self._services_to_install: list = ["dbus", "hal", "avahi", "fam"]
 
     @property
@@ -21,15 +22,19 @@ class Services:
         self._rc_services.remove(value)
 
     @property
-    def services_to_copy_or_start(self) -> list:
-        return self._services_to_copy_or_start
+    def services_to_copy(self) -> list:
+        return self._services_to_copy
+
+    @property
+    def services_to_start(self) -> list:
+        return self._services_to_start
 
     @property
     def services_to_install(self) -> list:
         return self._services_to_install
 
     def start_services(self):
-        for item in self.services_to_copy_or_start:
+        for item in self.services_to_start:
             subprocess.run(f"service {item} start", shell=True)
 
     def install_services(self):
@@ -109,7 +114,7 @@ if __name__ == "__main__":
     rc_files.backup_rc_conf()
     services.install_services()
     try:
-        rc_files.copy_to_etc_rcd(files=services.services_to_copy_or_start)
+        rc_files.copy_to_etc_rcd(files=services.services_to_copy)
     except Exception as e:
         print(e)
         sys.exit(1)
