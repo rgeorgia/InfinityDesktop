@@ -69,7 +69,6 @@ def main():
     set_up_home.copy_dot_files()
     # user_config.symlink_initrc()
     set_up_home.make_home()
-    set_up_home.make_dot_fvwm()
     user_config.setup_dot_config()
     set_up_home.make_dot_fvwm()
     user_config.change_to_fish()
