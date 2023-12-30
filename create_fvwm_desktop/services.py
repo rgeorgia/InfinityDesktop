@@ -55,6 +55,7 @@ class RcFile:
             source = self.example_rcd.joinpath(item)
             target = self.etc_rcd.joinpath(item)
             try:
+                print(f"Copying {source} to {target}")
                 shutil.copy(source, target)
 
             except PermissionError as perr:
