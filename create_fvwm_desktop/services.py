@@ -68,6 +68,7 @@ class RcFile:
         # Added services to rc.conf then start them.
         # Make a copy for "just in case"
         # cp /etc/rc.conf /tmp/rc.conf.bk
+        print(f"Backing up {self.rc_file_location} to {self.tmp_backup}")
         shutil.copy(self.rc_file_location, self.tmp_backup)
 
     def get_content(self):
@@ -99,13 +100,17 @@ class RcFile:
         for key, value in content.items():
             s = value.split("=")[0]
             if s in service.rc_services:
+                print(f"Found {s} in {self.rc_file_name}")
                 if "yes" not in value.split("=")[1].lower():
                     self.search_and_replace(f"{s}=NO", f"{s}=YES")
+                    print(f"Changing {s}=NO to {s}=YES")
                     service.remove_from_rc_services(value=s)
                 if "yes" in value.split("=")[1].lower():
+                    print(f"{s} already set")
                     service.remove_from_rc_services(value=s)
 
         for line in service.rc_services:
+            print(f"Appending {line}=YES to {self.rc_file_name}")
             self.append_to_file(f"{line}=YES")
 
 
