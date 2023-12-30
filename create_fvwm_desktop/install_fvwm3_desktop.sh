@@ -12,10 +12,10 @@ fi
 
 # Make sure python3.11 is installed
 sudo pkgin -y in python311
+sudo echo "nvmm" | tee -a /etc/modules.conf
+sudo echo "compat_linux" | tee -a /etc/modules.conf
 
-# Update /etc/rc.conf file
 sudo ./services.py
-
 ./setup_home.py
 
 # Install packages
