@@ -1,4 +1,3 @@
-#!/usr/pkg/bin/python3.11
 import shutil
 import subprocess
 import sys
@@ -131,7 +130,7 @@ class InitServices:
 
 
 if __name__ == "__main__":
-    services = InitServices()
+    services = InstallServices()
     rc_files = RcFile()
     rc_files.backup_rc_conf()
     services.install_services()
