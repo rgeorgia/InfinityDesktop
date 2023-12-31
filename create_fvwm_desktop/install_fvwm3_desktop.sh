@@ -38,7 +38,7 @@ sudo ./services.py
 
 # Install packages
 echo "Installing fvwm3 packages"
-sudo pkgin -y im fvwm3.pkg
+sudo pkgin -y im packages/fvwm3.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 sudo cp ./xdm/Xresources /etc/X11/xdm/.
