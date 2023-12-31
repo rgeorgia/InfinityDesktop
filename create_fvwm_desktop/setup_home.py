@@ -1,12 +1,6 @@
-#!/usr/pkg/bin/python3.11
-
 """
-
-chsh -s /usr/pkg/bin/fish
-
-# Make .fvwm
-mkdir -p $HOME/.fvwm
-cp -r dot-fvwm/fvwm/* $HOME/.fvwm
+setup_home.py
+Module that creates and configures the user's home directory for the Infinity Desktop
 """
 import shutil
 import subprocess
@@ -75,4 +69,3 @@ class SetupUserHome:
         self.setup_home.make_dot_fvwm()
         self.user_config.change_to_fish()
         return self
-
