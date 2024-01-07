@@ -1,4 +1,5 @@
 import pytest
+import init_services
 
 
 class TestInstallServices:
@@ -10,4 +11,12 @@ class TestCopyFilesToRcd:
 
 
 class TestStartServices:
+    pass
+
+
+class TestRcFile:
+    pass
+
+
+class TestInitServices:
     pass
