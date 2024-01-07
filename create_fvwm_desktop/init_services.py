@@ -8,7 +8,7 @@ class InstallServices:
     """Class of services needed"""
 
     def __init__(self):
-        self._services_to_install: list = ["dbus", "hal", "avahi", "fam"]
+        self._services_to_install: list = ["dbus", "avahi", "fam"]
 
     @property
     def services_to_install(self) -> list:
@@ -16,12 +16,13 @@ class InstallServices:
 
     def install_services(self):
         for item in self.services_to_install:
-            subprocess.run(f"sudo pkgin -y in {item}", shell=True)
+            sp = subprocess.run(f"sudo pkgin -y in {item}", shell=True, capture_output=True)
+            print(f"Install {item}, {sp.stdout.decode('utf-8')}, {sp.returncode}")
 
 
 class CopyExampleToRcd:
     def __init__(self):
-        self._services_to_copy: list = ["dbus", "avahidaemon", "famd", "hal", ]
+        self._services_to_copy: list = ["dbus", "avahidaemon", "famd"]
         self.example_rcd = Path("/usr/pkg/share/examples/rc.d")
         self.etc_rcd = Path("/etc/rc.d")
 
@@ -35,7 +36,11 @@ class CopyExampleToRcd:
             target = self.etc_rcd.joinpath(item)
             try:
                 print(f"Copying {source} to {target}")
-                shutil.copy(source, target)
+                # Not using shutil.copy because we need sudo privilege
+                # shutil.copy(source, target)
+                sp = subprocess.run(f"sudo cp {source} {target}", shell=True, capture_output=True)
+                if sp.returncode != 0:
+                    print(f"Error copying {source} to {target}")
 
             except PermissionError as err:
                 raise err
@@ -46,7 +51,7 @@ class CopyExampleToRcd:
 
 class StartServices:
     def __init__(self):
-        self._services_to_start: list = ["dbus", "avahidaemon", "rpcbind", "famd", "hal", ]
+        self._services_to_start: list = ["dbus", "avahidaemon", "rpcbind", "famd", ]
 
     @property
     def services_to_start(self) -> list:
@@ -62,7 +67,7 @@ class RcFile:
         self.rc_file_name = "rc.conf"
         self.rc_file_location = Path("/etc").joinpath(self.rc_file_name)
         self.tmp_backup = Path("/tmp").joinpath(f"{self.rc_file_name}.bk")
-        self._rc_services: list = ["dbus", "avahidaemon", "rpcbind", "famd", "hal", "xdm"]
+        self._rc_services: list = ["dbus", "avahidaemon", "rpcbind", "famd", "xdm"]
 
     def backup_rc_conf(self):
         # Added services to rc.conf then start them.

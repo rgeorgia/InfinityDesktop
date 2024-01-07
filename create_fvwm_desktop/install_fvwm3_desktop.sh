@@ -33,8 +33,7 @@ then
     echo "compat_linux" | sudo tee -a /etc/modules.conf
 fi
 
-sudo ./services.py
-./setup_home.py
+./install_infinity.py
 
 # Install packages
 echo "Installing fvwm3 packages"
