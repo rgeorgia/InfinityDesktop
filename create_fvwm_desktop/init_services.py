@@ -1,6 +1,7 @@
 import subprocess
 from pathlib import Path
 from typing import Self
+from setup_home import SetupUserHome
 
 
 class InstallServices:
@@ -66,11 +67,13 @@ class InitServices:
         self.install_services = InstallServices()
         self.start_services = StartServices()
         self.copy_to_rcd = CopyExampleToRcd()
+        self.setup_user_home = SetupUserHome()
 
     def run(self) -> Self:
         self.install_services.install_services()
         self.copy_to_rcd.copy_to_etc_rcd()
         result = subprocess.run(f"sudo ./update_rc.py", shell=True,  capture_output=True)
         self.start_services.start_services()
+        self.setup_user_home.run()
 
         return self
