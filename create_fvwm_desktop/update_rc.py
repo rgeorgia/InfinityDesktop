@@ -7,8 +7,8 @@ from pathlib import Path
 class RcFile:
     def __init__(self):
         self.rc_file_name = "rc.conf"
-        # self.rc_file_location = Path("/etc").joinpath(self.rc_file_name)
-        self.rc_file_location = Path(".").joinpath(self.rc_file_name)
+        self.rc_file_location = Path("/etc").joinpath(self.rc_file_name)
+        # self.rc_file_location = Path(".").joinpath(self.rc_file_name)
         self.tmp_backup = Path("/tmp").joinpath(f"{self.rc_file_name}.bk")
         self._rc_services: list = ["dbus", "avahidaemon", "rpcbind", "famd", "xdm"]
 
