@@ -1,6 +1,7 @@
 elixir
 go-hugo
 go121
+neovim
 nodejs
 npm
 py310-ipython
@@ -14,4 +15,3 @@ py39-sqlite3
 python310
 python311
 sqlitebrowser
-zig
