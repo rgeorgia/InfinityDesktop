@@ -1,4 +1,5 @@
 # Infinity Desktop
+
 An attempt to roll a BSD desktop, specifically for [NetBSD](http://netbsd.org/).
 
 ## Summary
