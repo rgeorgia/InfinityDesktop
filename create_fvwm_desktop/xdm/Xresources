@@ -13,7 +13,7 @@ xlogin*login.translations: #override \
 	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
 	<Key>Return: set-session-argument() finish-field()
 
-xlogin*greeting: Welcome to CLIENTHOST
+xlogin*greeting: Welcome to Infinity Desktop [NetBSD]
 xlogin*namePrompt: \040\040\040\040\040\040\040Login:
 xlogin*fail: Login incorrect or forbidden by policy
 xlogin*Login.echoPasswd: true
