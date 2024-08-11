@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/pkg/bin/bash
 if pgrep -x "picom" > /dev/null
 then
 	killall picom

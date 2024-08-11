@@ -107,10 +107,10 @@ AddToFunc   StartFunction
 + I Module FvwmButtons Launchers
 
 # Exec exec pkill volumeicon
-# Exec exec feh --bg-fill $[fvwm_backgrounds]/simple-lightbulbs.jpg &
-# Exec exec feh --bg-fill $[fvwm_backgrounds]/bg6.jpg &
-Exec exec feh --bg-fill $[fvwm_backgrounds]/water_color_tan.jpg &
+# Exec exec feh --bg-fill $[fvwm_backgrounds]/calm_yellow_water.jpg &
+Exec exec feh --bg-fill $HOME/.fvwm/backgrounds/calm_yellow_water.jpg &
 Exec exec conky -b -c $HOME/.config/fvwm3/system-overview &
+Exec exec picom -cf -b --config ~/.config/fvwm3/picom.conf &
 Exec exec xfce4-power-manager &
 Exec exec numlockx on &
 Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -347,6 +347,7 @@ DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "FVWM3" Title
 + "&Programs%images/icons/programs.png%" Popup MenuPrograms
 + "XDG &Menu%images/icons/apps.png%" Popup XDGMenu
++ "Rofi drun" Popup RofiDrun
 # + "&Terminal" Exec exec $[infostore.terminal]
 # Test (x dmenu_run) + "DMENU" Exec exec $[infostore.runcmd]
 + "" Nop
@@ -376,6 +377,16 @@ AddToMenu   MenuPrograms "" Title
 + "Thunar" Exec exec thunar
 + "Terminal" Exec exec xfce4-terminal
 + "Logout" Exec exec archlinux-logout
+
+DestroyMenu RofiDrun
+AddToMenu   RofiDrun "" Title
++ "Drun" Exec exec rofi -show drun
++ "Run" Exec exec rofi -show run
++ "Window" Exec exec rofi -show window
++ "Combi" Exec exec rofi -show combi
++ "Filebrowser" Exec exec rofi -show filebrowser
++ "ssh" Exec exec rofi -show ssh
+
 
 # Background Menu
 #
