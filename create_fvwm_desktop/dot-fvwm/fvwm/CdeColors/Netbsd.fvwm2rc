@@ -1,0 +1,19 @@
+# Color Scheme Default
+# Gray light-ish
+# Non Active window boarder
+Colorset 0 fg white, bg #999999, hi, sh, Plain, NoShape
+Colorset 1 fg white, bg #999999, hi, sh, Plain, NoShape
+# Light orange-ish
+Colorset 2 fg white, bg #cc5500, hi, sh, Plain, NoShape
+Colorset 3 fg white, bg #999999, hi, sh, Plain, NoShape
+Colorset 4 fg white, bg #eda870, hi, sh, Plain, NoShape
+# Popup Menu
+Colorset 5 fg black, bg #dcdcdc, hi, sh, Plain, NoShape
+# Lighterish Gray, with hint of blue
+# Colorset 6 fg white, bg #8998aa, hi, sh, Plain, NoShape
+Colorset 6 fg white, bg #ff7f00, hi, sh, Plain, NoShape
+# Dark gray
+Colorset 7 fg white, bg #686f82, hi, sh, Plain, NoShape
+Colorset 8 fg white, bg #999999, hi, sh, Plain, NoShape
+# RightPanel
+Colorset 10 fg white, bg #414a4c, hi, sh, Plain, NoShape
