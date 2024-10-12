@@ -10,8 +10,10 @@ py310-sqlite3
 py311-ipython
 py311-pip
 py311-sqlite3
-py39-pip
-py39-sqlite3
+py312-ipython
+py312-pip
+py312-sqlite3
 python310
 python311
+python312
 sqlitebrowser
