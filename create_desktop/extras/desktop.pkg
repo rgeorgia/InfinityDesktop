@@ -13,12 +13,14 @@ libreoffice
 mc
 mozilla-rootcerts-openssl
 neofetch
+neovim
+neomutt
 pcmanfm
 rhythmbox
 sakura
 sysupgrade
 thunderbird
 tint2
-vim-gtk3
+vim
 wget
 zenity
