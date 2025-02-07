@@ -1,4 +1,4 @@
-#!/usr/pkg/bin/python3.11
+#!/usr/pkg/bin/python3.13
 import shutil
 import sys
 from pathlib import Path

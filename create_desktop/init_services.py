@@ -16,7 +16,7 @@ class InstallServices:
 
     def install_services(self):
         for item in self.services_to_install:
-            sp = subprocess.run(f"sudo pkgin -y in {item}", shell=True, capture_output=True)
+            sp = subprocess.run(f"doas pkgin -y in {item}", shell=True, capture_output=True)
             print(f"Install {item}, {sp.stdout.decode('utf-8')}, {sp.returncode}")
 
 
@@ -36,9 +36,9 @@ class CopyExampleToRcd:
             target = self.etc_rcd.joinpath(item)
             try:
                 print(f"Copying {source} to {target}")
-                # Not using shutil.copy because we need sudo privilege
+                # Not using shutil.copy because we need doas privilege
                 # shutil.copy(source, target)
-                sp = subprocess.run(f"sudo cp {source} {target}", shell=True, capture_output=True)
+                sp = subprocess.run(f"doas cp {source} {target}", shell=True, capture_output=True)
                 if sp.returncode != 0:
                     print(f"Error copying {source} to {target}")
 
@@ -59,7 +59,7 @@ class StartServices:
 
     def start_services(self):
         for item in self.services_to_start:
-            subprocess.run(f"sudo service {item} start", shell=True)
+            subprocess.run(f"doas service {item} start", shell=True)
 
 
 class InitServices:
@@ -72,7 +72,7 @@ class InitServices:
     def run(self) -> Self:
         self.install_services.install_services()
         self.copy_to_rcd.copy_to_etc_rcd()
-        result = subprocess.run(f"sudo ./update_rc.py", shell=True,  capture_output=True)
+        result = subprocess.run(f"doas ./update_rc.py", shell=True,  capture_output=True)
         self.start_services.start_services()
         self.setup_user_home.run()
 
