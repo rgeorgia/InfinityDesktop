@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-accessories-menu" label="Accessories">
+</menu>
+
+<menu id="apps-development-menu" label="Development">
+  <item label="Pycharm Pro 2021.3" icon="/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.png">
+    <action name="Execute">
+        <command>/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="IDEA 2021.3" icon="/usr/pkg/intellij-ce-bin-2021.3.2/bin/idea.png">
+    <action name="Execute">
+        <command>/usr/pkg/intellij-ce-bin-2021.3.2/bin/idea.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+<menu id="apps-editors-menu" label="Editors">
+    <item label="Leafpad" icon="/usr/pkg/share/icons/Moka/32x32/apps/leafpad.png">
+    <action name="Execute">
+      <command>leafpad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Mousepad" icon="/usr/pkg/share/icons/Moka/32x32/apps/notepad.png">
+    <action name="Execute">
+      <command>mousepad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Pycharm 2021.3" icon="/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.png">
+    <action name="Execute">
+        <command>/home/rgeorgia/pycharm-2021.3.3/bin/pycharm.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-term-menu" label="Terminals">
+  <item label="Sakura" icon="/usr/pkg/share/icons/Moka/32x32/apps/sakura.png">
+    <action name="Execute">
+      <command>sakura</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="xfce4-terminal" icon="/usr/pkg/share/icons/Moka/32x32/apps/xfce4-terminal.png">
+    <action name="Execute">
+      <command>xfce4-terminal</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Xterm" icon="/usr/pkg/share/icons/Moka/32x32/apps/xterm.png">
+      <action name="Execute">
+          <command>xterm</command>
+      </action>
+  </item>
+</menu>
+
+<menu id="apps-net-menu" label="Internet">
+    <item label="Firefox" icon="/usr/pkg/share/icons/Moka/32x32/apps/firefox.png">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Filezilla" icon="/usr/pkg/share/icons/Moka/32x32/apps/filezilla.png">
+    <action name="Execute">
+      <command>filezilla</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Thunderbird" icon="/usr/pkg/share/icons/Moka/32x32/apps/thunderbird-old.png">
+    <action name="Execute">
+      <command>thunderbird</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="HeXChat" icon="/usr/pkg/share/icons/Moka/32x32/apps/hexchat.png">
+    <action name="Execute">
+      <command>hexchat</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-office-menu" label="Office">
+    <item label="OpenOffice Base" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.base.png">
+    <action name="Execute">
+      <command>loffice --base</command>
+    </action>
+  </item>
+  <item label="OpenOffice Calc" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.calc.png">
+    <action name="Execute">
+      <command>loffice --calc</command>
+    </action>
+  </item>
+  <item label="OpenOffice Draw" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.draw.png">
+    <action name="Execute">
+      <command>loffice --draw</command>
+    </action>
+  </item>
+  <item label="OpenOffice Impress" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.impress.png">
+    <action name="Execute">
+      <command>loffice --impress</command>
+    </action>
+  </item>
+  <item label="OpenOffice Math" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.math.png">
+    <action name="Execute">
+      <command>loffice --math</command>
+    </action>
+  </item>
+  <item label="OpenOffice Printer Administration" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.startcenter.png">
+    <action name="Execute">
+      <command>loffice-printeradmin</command>
+    </action>
+  </item>
+  <item label="OpenOffice Writer" icon="/usr/pkg/share/icons/Moka/32x32/apps/org.libreoffice.LibreOffice.writer.png">
+    <action name="Execute">
+      <command>loffice --writer</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-multimedia-menu" label="Multimedia">
+    <item label="Rhythmbox" icon="/usr/pkg/share/icons/Moka/32x32/apps/rhythmbox.png">
+    <action name="Execute">
+      <command>rhythmbox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-fileman-menu" label="File Managers">
+    <item label="Rox" icon="/usr/pkg/share/icons/Moka/32x32/apps/file-roller.png">
+    <action name="Execute">
+      <command>rox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>ROX-Filer</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="PCMan File Manager" icon="/usr/pkg/share/icons/Moka/32x32/apps/file-manager.png">
+    <action name="Execute">
+      <command>pcmanfm</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-graphics-menu" label="Graphics">
+    <item label="Gimp" icon="/usr/pkg/share/icons/Moka/32x32/apps/gimp.png">
+    <action name="Execute">
+      <command>gimp</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Dia Diagram Editor" icon="/usr/pkg/share/icons/Moka/32x32/apps/dia.png">
+    <action name="Execute">
+      <command>dia</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Inkscape" icon="/usr/pkg/share/icons/Moka/32x32/apps/inkscape.png">
+    <action name="Execute">
+      <command>inkscape</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf-qt</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Manage Cups Printers">
+    <action name="Execute">
+      <command>xdg-open http://localhost:631/</command>
+      <startupnotify>
+        <enabled>no</enabled>
+        <icon>cups</icon>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="exit-menu" label="Exit">
+    <item label="Log Out">
+	    <action name="Exit">
+            <prompt>yes</prompt>
+	    </action>
+	</item>
+	<item label="Shutdown">
+		<action name="Execute">
+            <prompt>yes</prompt>
+			<command>sudo poweroff</command>
+		</action>
+	</item>
+	<item label="Restart">
+		<action name="Execute">
+            <prompt>yes</prompt>
+		    <command>sudo reboot</command>
+		</action>
+	</item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-accessories-menu"/>
+  <menu id="apps-development-menu"/>
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-graphics-menu"/>
+  <menu id="apps-net-menu"/>
+  <menu id="apps-office-menu"/>
+  <menu id="apps-multimedia-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-fileman-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+  <menu id="exit-menu"/>
+</menu>
+
+</openbox_menu>
