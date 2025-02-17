@@ -1,39 +1,131 @@
-! https://www.udoo.org/forum/threads/how-to-set-default-xterm-font-and-screen-size.348/
-xterm*faceSize: 11
-xterm*faceName: Luxi Mono
-xterm*geometry: 90x35
-! xterm*selectToClipboard: true
+! vim:ts=8
 
-!urxvt
-URxvt*background: Black
-URxvt*foreground: White
-URxvt*geometry: 80x30
-URxvt*scrollBar: true
+#ifdef HIDPI
+! pkg_add xcursor-dmz
+Xcursor.theme:			dmz
+Xcursor.size:			64
 
-URxvt*color0:  #000000 // black
-URxvt*color1:  #B40000 // red
-URxvt*color2:  #00AA00 // green
-URxvt*color3:  #AAAA00 // yellow
-URxvt*color4:  #5555AA // blue
-URxvt*color5:  #AA00AA // magenta
-URxvt*color6:  #00AAAA // cyan
-URxvt*color7:  #AAAAAA // white
-URxvt*color8:  #555555 // black (now and below: bright)
-URxvt*color9:  #FF0000 // red
-URxvt*color10: #00FF00 // green
-URxvt*color11: #FFFF00 // yellow
-URxvt*color12: #6464FF // blue
-URxvt*color13: #FF00FF // magenta
-URxvt*color14: #00FFFF // cyan
-URxvt*color15: #FFFFFF // white
+Xft.dpi:			112
+#endif
 
-!-- Xft settings -- !
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintfull
+! a muted palette for athena things like xterm, xfontsel, etc.
+#define BG			#eae5ce
+#define FG			#444444
+*.background:			BG
+*.foreground:			FG
 
-! -- Fonts -- !
-URxvt.font:xft:Monospace:pixelsize=12
-URxvt.boldfont:xft:Monospace-Bold:pixelsize=12
+*.scrollbar.background:		BG
+*.scrollbar.foreground:		FG
+*.scrollBar.minimumThumb:	50
+*.scrollbar.width:		10
+
+*.borderColor:			BG
+
+#ifdef HIDPI
+.font:				-*-lucida-medium-r-*-*-24-*-*-*-*-*-*-*
+#else
+*.font:				-*-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
+#endif
+
+! solarized (light)
+
+! black
+URxvt.color0:			FG
+URxvt.color8:			#333333
+
+! red
+URxvt.color1:			#dc322f
+URxvt.color9:			#cb4b16
+
+! green
+URxvt.color2:			#859900
+URxvt.color10:			#93a1a1
+
+! yellow
+URxvt.color3:			#b58900
+URxvt.color11:			#839496
+
+! blue
+URxvt.color4:			#268bd2
+URxvt.color12:			#657b83
+
+! magenta
+URxvt.color5:			#d33682
+URxvt.color13:			#6c71c4
+
+! cyan
+URxvt.color6:			#2aa198
+URxvt.color14:			#586e75
+
+! white (gray)
+URxvt.color7:			#d9d7cc
+URxvt.color15:			#e5e5e5
+
+
+! urxvt-specific settings
+
+#ifdef HIDPI
+URxvt.internalBorder:		24
+#else
+URxvt.internalBorder:		12
+#endif
+URxvt.utmpInhibit:		true
+URxvt.loginShell:		true
+URxvt.saveLines:		20000
+URxvt.scrollBar:		false
+URxvt.selectToClipboard:	true
+URxvt.termName:			xterm-256color
+
+! hide when i type
+URxvt.pointerBlank:		true
+
+! if i scrolled up, leave it that way when more output comes
+URxvt.scrollTtyOutput:		false
+! but not when i press a key
+URxvt.scrollTtyKeypress:	true
+
+!URxvt.geometry:			80x40
+URxvt.geometry:			80x100
+
+#ifdef HIDPI
+URxvt.font:			xft:Iosevka (jcs):size=12.5,xft:noto emoji:size=12.5
+URxvt.boldFont:			xft:Iosevka (jcs):weight=bold:size=12.5,xft:noto emoji:weight=bold:size=12.5
+URxvt.letterSpace:		-1
+#else
+URxvt.font:			6x13,xft:noto emoji:size=12,xft:symbola
+URxvt.boldFont:			6x13bold,xft:noto emoji:weight=bold:size=12
+URxvt.letterSpace:		0
+#endif
+
+! make alt+v/command+v paste clipboard
+URxvt.keysym.M-v:		eval:paste_clipboard
+URxvt.keysym.Mod4-v:		eval:paste_clipboard
+URxvt.cutchars:			"`\"'&()*,;<=>?@[]^{|}.:/-"
+
+! support right-clicking urls to open them
+URxvt.perl-ext-common:		default,matcher,selection-to-clipboard,-selection
+URxvt.url-launcher:		HOME/bin/firefox
+URxvt.matcher.button:		3
+URxvt.matcher.rend.0:		Uline
+
+! disable paste warning
+URxvt.perl-ext:			-confirm-paste,ls_l,warn_on_close
+
+SshAskpass*inputTimeout:	15
+
+#ifdef HIDPI
+SshAskpass*Button.font:		-*-lucida-medium-r-*-*-32-*-*-*-*-*-*-*
+SshAskpass*Dialog.font:		-*-lucida-medium-r-*-*-36-*-*-*-*-*-*-*
+SshAskpass*Indicator.width:	40
+SshAskpass*Indicator.height:	20
+SshAskpass*defaultXResolution:	200/in
+SshAskpass*defaultYResolution:	200/in
+#endif
+
+XClock*.update:			1
+XClock*.analog:			False
+XClock*.render:			True
+XClock*.padding:		40
+XClock*.face:			Microsoft Sans Serif:size=20
+XClock*.strftime:		%a %b %d  %H:%M
+XClock*.background:		#c0c7c8

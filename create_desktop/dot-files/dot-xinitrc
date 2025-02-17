@@ -1,7 +1,0 @@
-xrdb -merge /home/rgeorgia/.Xresources
-xset s off
-xset -dpms
-
-exec wmaker
-# /usr/pkg/bin/fvwm3
-# /usr/X11R7/bin/ctwm

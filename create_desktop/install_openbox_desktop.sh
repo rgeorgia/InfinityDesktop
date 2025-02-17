@@ -36,7 +36,7 @@ fi
 ./install_infinity.py
 
 # Install packages
-echo "Installing fvwm3 packages"
+echo "Installing openbox packages"
 doas pkgin -y im packages/openbox.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
