@@ -12,13 +12,14 @@ neomutt
 nmap
 openjdk11
 openjdk17
+openjdk21
 rhythmbox
 sakura
 scite
 stalonetray
 sudo
+doas
 sysupgrade
 tcsh
-thunderbird
 tmux
 wget

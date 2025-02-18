@@ -1,5 +1,6 @@
 #!/bin/sh
 #
+echo "INSTALLING Openbox Desktop ENV"
 BASE_DIR=$PWD
 id | egrep "wheel|root" > /dev/null 2>&1
 if [ $? = 0 ]
@@ -12,6 +13,7 @@ fi
 
 # Make sure python3.13 is installed
 doas pkgin -y in python313
+doas pkgin -y in gh
 
 FILE=/etc/modules.conf
 if [ ! -f "$FILE" ]; then
@@ -37,7 +39,7 @@ fi
 
 # Install packages
 echo "Installing openbox packages"
-doas pkgin -y im packages/openbox.pkg
+doas pkgin -y im packages/openbox-full.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 doas cp ./xdm/Xresources /etc/X11/xdm/.
