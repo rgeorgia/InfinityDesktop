@@ -43,6 +43,6 @@ doas pkgin -y im packages/openbox-full.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 doas cp ./xdm/Xresources /etc/X11/xdm/.
+tar xzvf ./misc/themes.tar.gz -C ~
 cd $HOME
-ln -s .xinitrc .xsession
 cd ${PWD}
