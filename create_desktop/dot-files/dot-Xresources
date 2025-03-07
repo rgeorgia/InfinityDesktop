@@ -1,131 +1,64 @@
-! vim:ts=8
+! https://www.udoo.org/forum/threads/how-to-set-default-xterm-font-and-screen-size.348/
+!
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+! xterm
+xterm*faceSize: 14
+xterm*faceName: Source Code Pro Medium
+xterm*geometry: 90x35
+xterm*selectToClipboard: true
+xterm*background: Black
+xterm*foreground: White
+xterm*scrollBar: true
+xterm*color0:  Black
+xterm*color1:  Red3
+xterm*color2:  Green3
+xterm*color3:  Yellow3
+xterm*color4:  Blue3
+xterm*color5:  Magenta3
+xterm*color6:  Cyan3
+xterm*color7:  AntiqueWhite
+xterm*color8:  Grey25
+xterm*color9:  Red
+xterm*color10: Green
+xterm*color11: Yellow
+xterm*color12: Blue
+xterm*color13: Magenta
+xterm*color14: Cyan
+xterm*color15: White
+! -- Fonts -- !
+xterm.font:xft:Monospace:pixelsize=14
+xterm.boldfont:xft:Monospace-Bold:pixelsize=14
 
-#ifdef HIDPI
-! pkg_add xcursor-dmz
-Xcursor.theme:			dmz
-Xcursor.size:			64
-
-Xft.dpi:			112
-#endif
-
-! a muted palette for athena things like xterm, xfontsel, etc.
-#define BG			#eae5ce
-#define FG			#444444
-*.background:			BG
-*.foreground:			FG
-
-*.scrollbar.background:		BG
-*.scrollbar.foreground:		FG
-*.scrollBar.minimumThumb:	50
-*.scrollbar.width:		10
-
-*.borderColor:			BG
-
-#ifdef HIDPI
-.font:				-*-lucida-medium-r-*-*-24-*-*-*-*-*-*-*
-#else
-*.font:				-*-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
-#endif
-
-! solarized (light)
-
-! black
-URxvt.color0:			FG
-URxvt.color8:			#333333
-
-! red
-URxvt.color1:			#dc322f
-URxvt.color9:			#cb4b16
-
-! green
-URxvt.color2:			#859900
-URxvt.color10:			#93a1a1
-
-! yellow
-URxvt.color3:			#b58900
-URxvt.color11:			#839496
-
-! blue
-URxvt.color4:			#268bd2
-URxvt.color12:			#657b83
-
-! magenta
-URxvt.color5:			#d33682
-URxvt.color13:			#6c71c4
-
-! cyan
-URxvt.color6:			#2aa198
-URxvt.color14:			#586e75
-
-! white (gray)
-URxvt.color7:			#d9d7cc
-URxvt.color15:			#e5e5e5
-
-
-! urxvt-specific settings
-
-#ifdef HIDPI
-URxvt.internalBorder:		24
-#else
-URxvt.internalBorder:		12
-#endif
-URxvt.utmpInhibit:		true
-URxvt.loginShell:		true
-URxvt.saveLines:		20000
-URxvt.scrollBar:		false
-URxvt.selectToClipboard:	true
-URxvt.termName:			xterm-256color
-
-! hide when i type
-URxvt.pointerBlank:		true
-
-! if i scrolled up, leave it that way when more output comes
-URxvt.scrollTtyOutput:		false
-! but not when i press a key
-URxvt.scrollTtyKeypress:	true
-
-!URxvt.geometry:			80x40
-URxvt.geometry:			80x100
-
-#ifdef HIDPI
-URxvt.font:			xft:Iosevka (jcs):size=12.5,xft:noto emoji:size=12.5
-URxvt.boldFont:			xft:Iosevka (jcs):weight=bold:size=12.5,xft:noto emoji:weight=bold:size=12.5
-URxvt.letterSpace:		-1
-#else
-URxvt.font:			6x13,xft:noto emoji:size=12,xft:symbola
-URxvt.boldFont:			6x13bold,xft:noto emoji:weight=bold:size=12
-URxvt.letterSpace:		0
-#endif
-
-! make alt+v/command+v paste clipboard
-URxvt.keysym.M-v:		eval:paste_clipboard
-URxvt.keysym.Mod4-v:		eval:paste_clipboard
-URxvt.cutchars:			"`\"'&()*,;<=>?@[]^{|}.:/-"
-
-! support right-clicking urls to open them
-URxvt.perl-ext-common:		default,matcher,selection-to-clipboard,-selection
-URxvt.url-launcher:		HOME/bin/firefox
-URxvt.matcher.button:		3
-URxvt.matcher.rend.0:		Uline
-
-! disable paste warning
-URxvt.perl-ext:			-confirm-paste,ls_l,warn_on_close
-
-SshAskpass*inputTimeout:	15
-
-#ifdef HIDPI
-SshAskpass*Button.font:		-*-lucida-medium-r-*-*-32-*-*-*-*-*-*-*
-SshAskpass*Dialog.font:		-*-lucida-medium-r-*-*-36-*-*-*-*-*-*-*
-SshAskpass*Indicator.width:	40
-SshAskpass*Indicator.height:	20
-SshAskpass*defaultXResolution:	200/in
-SshAskpass*defaultYResolution:	200/in
-#endif
-
-XClock*.update:			1
-XClock*.analog:			False
-XClock*.render:			True
-XClock*.padding:		40
-XClock*.face:			Microsoft Sans Serif:size=20
-XClock*.strftime:		%a %b %d  %H:%M
-XClock*.background:		#c0c7c8
+! Cursor type and size
+Xcursor*theme: whiteglass
+Xcursor*size: 72
+! urxvt
+URxvt.termName: rxvt
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*geometry: 90x30
+URxvt*scrollBar: true
+URxvt*color0:  Black
+URxvt*color1:  Red3
+URxvt*color2:  Green3
+URxvt*color3:  Yellow3
+URxvt*color4:  Blue3
+URxvt*color5:  Magenta3
+URxvt*color6:  Cyan3
+URxvt*color7:  AntiqueWhite
+URxvt*color8:  Grey25
+URxvt*color9:  Red
+URxvt*color10: Green
+URxvt*color11: Yellow
+URxvt*color12: Blue
+URxvt*color13: Magenta
+URxvt*color14: Cyan
+URxvt*color15: White
+! -- Fonts -- !
+URxvt.font:xft:Monospace:pixelsize=14
+URxvt.boldfont:xft:Monospace-Bold:pixelsize=14

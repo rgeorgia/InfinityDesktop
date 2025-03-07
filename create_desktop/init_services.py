@@ -74,6 +74,6 @@ class InitServices:
         self.copy_to_rcd.copy_to_etc_rcd()
         result = subprocess.run(f"doas ./update_rc.py", shell=True,  capture_output=True)
         self.start_services.start_services()
-        # self.setup_user_home.run()
+        self.setup_user_home.run()
 
         return self

@@ -17,18 +17,14 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
 Plugin 'wincent/command-t.git'
-" Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-" Rust Plugins
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,7 +47,7 @@ let mapleader = "\<Space>"
 
 " Fast saving
 nmap <leader>w :w!<cr>
-nmap <leader>E :Ex<cr>
+nmap <leader>e :Ex<cr>
 
 " NERDTree
 let NERDTreeShowHidden=1
