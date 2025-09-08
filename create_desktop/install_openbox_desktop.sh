@@ -35,11 +35,12 @@ then
     echo "compat_linux" | doas tee -a /etc/modules.conf
 fi
 
-./install_infinity.py
+# ./install_infinity.py
 
 # Install packages
 echo "Installing openbox packages"
-doas pkgin -y im packages/openbox-full.pkg
+# doas pkgin -y im packages/openbox-full.pkg
+doas pkgin -y im packages/openbox.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 doas cp ./xdm/Xresources /etc/X11/xdm/.
