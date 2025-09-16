@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.9
+#!/usr/pkg/bin/python3.13
 import platform
 from collections import defaultdict
 from pathlib import Path
