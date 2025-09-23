@@ -377,6 +377,7 @@ AddToMenu   MenuPrograms "" Title
 # + "Pager" Module FvwmPager 0 3
 + "Rox" Exec exec rox
 + "Terminal" Exec exec alacritty
++ "Todo" Exec exec todo
 
 # Background Menu
 #
