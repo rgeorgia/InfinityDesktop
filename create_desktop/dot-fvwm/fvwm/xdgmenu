@@ -14,6 +14,7 @@ AddToMenu "Accessories"
 + "Accessories" Title
 + "Keyboard layout viewer" Exec kbd-layout-viewer5
 + "Vim" Exec xterm -e vim 
++ "urxvt" Exec urxvt
 + "Xarchiver" Exec xarchiver 
 + "picom" Exec picom
 
@@ -55,12 +56,10 @@ AddToMenu "Settings"
 + "File Manager Settings" Exec thunar-settings
 + "Power Manager" Exec xfce4-power-manager-settings
 + "Removable Drives and Media" Exec thunar-volman-settings
-+ "Xfce Terminal Settings" Exec xfce4-terminal --preferences
 
 DestroyMenu "System"
 AddToMenu "System"
 + "System" Title
 + "Bulk Rename" Exec thunar --bulk-rename 
 + "Thunar File Manager" Exec thunar 
-+ "Xfce Terminal" Exec xfce4-terminal
 

@@ -41,7 +41,7 @@ bold = { family = "monospace", style = "Bold" }
 italic = { family = "monospace", style = "Italic" }
 bold_italic = { family = "monospace", style = "Bold Italic" }
 builtin_box_drawing = true
-size = 13.0
+size = 11.0
 
 [cursor]
 style = { shape = "Block", blinking = "On" }

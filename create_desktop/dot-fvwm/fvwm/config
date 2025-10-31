@@ -33,8 +33,8 @@
 #
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
-# InfoStoreAdd terminal urxvt
-InfoStoreAdd terminal xterm
+InfoStoreAdd terminal urxvt
+# InfoStoreAdd terminal xterm
 
 # This is used for "Run Command" and the Meta+Space key-binding
 InfoStoreAdd runcmd "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'"
@@ -65,7 +65,6 @@ SetEnv fvwm_filemanager /usr/pkg/bin/rox
 SetEnv fvwm_browser /usr/pkg/bin/firefox
 SetEnv fvwm_compare /usr/pkg/bin/meld
 
-
 #Choose the icons for the windows - min, max and close
 #SetEnv icons $[fvwm_windowicons]/blocks
 #SetEnv icons $[fvwm_windowicons]/buttons
@@ -75,7 +74,6 @@ SetEnv icons $[fvwm_windowicons]/classic
 #SetEnv icons $[fvwm_windowicons]/sea
 #SetEnv icons $[fvwm_windowicons]/w10
 #SetEnv icons $[fvwm_windowicons]/wcircles
-
 
 ImagePath $[fvwm_icons]:$[fvwm_launchers]:$[fvwm_backgrounds]:+
 
@@ -103,18 +101,13 @@ ImagePath $[fvwm_icons]:$[fvwm_launchers]:$[fvwm_backgrounds]:+
 # actions that are run after a restart.
 DestroyFunc StartFunction
 AddToFunc   StartFunction
-+ I Module FvwmPager 0 2
++ I Module FvwmPager 0 1
 + I Module FvwmButtons Launchers
 
 # Startup Applications
-Exec exec pkill volumeicon
 Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/infinity-wallpaper-4.jpg &
-# Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/netbsd_knight_rider.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/conky.conf &
 # Exec exec picom --config $HOME/.config/fvwm3/picom.conf &
-Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# Exec exec /usr/pkg/bin/todo &
-# Exec exec /usr/pkg/bin/alacritty &
 
 # Mouse Bindings Functions
 DestroyFunc RaiseMoveX
@@ -191,8 +184,8 @@ DestroyFunc ChangeDesk
 AddToFunc   ChangeDesk
 + I SendToModule FvwmButtons ChangeButton desk0 Colorset 10
 + I SendToModule FvwmButtons ChangeButton desk1 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk2 Colorset 10
-+ I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
+# + I SendToModule FvwmButtons ChangeButton desk2 Colorset 10
+# + I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
 + I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11
 
 
@@ -214,7 +207,6 @@ AddToFunc   ChangeDesk
 #
 DesktopName 0 Main
 DesktopName 1 Code
-DesktopName 2 Play
 DesktopSize 3x2
 
 # EdgeScroll will move the view port between the Pages when the mouse
@@ -350,7 +342,7 @@ AddToMenu   MenuFvwmRoot "FVWM3" Title
 + "&Programs%images/icons/programs.png%" Popup MenuPrograms
 + "XDG &Menu%images/icons/apps.png%" Popup XDGMenu
 # + "&Terminal" Exec exec $[infostore.terminal]
-# Test (x dmenu_run) + "DMENU" Exec exec $[infostore.runcmd]
+Test (x rofi) + "DMENU" Exec exec "rofi -modi drun,run -show drun"
 + "" Nop
 # + "Terminal" Module FvwmConsole -terminal $[infostore.terminal]
 # + "Copy Config%images/icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
@@ -376,7 +368,10 @@ AddToMenu   MenuPrograms "" Title
 + "Man Pages" Popup MenuFvwmManPages
 # + "Pager" Module FvwmPager 0 3
 + "Rox" Exec exec rox
-+ "Terminal" Exec exec alacritty
++ "Rofi" Exec exec rofi -modi drun,run -show drun
++ "Alacritty" Exec exec alacritty
++ "Urxvt" Exec exec urxvt
++ "Xterm" Exec exec xterm
 + "Todo" Exec exec todo
 
 # Background Menu
@@ -462,7 +457,6 @@ DestroyMenu MenuSendToDesk
 AddToMenu   MenuSendToDesk
 + "Desk Main"	MoveToDesk 0 0
 + "Desk Code"	MoveToDesk 0 1
-+ "Desk Play"	MoveToDesk 0 2
 
 DestroyMenu MenuSendToPage
 AddToMenu   MenuSendToPage
@@ -528,7 +522,6 @@ Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
 Silent Key Tab A 4 WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
 Silent Key F1 A C GotoDesk 0 0
 Silent Key F2 A C GotoDesk 0 1
-Silent Key F3 A C GotoDesk 0 2
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
@@ -645,36 +638,6 @@ DestroyModuleConfig FvwmScript:*
 # The panel contains buttons to switch desks, FvwmPager, a system tray,
 # FvwmIconMan (list of running windows), and a clock.
 #
-# Note - To use the system tray you must have "stalonetray" installed.
-DestroyModuleConfig RightPanel:*
-*RightPanel: Geometry 120x$[vp.height]-0+0
-*RightPanel: Colorset 10
-*RightPanel: Rows $[vp.height]
-*RightPanel: Columns 120
-*RightPanel: Frame 0
-*RightPanel: Font "xft:Sans:Bold:size=12:antialias=True"
-*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
-*RightPanel: (120x5, Frame 0)
-*RightPanel: (10x20, Frame 0)
-*RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
-*RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 0)
-*RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 0)
-*RightPanel: (10x20, Frame 0)
-*RightPanel: (5x80, Frame 0)
-*RightPanel: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
-*RightPanel: (5x80, Frame 0)
-*RightPanel: (120x5, Frame 0)
-Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \
-    stalonetray 'Exec exec stalonetray --config \
-    "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 0)
-Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-225)), \
-    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
-Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
-    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
-*RightPanel: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',\
-    Frame 0)
-*RightPanel: (120x5, Frame 0)
-
 # FvwmPager
 #
 # This module displays the location of the windows on the various Pages
@@ -725,10 +688,6 @@ DestroyModuleConfig EventNewDesk:*
 *EventNewDesk: PassID
 *EventNewDesk: new_desk ChangeDesk
 
-
-
-
-
 # == Keyboard bindings
 
 # Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing
@@ -737,8 +696,6 @@ DestroyModuleConfig EventNewDesk:*
 # 3 = Shift = S
 # 4 = superkey = M
 # A = any key
-
-
 
 # Paging: Windows key + arrows moves to the next desktop
 # in the desired direction
@@ -778,19 +735,17 @@ Key t WT 4 Thumbnail
 # Super + 1-4 to switch workspace
 Key 1 A 4 GotoDesk 0 0
 Key 2 A 4 GotoDesk 0 1
-Key 3 A 4 GotoDesk 0 2
-
 
 # Super + Shift + 1-4 to send window to another workspace
 Key 1 A 4S MovetoPage 0 0
 Key 2 A 4S MovetoPage 1 0
-Key 3 A 4S MovetoPage 2 0
+# Key 3 A 4S MovetoPage 2 0
 Key 4 A 4S MovetoPage 0 1
 Key 5 A 4S MovetoPage 1 1
-Key 6 A 4S MovetoPage 2 1
+# Key 6 A 4S MovetoPage 2 1
 Key 7 A 4S MovetoPage 0 2
 Key 8 A 4S MovetoPage 1 2
-Key 9 A 4S MovetoPage 2 2
+# Key 9 A 4S MovetoPage 2 2
 
 # Window snapping
 Key Left A 4 SnapLeft
@@ -813,9 +768,9 @@ Key m A M Move
 Key r A M Resize
 
 
-Style "tint2"        !Title, !Handles, !Borders, StaysOnTop, EWMHIgnoreStrutHints, Sticky, EWMHPlacementIgnoreWorkingArea, NeverFocus, WindowListSkip
+Style "tint2" !Title, !Handles, !Borders, StaysOnTop, EWMHIgnoreStrutHints, Sticky, EWMHPlacementIgnoreWorkingArea, NeverFocus, WindowListSkip
 
-Style "conky"        NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
+Style "conky" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
   CirculateSkip, FixedPosition, FixedSize, !Iconifiable, NeverFocus, StaysOnTop
 
 
@@ -834,9 +789,9 @@ DestroyModuleConfig FvwmPager: *
 *FvwmPager: HilightColorset * 10
 *FvwmPager: BalloonColorset * 9
 *FvwmPager: WindowColorsets 9 10
-*FvwmPager: Font "xft:Sans:Bold:pixelsize=12:minspace=True:antialias=True"
+*FvwmPager: Font "xft:Sans:Bold:pixelsize=10:minspace=True:antialias=True"
 *FvwmPager: Balloons All
-*FvwmPager: BalloonFont "xft:NotoSans:Bold:pixelsize=12:minspace=True:antialias=True"
+*FvwmPager: BalloonFont "xft:NotoSans:Bold:pixelsize=10:minspace=True:antialias=True"
 *FvwmPager: BallonYOffset +2
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
@@ -846,24 +801,3 @@ DestroyModuleConfig FvwmPager: *
 *FvwmPager: DeskHilight Black
 #*FvwmPager: Hilight Black
 
-
-##################################################################
-# 9: Launcher
-##################################################################
-
-
-Style "Launchers" NoTitle, !Handles, !Borders, Sticky, WindowListSkip, \
-  CirculateSkip, StaysOnBottom, FixedPosition, FixedSize, !Iconifiable
-
-DestroyModuleConfig Launchers: *
-*Launchers: Geometry 500x50+0+0
-# *Launchers: Geometry 540
-*Launchers: Colorset 10
-*Launchers: Rows 1
-*Launchers: Columns 30
-*Launchers: Frame 2
-*Launchers: Font "Shadow=1:xft:NotoSans:Bold:pixelsize=12:minspace=True:antialias=True"
-*Launchers: (5x1, Frame 0, Icon /home/rgeorgia/.fvwm/images/image.png )
-*Launchers: (4x1, Frame 0, Icon /usr/pkg/share/icons/Moka/64x64/apps/xterm-color_48x48.png, Action(Mouse 1) Exec exec /usr/pkg/bin/alacritty)
-*Launchers: (4x1, Frame 0, Icon /usr/pkg/share/icons/Moka/48x48@2x/apps/system-file-manager.png, Action(Mouse 1) Exec exec $[fvwm_filemanager])
-*Launchers: (5x1, Frame 0, Icon $[fvwm_icons]/48x48/firefox.png, Action(Mouse 1) Exec exec $[fvwm_browser])
