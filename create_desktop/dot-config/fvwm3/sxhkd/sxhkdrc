@@ -8,11 +8,15 @@
 
 # Vivaldi
 super + F1
-	xfce4-terminal
+	vivaldi-stable
 
-# Geany
+# Atom
 super + F2
-	geany
+	subl
+
+#Inkscape
+super + F3
+    inkscape
 
 #Gimp
 super + F4
@@ -22,13 +26,25 @@ super + F4
 super + F5
     meld
 
+#Vlc
+super + F6
+    vlc --video-on-top
+
+#Virtualbox
+super + F7
+    virtualbox
+
 #Thunar
 super + F8
     thunar
 
 #Evolution
 super + F9
-    thunderbird
+    evolution
+
+#Spotify
+super + F10
+    spotify
 
 #Rofi Fullscreen
 super + F11
@@ -42,6 +58,14 @@ super + F12
 # SUPER + ... KEYS
 #################################################################
 
+#Atom
+super + e
+    atom
+
+#Browser
+super + w
+    vivaldi-stable
+
 #Conky-toggle
 super + c
     conky-toggle
@@ -50,15 +74,38 @@ super + c
 #super + h
 #    urxvt 'htop task manager' -e htop
 
+#archlinux-logout
+super + x
+    archlinux-logout
 
 #Rofi theme selector
 super + r
     rofi-theme-selector
 
+#Urxvt
+super + t
+    urxvt
+
+#Pavucontrol
+super + v
+    pavucontrol
+
+#Pragha
+#super + m
+#    pragha
+
+#alacritty
+super + Return
+    alacritty
+
 #Xkill
 super + Escape
     xkill
 
+#Keyboard dependent
+#alacritty
+super + KP_Enter
+	alacritty
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -329,3 +376,18 @@ XF86MonBrightnessUp
 #Brightness down
 XF86MonBrightnessDown
     xbacklight -dec 10
+
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/fvwm3/scripts/picom-toggle.sh

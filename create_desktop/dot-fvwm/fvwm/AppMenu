@@ -10,7 +10,6 @@ AddToMenu MyMenuApplications "My Applications" Title
 + "Mail Reader" Exec exec exo-open --launch MailReader %u
 + "" nop
 + "[System]" nop
-+ "Sakura" Exec exec sakura
 + "Gigolo" Exec exec gigolo
 + "XTerm" Exec exec xterm
 + Htop Exec exec uxterm htop
