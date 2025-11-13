@@ -5,7 +5,7 @@ from setup_home import SetupUserHome
 
 
 class InstallServices:
-    """Class of services needed"""
+    """Class of services needed """
 
     def __init__(self):
         self._services_to_install: list = ["dbus", "avahi", "fam"]
