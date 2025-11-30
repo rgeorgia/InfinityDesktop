@@ -7,6 +7,7 @@ Create an package that installs and builds a usable desktop.
 
 ```bash
 $ pkgin in infinity-desktop
+
 ```
 
 ![Desktop](screenshots/screen.png)
