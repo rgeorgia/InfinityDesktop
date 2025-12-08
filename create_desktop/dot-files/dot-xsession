@@ -39,8 +39,8 @@ fi
 
 redshift -l 41.90:-87.66 -t 5000:3500 -m randr &
 
-/usr/pkg/bin/openbox-session
-# startxfce4
+/usr/pkg/bin/i3
+# /usr/pkg/bin/fvwm3
 # /usr/X11R7/bin/ctwm
 
 cleanup
