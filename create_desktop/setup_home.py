@@ -11,7 +11,7 @@ from typing import Self
 class SetupHome:
     def __init__(self):
         self.dot_file_location = Path(".").joinpath("dot-files")
-        self.dot_fvwm_location = Path(".").joinpath("dot-fvwm").joinpath("fvwm")
+        self.dot_fvwm_location = Path(".").joinpath("dot-fvwm")
         self.dirs_to_create = ['Documents', 'Downloads', 'Templates', 'Videos', 'Pictures/backgrounds', 'Nowhere', ]
 
     def copy_dot_files(self):
