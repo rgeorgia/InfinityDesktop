@@ -81,6 +81,7 @@ class RcFile:
 
 def main():
     rc_update = RcFile()
+    print("Running rc update")
     try:
         rc_update.update_rc_file()
     except Exception as e:

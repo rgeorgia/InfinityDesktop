@@ -12,6 +12,7 @@ fi
 
 # Make sure python3.14 is installed
 doas pkgin -y in python314
+chmod +x *.py
 
 FILE=/etc/modules.conf
 if [ ! -f "$FILE" ]; then
@@ -33,7 +34,7 @@ then
     echo "compat_linux" | doas tee -a /etc/modules.conf
 fi
 
-./install_infinity.py
+exec /usr/pkg/bin/python3.14 $PWD/install_infinity.py
 
 # Install packages
 echo "Installing fvwm3 packages"
