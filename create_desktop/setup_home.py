@@ -12,7 +12,7 @@ class SetupHome:
     def __init__(self):
         self.dot_file_location = Path(".").joinpath("dot-files")
         self.dot_fvwm_location = Path(".").joinpath("dot-fvwm")
-        self.dirs_to_create = ['Documents', 'Downloads', 'Templates', 'Videos', 'Pictures/backgrounds', 'Nowhere', ]
+        self.dirs_to_create = ['MyDocuments', 'Downloads', 'Templates', 'Videos', 'Pictures/backgrounds', 'Nowhere', ]
 
     def copy_dot_files(self):
         for item in self.dot_file_location.iterdir():
