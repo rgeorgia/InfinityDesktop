@@ -10,8 +10,8 @@ else
     exit 1
 fi
 
-# Make sure python3.11 is installed
-doas pkgin -y in python311
+# Make sure python3.14 is installed
+doas pkgin -y in python314
 
 FILE=/etc/modules.conf
 if [ ! -f "$FILE" ]; then
