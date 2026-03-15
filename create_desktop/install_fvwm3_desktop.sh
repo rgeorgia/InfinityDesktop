@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-BASE_DIR=$PWD
-id | egrep "wheel|root" > /dev/null 2>&1
+
+id | grep -E "wheel|root" > /dev/null 2>&1
 if [ $? = 0 ]
 then
     echo "You have permission"
@@ -34,7 +34,8 @@ then
     echo "compat_linux" | doas tee -a /etc/modules.conf
 fi
 
-exec /usr/pkg/bin/python3.14 $PWD/install_infinity.py
+echo "Running install script"
+/usr/pkg/bin/python3.14 "$PWD/install_infinity.py"
 
 # Install packages
 echo "Installing fvwm3 packages"
@@ -42,6 +43,6 @@ doas pkgin -y im packages/fvwm3.pkg
 
 echo "Updating Xresources in /etc/X11/xdm"
 doas cp ./xdm/Xresources /etc/X11/xdm/.
-cd $HOME
+cd "$HOME" || exit
 ln -s .xinitrc .xsession
-cd ${PWD}
+cd "${PWD}" || exit

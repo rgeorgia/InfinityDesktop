@@ -2,6 +2,7 @@ import subprocess
 from pathlib import Path
 from typing import Self
 from setup_home import SetupUserHome
+from update_rc import RcFile
 
 
 class InstallServices:
@@ -68,11 +69,16 @@ class InitServices:
         self.start_services = StartServices()
         self.copy_to_rcd = CopyExampleToRcd()
         self.setup_user_home = SetupUserHome()
+        self.rc_update = RcFile()
 
     def run(self) -> Self:
         self.install_services.install_services()
         self.copy_to_rcd.copy_to_etc_rcd()
-        result = subprocess.run(f"doas ./update_rc.py", shell=True,  capture_output=True)
+        try:
+            self.rc_update.update_rc_file()
+        except Exception as e:
+            print(e)
+        # result = subprocess.run("doas ./update_rc.py", shell=True,  capture_output=True)
         self.start_services.start_services()
         self.setup_user_home.run()
 
