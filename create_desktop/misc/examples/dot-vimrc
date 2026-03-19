@@ -6,7 +6,8 @@ filetype plugin indent on
 " Enable spell checking
 set spell
 set spelllang=en_us
-
+set tabstop=4
+set re=0
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,11 +21,15 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Raku/vim-raku'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,7 +102,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme ron
 catch
 endtry
 
