@@ -13,10 +13,13 @@ sub has_root_permission {
 }
 
 
-if (! has_root_permission) {
-    die "Need sudo/doas permissions\n";
+sub main {
+
+	if (! has_root_permission) {
+	    die "Need sudo/doas permissions\n";
+	}
+	print "Installing\n";
 }
 
 
-
-print "Installing\n";
+exit main;
