@@ -1,6 +1,4 @@
 #!/usr/pkg/bin/perl
-use strict;
-use warnings;
 
 sub has_root_permission {
     my $username = getpwuid($<);
