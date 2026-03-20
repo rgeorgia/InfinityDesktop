@@ -32,13 +32,13 @@ class RcFile:
         return content_dict
 
     def search_and_replace(self, search_word: str, replace_word: str):
-        with open(self.rc_file_location, 'r') as file:
+        with open(self.rc_file_location, "r") as file:
             file_contents = file.read()
 
         updated_contents = file_contents.replace(search_word, replace_word)
 
         try:
-            with open(self.rc_file_location, 'w') as file:
+            with open(self.rc_file_location, "w") as file:
                 file.write(updated_contents)
         except PermissionError as e:
             raise e

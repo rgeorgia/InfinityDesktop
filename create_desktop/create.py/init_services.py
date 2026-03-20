@@ -6,7 +6,7 @@ from update_rc import RcFile
 
 
 class InstallServices:
-    """Class of services needed """
+    """Class of services needed"""
 
     def __init__(self):
         self._services_to_install: list = ["dbus", "avahi", "fam"]
@@ -17,7 +17,9 @@ class InstallServices:
 
     def install_services(self):
         for item in self.services_to_install:
-            sp = subprocess.run(f"doas pkgin -y in {item}", shell=True, capture_output=True)
+            sp = subprocess.run(
+                f"doas pkgin -y in {item}", shell=True, capture_output=True
+            )
             print(f"Install {item}, {sp.stdout.decode('utf-8')}, {sp.returncode}")
 
 
@@ -39,7 +41,9 @@ class CopyExampleToRcd:
                 print(f"Copying {source} to {target}")
                 # Not using shutil.copy because we need doas privilege
                 # shutil.copy(source, target)
-                sp = subprocess.run(f"doas cp {source} {target}", shell=True, capture_output=True)
+                sp = subprocess.run(
+                    f"doas cp {source} {target}", shell=True, capture_output=True
+                )
                 if sp.returncode != 0:
                     print(f"Error copying {source} to {target}")
 
@@ -52,7 +56,12 @@ class CopyExampleToRcd:
 
 class StartServices:
     def __init__(self):
-        self._services_to_start: list = ["dbus", "avahidaemon", "rpcbind", "famd", ]
+        self._services_to_start: list = [
+            "dbus",
+            "avahidaemon",
+            "rpcbind",
+            "famd",
+        ]
 
     @property
     def services_to_start(self) -> list:

@@ -1,4 +1,4 @@
-# Perl Version for Creating Infinity DE
+# Rakudo Version for Creating Infinity DE
 
 1. Check if root permission. If not, exit.
 2. Update /etc/modules.conf
@@ -12,4 +12,8 @@
 10. Add .xinitrc
 11. Symlink .xinitrc .xsession
 
+## First Road Map
 
+- Create classes based on python version
+- Rethink why those classes are even needed
+- Refactor code
