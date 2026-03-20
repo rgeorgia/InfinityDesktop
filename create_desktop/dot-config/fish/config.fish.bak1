@@ -1,0 +1,36 @@
+function setXDGenv
+	set -gx XDG_CONFIG_HOME "$HOME/.config"
+	set -gx XDG_DATA_HOME "$HOME/.local/share"
+	set -gx XDG_CACHE_HOME "$HOME/.cache"
+end
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+# Set the search path for programs.
+set -gx PATH $HOME/bin /bin /sbin /usr/bin /usr/sbin /usr/X11R7/bin /usr/pkg/bin
+set -gx PATH $PATH /usr/pkg/sbin /usr/games /usr/local/bin /usr/local/sbin
+set -gx PATH $HOME/.cargo/bin $PATH
+set -gx MANPATH /usr/share/man /usr/X11R7/man /usr/pkg/man
+
+# Set environment variables
+set -gx EDITOR vim
+set -gx QT_QPA_PLARFORMTHEME qt5ct
+set -gx QTDIR /usr/pkg/qt5
+set -gx VISUAL $EDITOR
+
+setXDGenv
+# set vi key bindings
+fish_vi_key_bindings
+
+## Useful aliases
+# Replace ls with eza
+alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
+alias lsz 'eza -al --color=always --total-size --group-directories-first --icons' # include file size
+alias la 'eza -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll 'eza -l --color=always --group-directories-first --icons'  # long format
+alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
+alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+alias weather 'curl http://wttr.in/Lincolnton'
+alias hbsd 'cd /home/rgeorgia/workspace/hbsd_projects/hbsd-update'

@@ -30,7 +30,7 @@ I am focusing more on [FVWM](https://www.fvwm.org/). I am actually pulling a lot
 
 ---
 
-Totally inspired by the good folks that brought you [GhostBSD](https://github.com/ghostbsd)! GhostBSD is built on [TrueOS](https://www.trueos.org/), which is another excellent project. I totally recommend you check them out. Some of us even support them financially. Yup I **love** GhostBSD!
+Totally inspired by the good folks that brought you [GhostBSD](https://github.com/ghostbsd)!
 
 The other major "kick in the pants" which I needed came from the author of [OS108](https://github.com/OS108/os108.github.io).
 Jay is a great guy and I would also recommend that you visit his github repo and an excellent forum he setup called [UnitedBSD](https://unitedbsd.com/).

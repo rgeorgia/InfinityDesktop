@@ -109,7 +109,6 @@ AddToFunc   StartFunction
 # Startup Applications
 Exec exec pkill volumeicon
 Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/infinity-wallpaper-4.jpg &
-# Exec exec feh --bg-fill /home/rgeorgia/Pictures/backgrounds/netbsd_knight_rider.jpg &
 Exec exec conky -c $HOME/.config/fvwm3/conky.conf &
 # Exec exec picom --config $HOME/.config/fvwm3/picom.conf &
 Exec exec /usr/pkg/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -359,9 +358,11 @@ AddToMenu   MenuFvwmRoot "FVWM3" Title
 + "&Quit%images/icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
 
 # Generate XDGMenu
-PipeRead "fvwm-menu-desktop -e"
+# PipeRead "fvwm-menu-desktop -e"
+# PipeRead $[fvwm_scripts]/fvwm_app_menu
+PipeRead "/home/rgeorgia/.fvwm/scripts/fvwm_app_menu"
 
-read xdgmenu
+# read xdgmenu
 
 
 # Programs Menu
@@ -374,9 +375,8 @@ AddToMenu   MenuPrograms "" Title
 # + "Wallpapers%images/icons/wallpaper.png%" Popup BGMenu
 + "Man Pages" Popup MenuFvwmManPages
 # + "Pager" Module FvwmPager 0 3
-+ "Rox" Exec exec rox
-+ "Terminal" Exec exec alacritty
-+ "Todo" Exec exec todo
++ "&Rox%/usr/pkg/share/icons/Moka/16x16/apps/file-manager.png%" Exec exec rox
++ "&Terminal%/usr/pkg/share/icons/Moka/16x16/apps/xterm-color.png%" Exec exec alacritty
 
 # Background Menu
 #

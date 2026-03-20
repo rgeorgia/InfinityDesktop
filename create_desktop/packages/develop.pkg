@@ -8,6 +8,10 @@ py313-ipython
 py313-pip
 py313-sqlite3
 python313
+py314-ipython
+py314-pip
+py314-sqlite3
+python314
 sqlitebrowser
 firefox
 zig

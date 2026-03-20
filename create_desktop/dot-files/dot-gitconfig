@@ -12,6 +12,7 @@
         ss = status -s
         l = log --graph --decorate --pretty=oneline --abbrev-commit
         la = log --pretty=format:'* %C(yellow)%h %C(cyan)%an %C(reset)%s'
+		rv = remote -v
 [color]
         branch = true
         diff = true
@@ -29,3 +30,5 @@
         helper = 
         helper = !/usr/bin/gh auth git-credential
 
+[init]
+	defaultBranch = main
