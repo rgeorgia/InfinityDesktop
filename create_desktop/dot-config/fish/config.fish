@@ -49,9 +49,9 @@ if test -d ~/.local/bin
 end
 
 ## Starship prompt
-if status --is-interactive
-   source (/usr/pkg/bin/starship init fish --print-full-init | psub)
-end
+# if status --is-interactive
+#   source (/usr/pkg/bin/starship init fish --print-full-init | psub)
+# end
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang

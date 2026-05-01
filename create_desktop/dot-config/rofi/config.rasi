@@ -155,4 +155,9 @@ font: "mono 14";
       sorting-method:    "name";
   }
 }
-@theme "DarkBlue"
+//@theme "DarkBlue"
+//@theme "/usr/local/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/local/share/rofi/themes/DarkBlue.rasi"
+//@theme "/usr/local/share/rofi/themes/Arc-Dark.rasi"
+@theme "/usr/pkg/share/rofi/themes/android_notification.rasi"
+
